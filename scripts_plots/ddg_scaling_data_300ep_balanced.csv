@@ -1,0 +1,96 @@
+# MuLAN ΔΔG scaling data — 300ep/patience30 BALANCED-splitter series (S1102 balanced_seed42 10-fold CV).
+# Sibling of ddg_scaling_data_300ep.csv (the paper-faithful rng.integers 300ep series) and of the
+# 50ep ddg_scaling_data.csv (from-scratch suite); SAME 20-column schema and semantics — see the 50ep
+# file's header for the full column doc. Rendered by
+#     MULAN_PLOT_SERIES=300ep_balanced python plot_ddg_scaling.py -> ddg_scaling_300ep_balanced.{png,svg}
+#
+# Source: experiments/embedding_sweep results_balanced/ (config_balanced.sh — balanced splitter, the
+# fork default that produces equal-size folds, seed 42; 1100 muts = S1102 minus 2I9B, 300 epochs /
+# patience 30, lightatt_default_config, batch 32, lr 5e-4). PCC/std from
+# experiments/embedding_sweep/results_balanced/<tag>.json (aggregate.py, ES_CONFIG=config_balanced.sh).
+# cv10_runtime_hhmm from the pueue wall-clock of each embsweep_bal_base_* task (Mac rows trained on
+# Apple M4 Pro / MPS; Ankh reuses cv10_ankh_converge so its runtime is carried, not a fresh balanced
+# task). run_platform keys the marker hue: mps=magenta (M4 Pro), linux=blue (40c CPU), gpu=green
+# (Linux Precision-7920 RTX 24G box). ESM C 6B is a `gpu` run (base 0.8812, aug flat 0.8800, from
+# results_esmc6b_gpu_*.tar.gz); its cv10 wall-clock isn't a pueue task here so runtime is left blank.
+# Its peak_ram_gb=29 / emb_gen_min=69.7 on Linux 40c CPU are CARRIED from the 50ep seq_cv10 row
+# (emb-gen cost is PLM-intrinsic / epoch+splitter-independent) so it appears on the Peak-RAM panel.
+# NEW gen runs auto-log these: gen_plm_emb.py / esm3_gen.py / prewarm_aug_cpu.py emit a
+# `[COST <plm>] peak_ram_gb=.. emb_gen_min=.. platform=.. host=..` line (scratch/emb_gen_util.py)
+# -> grep the run log for `[COST ` to fill peak_ram_gb/emb_gen_min for a newly-measured PLM.
+# Embedding-generation cost columns (peak_ram_gb / emb_gen_min / platform / emb_gen_min_mps) are
+# PLM-intrinsic + epoch/splitter-independent, so carried over from the matching 50ep/rng rows where
+# measured (blank otherwise). ESM C 600M base LANDED (10/10, 0.8336 ± 0.057; the earlier #19 no-op was
+# re-run) and is now a seq_cv10 row; it shares lineage=ESMC with ESM C 6B (600M->6B family line). Its
+# +aug balanced arm also LANDED (10/10, 0.8309 +/- 0.062, cv10_runtime 3:24 from task #28 21:50->01:14)
+# as an aug_cv10 row -- aug sits ~0.003 BELOW base, another esmc600m "aug no lift" (cf the 50ep 0.831
+# base > 0.828 aug). Base label nudged down-left so its 6.0e8 marker doesn't crowd SaProt's 6.5e8 guide.
+# cv10_runtime 1:01 (base) = the fold-dir wall-clock span (20:48->21:50); corroborated by the 300ep-rng
+# esmc600m 1:00. rt_dx=-13 puts the base label WEST so it doesn't collide with SaProt's own
+# westward-placed runtime.
+# Ankh3-large base LANDED 2026-07-14 (10/10, 0.8347 +/- 0.052, ~2h22 wall, task #30 01:14->03:37)
+# but is intentionally NOT a plotted row: it has no published param count to place on the log-x
+# axis (emb_dim 1536, ~Ankh-large size) and would overplot Ankh-large (0.8357) — so it's tracked
+# in RESULTS.md sec.19 only. Its balanced aug arm was not run.
+# foldxmlp_cv10 series (RESULTS.md sec.19): the Stage-2 FoldX decomposed-12-term MLP add_scores
+# arm, a 3rd lever alongside base(seq_cv10)/aug(aug_cv10). Amber triangle at each PLM's own
+# params-x, connector = lift from base. 5 complete arms: esmc600m 0.8529, saprot 0.8668,
+# ankh 0.8536, prostt5 0.8368 (all MPS), esmc6b 0.8890 (GPU) -- each > its +aug diamond
+# (FoldX-MLP is the stronger lever). CORRECTED 2026-07-27: the earlier partial GPU import
+# (results_esmc6b_gpu_20260714, MLP then 6/10 folds) had the esmc6b MLP and SCALAR arms
+# SWAPPED. The complete 10/10 GPU run (scratch/results/s1102_esmc6b_balanced/, 2026-07-27
+# handoff) gives MLP 0.8890 +/- 0.036 (paired +0.0078, 6/10 folds) vs SCALAR 0.8847 +/- 0.040
+# (paired +0.0035) over base 0.8812 -- so MLP > scalar for esmc6b too, same ordering as every
+# other PLM; the "scalar beats MLP, uniquely" claim was a label error, not a result. esmc6b is
+# still the exception on MAGNITUDE: +0.0078 vs +0.014-0.019 for the smaller PLMs -- the
+# strongest/largest PLM has the least headroom for either add-on lever (diminishing returns).
+# esm2/ankh3/saprot13b foldxmlp arms omitted (esm2 running; saprot13b base not yet paired).
+# ESM3-open base LANDED 2026-07-14 (esm3_sm_open_v1, 1.4B, 10/10, 0.7938 +/- 0.064, ~2h54 wall,
+# task #38 14:35->17:29 MPS; emb_dim 1536). It is the LOWEST of the balanced-300ep suite -- fold 0
+# (0.650) drags it, median ~0.82 still trails prostt5 0.823 -> another "scale != win" point. emb-gen
+# cost columns blank (its CPU gen predates the [COST] auto-log instrumentation). Its +aug and
+# FoldX-MLP arms did NOT run (a `bash -c MAXPAR=2 bash ...` queue typo no-op'd tasks #39/#40); rows
+# will be added when those re-run.
+# MINT (A2 arm, experiments/mint/PLAN_MINT_A2.md) LANDED 2026-07-14 (10/10, cross-fold mean 0.8497
+# +/- 0.039; pueue #51 20:09->22:08 = 1:59 MPS). It is a seq_cv10 BASE row like the monomer PLMs --
+# the circles are each a PLM's raw-embedding base arm and MINT is one more, a CROSS-CHAIN embedder
+# (ESM-2-650M backbone + multimer cross-attention, 813M params, dim 1280), so it earns a circle, not
+# an add-on marker. Placed at 8.13e8 params (the 813M multimer encoder, not the 650M backbone);
+# label flags it as cross-chain so it doesn't read as a monomer scale point. Note the plotted number
+# is the BULK cross-fold PCC only: the A2 finding is that MINT does NOT beat the 6-PLM consensus
+# (0.870 pooled) and is the WORST arm on the electrostatic worst-40 tail -- see PLAN_MINT_A2.md sec.5
+# / S1102_CROSSFOLD_MISPREDICT.md sec.A2; this plot shows only where its bulk PCC sits vs scale.
+# emb-gen cost columns blank (MINT complex-embedding gen predates the [COST] auto-log). Its monomer
+# ablation + C1 tail-loss arms are separate studies, not scaling-suite rows.
+model,params,pcc,pcc_std,series,status,label,dx,dy,peak_ram_gb,emb_gen_min,lineage,emb_dim,est_ram_gb,platform,emb_gen_min_mps,run_platform,cv10_runtime_hhmm,rt_dx,rt_dy
+ESM C 600M,6.0e8,0.8336,0.057,seq_cv10,measured,1,-40,-22,,,ESMC,1152,,,,mps,1:01,-13,0
+SaProt-650M\n(WT-3Di),6.5e8,0.8490,0.051,seq_cv10,measured,1,-48,-3,,,SaProt,1280,,,,mps,1:32,-11,
+Ankh-large,1.15e9,0.8357,0.053,seq_cv10,measured,1,0,18,4.7,,Ankh,1536,,Linux 40c CPU / 62G,,mps,1:30,,
+ProstT5,1.21e9,0.8231,0.053,seq_cv10,measured,1,0,-48,4.9,19,,1024,,Linux 40c CPU / 62G,2.0,mps,1:24,-11,
+ESM3,1.4e9,0.7938,0.064,seq_cv10,measured,1,36,-26,,,,1536,,,,mps,2:54,-11,
+ESM2-3B,2.8e9,0.8329,0.053,seq_cv10,measured,1,8,-52,12,,ESM2,2560,,Linux 40c CPU / 62G,,mps,3:02,-11,
+ESM C 6B,6.0e9,0.8812,0.036,seq_cv10,measured,1,0,14,29,69.7,ESMC,2560,,Linux 40c CPU / 62G,,gpu,,,
+MINT\n(cross-chain),8.13e8,0.8497,0.039,seq_cv10,measured,1,5,44,,,,1280,,,,mps,1:59,0,-14
+AIDO.Protein-16B,1.6e10,0.8374,0.048,seq_cv10,measured,1,-6,-56,,,,2304,,,,gpu,,,
+Ankh-large +aug,1.15e9,0.8379,0.057,aug_cv10,measured,0,0,0,,,,1536,,,,mps,3:15,,
+ProstT5 +aug,1.21e9,0.8322,0.049,aug_cv10,measured,0,0,0,,,,1024,,,,mps,3:01,,
+SaProt-650M\n(WT-3Di) +aug,6.5e8,0.8543,0.050,aug_cv10,measured,0,0,0,,,,1280,,,,mps,8:15,,
+ESM2-3B +aug,2.8e9,0.8394,0.054,aug_cv10,measured,0,0,0,,,,2560,,,,mps,11:15,,
+ESM C 600M +aug,6.0e8,0.8309,0.062,aug_cv10,measured,0,0,0,,,,1152,,,,mps,3:24,,
+ESM C 6B +aug,6.0e9,0.8800,0.039,aug_cv10,measured,0,0,0,,,,2560,,,,gpu,,,
+AIDO.Protein-16B +aug,1.6e10,0.8391,0.050,aug_cv10,measured,0,0,0,,,,2304,,,,gpu,,,
+ESM C 600M +FoldX,6.0e8,0.8529,0.046,foldxmlp_cv10,measured,0,0,0,,,,1152,,,,mps,,,
+SaProt-650M\n(WT-3Di) +FoldX,6.5e8,0.8668,0.037,foldxmlp_cv10,measured,0,0,0,,,,1280,,,,mps,,,
+Ankh-large +FoldX,1.15e9,0.8536,0.051,foldxmlp_cv10,measured,0,0,0,,,,1536,,,,mps,,,
+ProstT5 +FoldX,1.21e9,0.8368,0.044,foldxmlp_cv10,measured,0,0,0,,,,1024,,,,mps,,,
+ESM C 6B +FoldX,6.0e9,0.8890,0.036,foldxmlp_cv10,measured,0,0,0,,,,2560,,,,gpu,,,
+ESM2-3B +FoldX,2.8e9,0.8500,0.055,foldxmlp_cv10,measured,0,0,0,,,,2560,,,,mps,,,
+AIDO.Protein-16B +FoldX,1.6e10,0.8573,0.038,foldxmlp_cv10,measured,0,0,0,,,,2304,,,,gpu,,,
+Ankh-large +FoldX scalar,1.15e9,0.8534,0.042,foldxscalar_cv10,measured,0,0,0,,,,1536,,,,mps,,,
+SaProt-650M\n(WT-3Di) +FoldX scalar,6.5e8,0.8614,0.044,foldxscalar_cv10,measured,0,0,0,,,,1280,,,,mps,,,
+ESM2-3B +FoldX scalar,2.8e9,0.8530,0.045,foldxscalar_cv10,measured,0,0,0,,,,2560,,,,mps,,,
+AIDO.Protein-16B +FoldX scalar,1.6e10,0.8488,0.037,foldxscalar_cv10,measured,0,0,0,,,,2304,,,,gpu,,,
+ESM C 600M +FoldX scalar,6.0e8,0.8472,0.050,foldxscalar_cv10,measured,0,0,0,,,,1152,,,,mps,,,
+ProstT5 +FoldX scalar,1.21e9,0.8338,0.043,foldxscalar_cv10,measured,0,0,0,,,,1024,,,,mps,,,
+MuLAN-Ankh (paper),1.15e9,0.868,,reference,reference,0,0,0,,,,1536,,,,reference,,,
+MuLAN-ESM2-3B (paper),2.8e9,0.854,,reference,reference,0,0,0,,,,2560,,,,reference,,,

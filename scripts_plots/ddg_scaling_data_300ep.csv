@@ -1,0 +1,21 @@
+# MuLAN ΔΔG scaling data — 300ep/patience30 PAPER-FAITHFUL series (S1102 seed-42 10-fold CV).
+# Sibling of ddg_scaling_data.csv (the 50ep from-scratch suite); SAME 20-column schema and
+# semantics — see that file's header for the full column doc. Rendered by
+#     MULAN_PLOT_SERIES=300ep python plot_ddg_scaling.py   ->  ddg_scaling_300ep.{png,svg}
+#
+# Source: experiments/embedding_sweep (paper_seed42 splits, 1100 muts = S1102 minus 2I9B,
+# 300 epochs / patience 30, lightatt_default_config, batch 32, lr 5e-4). PCC/std from
+# experiments/embedding_sweep/results/<tag>.json (aggregate.py). cv10_runtime_hhmm from the
+# pueue wall-clock of each embsweep_base_* task (all trained on Apple M4 Pro / MPS).
+# Embedding-generation cost columns (peak_ram_gb / emb_gen_min / platform / emb_gen_min_mps)
+# are PLM-intrinsic and epoch-independent, so they are carried over from the matching 50ep
+# rows where measured (blank otherwise). saprot base (running) + esm2 base (queued) + ALL
+# +aug runs were still in the pueue queue at snapshot time -> omitted here (SaProt at ~6.5e8
+# would collide with ESM C 600M's guide); append a measured row per model as each lands.
+model,params,pcc,pcc_std,series,status,label,dx,dy,peak_ram_gb,emb_gen_min,lineage,emb_dim,est_ram_gb,platform,emb_gen_min_mps,run_platform,cv10_runtime_hhmm,rt_dx,rt_dy
+ESM C 600M,6.0e8,0.8177,0.046,seq_cv10,measured,1,-46,0,,,ESM C,1152,,,,mps,1:00,-13,0
+Ankh-large,1.15e9,0.8217,0.048,seq_cv10,measured,1,0,18,4.7,,Ankh,1536,,Linux 40c CPU / 62G,,mps,1:30,,
+ProstT5,1.21e9,0.8006,0.053,seq_cv10,measured,1,0,-40,4.9,19,,1024,,Linux 40c CPU / 62G,2.0,mps,1:09,-11,
+ESM C 6B,6.0e9,0.8690,0.033,seq_cv10,measured,1,0,14,29,69.7,ESM C,2560,,Linux 40c CPU / 62G,,gpu,,,
+MuLAN-Ankh (paper),1.15e9,0.868,,reference,reference,0,0,0,,,,1536,,,,reference,,,
+MuLAN-ESM2-3B (paper),2.8e9,0.854,,reference,reference,0,0,0,,,,2560,,,,reference,,,

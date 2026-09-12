@@ -1,0 +1,11 @@
+#tag	plm_model_name	embeddings_dir
+ankh	ankh	scratch/embeddings_skempi_full/ankh
+esm2	esm	scratch/embeddings_skempi_full/esm2
+saprot	saprot	scratch/embeddings_skempi_full/saprot
+prostt5	prostt5	scratch/embeddings_skempi_full/prostt5
+esmc600m	esmc_600m	scratch/embeddings_skempi_full/esmc600m
+ankh3_large	ankh3_large	scratch/embeddings_skempi_full/ankh3_large
+ankh3_xl	ankh3_xl	scratch/embeddings_skempi_full/ankh3_xl
+saprot13b	saprot_1.3b	scratch/embeddings_skempi_full/saprot13b
+esmc6b	esmc_6b	scratch/embeddings_skempi_full/esmc6b
+aido	aido	scratch/embeddings_skempi_full/aido

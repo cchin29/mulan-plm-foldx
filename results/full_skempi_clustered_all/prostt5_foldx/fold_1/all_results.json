@@ -1,0 +1,16 @@
+{
+    "epoch": 104.0,
+    "test_loss": 2.8729281425476074,
+    "test_mae": 1.0411758422851562,
+    "test_pcc": 0.6156483292579651,
+    "test_rmse": 1.6949713230133057,
+    "test_runtime": 9.8849,
+    "test_samples_per_second": 177.342,
+    "test_scc": 0.578687791000801,
+    "test_steps_per_second": 5.564,
+    "total_flos": 0.0,
+    "train_loss": 1.3071237088996412,
+    "train_runtime": 5874.625,
+    "train_samples_per_second": 171.228,
+    "train_steps_per_second": 5.362
+}

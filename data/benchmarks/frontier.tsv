@@ -1,0 +1,53 @@
+# Comparator numbers transcribed from the source papers. One row per (method, metric, protocol).
+# `protocol` is load-bearing: a number is only comparable to a MuLAN arm trained on the SAME
+# protocol. See README.md in this directory before using any of these.
+#
+# One caveat on the `pooled_spearman` / `clustered_id60` rows sourced from ProtBFF Table 2.
+# `pooled_spearman` is the lookup key these rows have always carried, but the frontier papers
+# report that split FOLD-AVERAGED -- Spearman within each test fold, then averaged -- which
+# was determined on 2026-08-05 and is what experiments/BENCHMARK_MATRIX.md now states. The key
+# is left as-is because it is referenced by plot_frontier_comparison.py; the metric it names is
+# the source's, not a claim that the number is pooled. Fold-averaged and pooled differ by up to
+# ~0.05 on a given arm, so a MuLAN value set against these rows should be read fold-averaged
+# (spearman_foldavg in results_matrix_ps.csv). The ProtBFF verdict is the same either way.
+method	metric	protocol	value	source
+RDE-Network	ps_spearman_T10	bycomplex_all	0.401	RDE-Network 2023, Table 1
+DiffAffinity	ps_spearman_T10	bycomplex_all	0.397	DiffAffinity, secondary table
+Prompt-DDG	ps_spearman_T10	bycomplex_all	0.426	Prompt-DDG, secondary table
+CATH-ddG	ps_spearman_T10	bycomplex_all	0.460	CATH-ddG, secondary table
+BA-DDG	ps_spearman_T10	bycomplex_all	0.513	BA-DDG, secondary table
+FoldX	ps_spearman_T10	bycomplex_all	0.369	Prompt-DDG Table 1
+USP-ddG	ps_spearman_T10	cath	0.493	USP-ddG Table 1
+CATH-ddG	ps_spearman_T10	cath	0.494	USP-ddG Table 1 (re-eval)
+BA-DDG	ps_spearman_T10	cath	0.402	USP-ddG Table 1 (re-eval)
+flex-ddG	ps_spearman_T10	cath	0.454	USP-ddG Table 1 (re-eval)
+FoldX	ps_spearman_T10	cath	0.430	USP-ddG Table 1 (re-eval)
+Prompt-DDG	ps_spearman_T10	cath	0.303	USP-ddG Table 1 (re-eval)
+RDE-Network	ps_spearman_T10	cath	0.288	USP-ddG Table 1 (re-eval)
+DiffAffinity	ps_spearman_T10	cath	0.249	USP-ddG Table 1 (re-eval)
+PPIformer	ps_spearman_T10	cath	0.216	USP-ddG Table 1 (re-eval)
+ProSST + ProtBFF	pooled_spearman	clustered_id60	0.471	ProtBFF Table 2
+ProMIM	pooled_spearman	clustered_id60	0.464	ProtBFF Table 2
+RDE-Network	pooled_spearman	clustered_id60	0.439	ProtBFF Table 2
+ESM2 + ProtBFF	pooled_spearman	clustered_id60	0.410	ProtBFF Table 2
+FoldX	pooled_spearman	clustered_id60	0.294	ProtBFF Table 2
+ESM2 (bare PLM)	pooled_spearman	clustered_id60	0.204	ProtBFF Table 2
+ProtBFF	pooled_spearman	clustered_id60	0.477	ProtBFF bioRxiv 2025-12-23
+ProtBFF	pooled_pearson	clustered_id60	0.514	ProtBFF bioRxiv 2025-12-23
+ProSST (base)	pooled_spearman	clustered_id60	0.354	ProtBFF Table 2
+ProMIM	pooled_pearson	clustered_id60	0.486	ProtBFF Table 2
+ProSST (base)	pooled_pearson	clustered_id60	0.428	ProtBFF Table 2
+USP-ddG	auroc	cath	0.802	USP-ddG Table 1
+CATH-ddG	auroc	cath	0.781	USP-ddG Table 1
+flex-ddG	auroc	cath	0.764	USP-ddG Table 1
+FoldX	auroc	cath	0.754	USP-ddG Table 1
+RDE-Network	auroc	cath	0.745	USP-ddG Table 1
+BA-DDG	auroc	cath	0.732	USP-ddG Table 1
+DiffAffinity	auroc	cath	0.625	USP-ddG Table 1
+CATH-ddG	auroc	bycomplex	0.776	BA-DDG Table 1 / CATH-ddG Suppl. S2
+BA-DDG	auroc	bycomplex	0.773	BA-DDG Table 1 / CATH-ddG Suppl. S2
+Prompt-DDG	auroc	bycomplex	0.757	BA-DDG Table 1 / CATH-ddG Suppl. S2
+ProMIM	auroc	bycomplex	0.760	BA-DDG Table 1 / CATH-ddG Suppl. S2
+RDE-Network	auroc	bycomplex	0.745	BA-DDG Table 1 / CATH-ddG Suppl. S2
+DiffAffinity	auroc	bycomplex	0.744	BA-DDG Table 1 / CATH-ddG Suppl. S2
+FoldX	auroc	bycomplex	0.658	BA-DDG Table 1 / CATH-ddG Suppl. S2

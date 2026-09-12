@@ -1,0 +1,529 @@
+regime,dataset,model,arm,n_folds,expected,mean_ntest,total_ntest,mean_pcc,std_pcc,mean_runtime_s,platform,status
+S1102-CV 50ep/p10,S1102,Ankh-large,base,10,10,110,1100,0.832125,0.057475,7047.3,MPS*,done
+S1102-CV 50ep/p10,S1102,Ankh-large,aug,10,10,110,1100,0.837891,0.053713,11527.9,MPS*,done
+S1102-CV 50ep/p10,S1102,Ankh-large,fx_scalar,10,10,110,1100,0.831019,0.043136,1172.3,MPS*,done
+S1102-CV 50ep/p10,S1102,Ankh-large,fx_mlp,10,10,110,1100,0.838312,0.044181,1183.5,MPS*,done
+S1102-CV 50ep/p10,S1102,ProstT5,base,10,10,110,1100,0.804603,0.054826,5063.8,MPS*,done
+S1102-CV 50ep/p10,S1102,ProstT5,aug,10,10,110,1100,0.818797,0.060118,9481.4,MPS*,done
+S1102-CV 50ep/p10,S1102,ProstT5,fx_scalar,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,ProstT5,fx_mlp,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,SaProt,base,10,10,110,1100,0.842252,0.050368,277.8,MPS*,done
+S1102-CV 50ep/p10,S1102,SaProt,aug,10,10,110,1100,0.852009,0.050850,525.5,MPS*,done
+S1102-CV 50ep/p10,S1102,SaProt,fx_scalar,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,SaProt,fx_mlp,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,SaProt-1.3B,base,10,10,110,1100,0.836606,0.060881,245.6,MPS*,done
+S1102-CV 50ep/p10,S1102,SaProt-1.3B,aug,10,10,110,1100,0.849825,0.065003,570.8,MPS*,done
+S1102-CV 50ep/p10,S1102,SaProt-1.3B,fx_scalar,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,SaProt-1.3B,fx_mlp,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,ESM2-3B,base,10,10,110,1100,0.815524,0.053684,10619.2,MPS*,done
+S1102-CV 50ep/p10,S1102,ESM2-3B,aug,10,10,110,1100,0.823890,0.060787,903.0,MPS*,done
+S1102-CV 50ep/p10,S1102,ESM2-3B,fx_scalar,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,ESM2-3B,fx_mlp,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,ESM3-1.4B,base,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,ESM3-1.4B,aug,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,ESM3-1.4B,fx_scalar,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,ESM3-1.4B,fx_mlp,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,ESM-C 600M,base,10,10,110,1100,0.831413,0.055760,507.4,MPS*,done
+S1102-CV 50ep/p10,S1102,ESM-C 600M,aug,10,10,110,1100,0.827976,0.059625,884.2,MPS*,done
+S1102-CV 50ep/p10,S1102,ESM-C 600M,fx_scalar,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,ESM-C 600M,fx_mlp,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,ESM-C 6B,base,10,10,110,1100,0.858777,0.069311,10293.1,CUDA*,done
+S1102-CV 50ep/p10,S1102,ESM-C 6B,aug,10,10,110,1100,0.877650,0.042818,23447.2,CUDA*,done
+S1102-CV 50ep/p10,S1102,ESM-C 6B,fx_scalar,10,10,110,1100,0.871034,0.030609,15768.3,CUDA*,done
+S1102-CV 50ep/p10,S1102,ESM-C 6B,fx_mlp,10,10,110,1100,0.870483,0.035835,4173.0,CUDA*,done
+S1102-CV 50ep/p10,S1102,Ankh3-large,base,10,10,110,1100,0.823354,0.056553,340.5,MPS*,done
+S1102-CV 50ep/p10,S1102,Ankh3-large,aug,10,10,110,1100,0.848976,0.041781,673.0,MPS*,done
+S1102-CV 50ep/p10,S1102,Ankh3-large,fx_scalar,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,Ankh3-large,fx_mlp,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,Ankh3-xl,base,10,10,110,1100,0.831445,0.055745,534.8,MPS*,done
+S1102-CV 50ep/p10,S1102,Ankh3-xl,aug,10,10,110,1100,0.855218,0.043347,1028.5,MPS*,done
+S1102-CV 50ep/p10,S1102,Ankh3-xl,fx_scalar,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,Ankh3-xl,fx_mlp,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,AIDO-16B,base,10,10,110,1100,0.827943,0.045909,9533.9,MPS*,done
+S1102-CV 50ep/p10,S1102,AIDO-16B,aug,10,10,110,1100,0.835536,0.056870,18601.7,MPS*,done
+S1102-CV 50ep/p10,S1102,AIDO-16B,fx_scalar,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,AIDO-16B,fx_mlp,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,MINT,base,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,MINT,aug,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,MINT,fx_scalar,0,10,,,,,,,empty
+S1102-CV 50ep/p10,S1102,MINT,fx_mlp,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,Ankh-large,base,10,10,110,1100,0.835726,0.052513,1102.1,MPS*,done
+S1102-CV 300ep/p30,S1102,Ankh-large,aug,10,10,110,1100,0.837934,0.057437,2303.5,MPS*,done
+S1102-CV 300ep/p30,S1102,Ankh-large,fx_scalar,10,10,110,1100,0.853356,0.041681,1213.4,MPS*,done
+S1102-CV 300ep/p30,S1102,Ankh-large,fx_mlp,10,10,110,1100,0.853560,0.050650,1324.9,MPS*,done
+S1102-CV 300ep/p30,S1102,ProstT5,base,10,10,110,1100,0.823122,0.053198,985.6,MPS*,done
+S1102-CV 300ep/p30,S1102,ProstT5,aug,10,10,110,1100,0.832231,0.048743,6137.2,MPS*,done
+S1102-CV 300ep/p30,S1102,ProstT5,fx_scalar,10,10,110,1100,0.833841,0.042827,956.1,MPS*,done
+S1102-CV 300ep/p30,S1102,ProstT5,fx_mlp,10,10,110,1100,0.836834,0.044048,2504.3,MPS*,done
+S1102-CV 300ep/p30,S1102,SaProt,base,10,10,110,1100,0.848970,0.050640,1102.1,MPS*,done
+S1102-CV 300ep/p30,S1102,SaProt,aug,10,10,110,1100,0.854295,0.049791,17111.1,MPS*,done
+S1102-CV 300ep/p30,S1102,SaProt,fx_scalar,10,10,110,1100,0.861415,0.043847,930.6,MPS*,done
+S1102-CV 300ep/p30,S1102,SaProt,fx_mlp,10,10,110,1100,0.866780,0.037090,1058.0,MPS*,done
+S1102-CV 300ep/p30,S1102,SaProt-1.3B,base,10,10,110,1100,0.841100,0.061800,1198.1,MPS*,done
+S1102-CV 300ep/p30,S1102,SaProt-1.3B,aug,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,SaProt-1.3B,fx_scalar,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,SaProt-1.3B,fx_mlp,10,10,110,1100,0.858156,0.052848,924.6,MPS*,done
+S1102-CV 300ep/p30,S1102,ESM2-3B,base,10,10,110,1100,0.832871,0.053090,2083.6,MPS*,done
+S1102-CV 300ep/p30,S1102,ESM2-3B,aug,10,10,110,1100,0.839360,0.053635,8048.9,MPS*,done
+S1102-CV 300ep/p30,S1102,ESM2-3B,fx_scalar,10,10,110,1100,0.852959,0.045316,2532.4,MPS*,done
+S1102-CV 300ep/p30,S1102,ESM2-3B,fx_mlp,10,10,110,1100,0.849966,0.054902,2499.5,MPS*,done
+S1102-CV 300ep/p30,S1102,ESM3-1.4B,base,10,10,110,1100,0.793756,0.060644,1977.8,MPS*,done
+S1102-CV 300ep/p30,S1102,ESM3-1.4B,aug,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,ESM3-1.4B,fx_scalar,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,ESM3-1.4B,fx_mlp,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,ESM-C 600M,base,10,10,110,1100,0.833596,0.056926,2932.6,MPS*,done
+S1102-CV 300ep/p30,S1102,ESM-C 600M,aug,10,10,110,1100,0.830924,0.061843,2439.6,MPS*,done
+S1102-CV 300ep/p30,S1102,ESM-C 600M,fx_scalar,10,10,110,1100,0.847153,0.049579,6086.3,MPS*,done
+S1102-CV 300ep/p30,S1102,ESM-C 600M,fx_mlp,10,10,110,1100,0.852857,0.046404,2596.7,MPS*,done
+S1102-CV 300ep/p30,S1102,ESM-C 6B,base,10,10,110,1100,0.881208,0.036361,1564.4,CUDA*,done
+S1102-CV 300ep/p30,S1102,ESM-C 6B,aug,10,10,110,1100,0.880028,0.039123,2118.1,CUDA*,done
+S1102-CV 300ep/p30,S1102,ESM-C 6B,fx_scalar,10,10,110,1100,0.884743,0.039540,1197.9,CUDA*,done
+S1102-CV 300ep/p30,S1102,ESM-C 6B,fx_mlp,10,10,110,1100,0.889026,0.035777,1259.0,CUDA*,done
+S1102-CV 300ep/p30,S1102,Ankh3-large,base,10,10,110,1100,0.834675,0.052424,1670.0,MPS*,done
+S1102-CV 300ep/p30,S1102,Ankh3-large,aug,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,Ankh3-large,fx_scalar,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,Ankh3-large,fx_mlp,1,10,110,110,0.900711,0.000000,1362.4,MPS*,partial
+S1102-CV 300ep/p30,S1102,Ankh3-xl,base,10,10,110,1100,0.838530,0.058964,10202.3,MPS*,done
+S1102-CV 300ep/p30,S1102,Ankh3-xl,aug,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,Ankh3-xl,fx_scalar,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,Ankh3-xl,fx_mlp,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,AIDO-16B,base,10,10,110,1100,0.837391,0.048462,977.9,MPS*,done
+S1102-CV 300ep/p30,S1102,AIDO-16B,aug,10,10,110,1100,0.839080,0.049664,1716.1,MPS*,done
+S1102-CV 300ep/p30,S1102,AIDO-16B,fx_scalar,10,10,110,1100,0.848832,0.037310,979.3,MPS*,done
+S1102-CV 300ep/p30,S1102,AIDO-16B,fx_mlp,10,10,110,1100,0.857305,0.037682,1021.5,MPS*,done
+S1102-CV 300ep/p30,S1102,MINT,base,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,MINT,aug,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,MINT,fx_scalar,0,10,,,,,,,empty
+S1102-CV 300ep/p30,S1102,MINT,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,Ankh-large,base,10,10,113,1127,0.822352,0.043284,7719.1,MPS*,done
+Benchmarks 50ep/p10,S1131,Ankh-large,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,Ankh-large,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,Ankh-large,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ProstT5,base,10,10,113,1127,0.781038,0.050079,5329.9,MPS*,done
+Benchmarks 50ep/p10,S1131,ProstT5,aug,10,10,113,1127,0.796747,0.039267,2330.2,MPS*,done
+Benchmarks 50ep/p10,S1131,ProstT5,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ProstT5,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,SaProt,base,10,10,113,1127,0.846804,0.040384,284.7,MPS*,done
+Benchmarks 50ep/p10,S1131,SaProt,aug,10,10,113,1127,0.843863,0.040570,2904.1,MPS*,done
+Benchmarks 50ep/p10,S1131,SaProt,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,SaProt,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,SaProt-1.3B,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,SaProt-1.3B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,SaProt-1.3B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,SaProt-1.3B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM2-3B,base,10,10,113,1127,0.821995,0.036129,498.7,MPS*,done
+Benchmarks 50ep/p10,S1131,ESM2-3B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM2-3B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM2-3B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM3-1.4B,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM3-1.4B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM3-1.4B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM3-1.4B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM-C 600M,base,10,10,113,1127,0.823418,0.037014,401.8,MPS*,done
+Benchmarks 50ep/p10,S1131,ESM-C 600M,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM-C 600M,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM-C 600M,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,ESM-C 6B,base,10,10,113,1127,0.866497,0.036449,12316.3,CUDA*,done
+Benchmarks 50ep/p10,S1131,ESM-C 6B,aug,10,10,113,1127,0.871599,0.029126,25169.4,CUDA*,done
+Benchmarks 50ep/p10,S1131,ESM-C 6B,fx_scalar,10,10,113,1127,0.888372,0.024661,1287.0,CUDA*,done
+Benchmarks 50ep/p10,S1131,ESM-C 6B,fx_mlp,10,10,113,1127,0.881560,0.032991,1130.9,CUDA*,done
+Benchmarks 50ep/p10,S1131,Ankh3-large,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,Ankh3-large,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,Ankh3-large,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,Ankh3-large,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,Ankh3-xl,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,Ankh3-xl,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,Ankh3-xl,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,Ankh3-xl,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,AIDO-16B,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,AIDO-16B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,AIDO-16B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,AIDO-16B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,MINT,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,MINT,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,MINT,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S1131,MINT,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,Ankh-large,base,10,10,112,1124,0.822891,0.057843,11135.1,MPS*,done
+Benchmarks 50ep/p10,S2003,Ankh-large,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,Ankh-large,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,Ankh-large,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ProstT5,base,10,10,112,1124,0.795918,0.071883,7306.6,MPS*,done
+Benchmarks 50ep/p10,S2003,ProstT5,aug,10,10,112,1124,0.809687,0.062643,3148.0,MPS*,done
+Benchmarks 50ep/p10,S2003,ProstT5,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ProstT5,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,SaProt,base,10,10,112,1124,0.832310,0.050986,530.3,MPS*,done
+Benchmarks 50ep/p10,S2003,SaProt,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,SaProt,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,SaProt,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,SaProt-1.3B,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,SaProt-1.3B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,SaProt-1.3B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,SaProt-1.3B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM2-3B,base,10,10,112,1124,0.806517,0.068007,748.5,MPS*,done
+Benchmarks 50ep/p10,S2003,ESM2-3B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM2-3B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM2-3B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM3-1.4B,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM3-1.4B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM3-1.4B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM3-1.4B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM-C 600M,base,10,10,112,1124,0.821010,0.057514,610.7,MPS*,done
+Benchmarks 50ep/p10,S2003,ESM-C 600M,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM-C 600M,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM-C 600M,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,ESM-C 6B,base,10,10,112,1124,0.851907,0.037908,10743.3,CUDA*,done
+Benchmarks 50ep/p10,S2003,ESM-C 6B,aug,10,10,112,1124,0.856586,0.043896,81061.1,CUDA*,done
+Benchmarks 50ep/p10,S2003,ESM-C 6B,fx_scalar,10,10,112,1124,0.876036,0.037199,1897.7,CUDA*,done
+Benchmarks 50ep/p10,S2003,ESM-C 6B,fx_mlp,10,10,112,1124,0.885489,0.032909,2126.9,CUDA*,done
+Benchmarks 50ep/p10,S2003,Ankh3-large,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,Ankh3-large,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,Ankh3-large,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,Ankh3-large,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,Ankh3-xl,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,Ankh3-xl,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,Ankh3-xl,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,Ankh3-xl,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,AIDO-16B,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,AIDO-16B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,AIDO-16B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,AIDO-16B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,MINT,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,MINT,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,MINT,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S2003,MINT,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,Ankh-large,base,10,10,250,2497,0.798092,0.041837,31928.1,MPS*,done
+Benchmarks 50ep/p10,S4169,Ankh-large,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,Ankh-large,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,Ankh-large,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ProstT5,base,10,10,250,2497,0.763748,0.063053,23663.4,MPS*,done
+Benchmarks 50ep/p10,S4169,ProstT5,aug,10,10,250,2497,0.766168,0.062249,9871.8,MPS*,done
+Benchmarks 50ep/p10,S4169,ProstT5,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ProstT5,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,SaProt,base,10,10,250,2497,0.814529,0.046493,950.2,MPS*,done
+Benchmarks 50ep/p10,S4169,SaProt,aug,4,10,250,998,0.836126,0.051093,15077.5,MPS*,partial
+Benchmarks 50ep/p10,S4169,SaProt,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,SaProt,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,SaProt-1.3B,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,SaProt-1.3B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,SaProt-1.3B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,SaProt-1.3B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM2-3B,base,10,10,250,2497,0.792264,0.048334,1853.3,MPS*,done
+Benchmarks 50ep/p10,S4169,ESM2-3B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM2-3B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM2-3B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM3-1.4B,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM3-1.4B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM3-1.4B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM3-1.4B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM-C 600M,base,10,10,250,2497,0.793650,0.047622,1634.1,MPS*,done
+Benchmarks 50ep/p10,S4169,ESM-C 600M,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM-C 600M,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM-C 600M,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,ESM-C 6B,base,10,10,250,2497,0.825321,0.049025,26762.1,CUDA*,done
+Benchmarks 50ep/p10,S4169,ESM-C 6B,aug,10,10,250,2497,0.834486,0.039883,7402.5,CUDA*,done
+Benchmarks 50ep/p10,S4169,ESM-C 6B,fx_scalar,10,10,250,2497,0.856742,0.034265,5069.7,CUDA*,done
+Benchmarks 50ep/p10,S4169,ESM-C 6B,fx_mlp,10,10,250,2497,0.857359,0.034413,4510.2,CUDA*,done
+Benchmarks 50ep/p10,S4169,Ankh3-large,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,Ankh3-large,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,Ankh3-large,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,Ankh3-large,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,Ankh3-xl,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,Ankh3-xl,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,Ankh3-xl,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,Ankh3-xl,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,AIDO-16B,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,AIDO-16B,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,AIDO-16B,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,AIDO-16B,fx_mlp,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,MINT,base,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,MINT,aug,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,MINT,fx_scalar,0,10,,,,,,,empty
+Benchmarks 50ep/p10,S4169,MINT,fx_mlp,0,10,,,,,,,empty
+Honest ladder — S1102 (1100 muts),S1102 by-complex,Ankh-large,base,3,3,367,1100,0.719523,0.006634,422.1,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,Ankh-large,fx_scalar,3,3,367,1100,0.740427,0.027597,392.9,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,Ankh-large,fx_mlp,3,3,367,1100,0.744527,0.023879,724.8,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ProstT5,base,3,3,367,1100,0.684670,0.009795,429.8,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ProstT5,fx_scalar,3,3,367,1100,0.586672,0.148416,466.6,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ProstT5,fx_mlp,3,3,367,1100,0.706978,0.032915,337.3,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,SaProt,base,3,3,367,1100,0.722236,0.028616,385.1,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,SaProt,fx_scalar,3,3,367,1100,0.730942,0.033013,353.7,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,SaProt,fx_mlp,3,3,367,1100,0.734488,0.022311,425.5,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,SaProt-1.3B,base,3,3,367,1100,0.724188,0.050770,551.9,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,SaProt-1.3B,fx_scalar,3,3,367,1100,0.728014,0.023366,715.0,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,SaProt-1.3B,fx_mlp,3,3,367,1100,0.730750,0.029937,520.5,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM2-3B,base,3,3,367,1100,0.704187,0.056580,690.3,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM2-3B,fx_scalar,3,3,367,1100,0.701376,0.039924,952.2,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM2-3B,fx_mlp,3,3,367,1100,0.722485,0.010419,958.3,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM3-1.4B,base,3,3,367,1100,0.366463,0.200093,604.6,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM3-1.4B,fx_scalar,3,3,367,1100,0.502465,0.106839,917.3,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM3-1.4B,fx_mlp,3,3,367,1100,0.455687,0.094152,788.8,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM-C 600M,base,3,3,367,1100,0.724727,0.030149,278.8,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM-C 600M,fx_scalar,3,3,367,1100,0.737392,0.024457,435.0,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM-C 600M,fx_mlp,3,3,367,1100,0.736684,0.026708,417.4,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM-C 6B,base,3,3,367,1100,0.746599,0.009780,479.5,CUDA*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM-C 6B,fx_scalar,3,3,367,1100,0.773336,0.017692,477.9,CUDA*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,ESM-C 6B,fx_mlp,3,3,367,1100,0.771233,0.022433,527.0,CUDA*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,Ankh3-large,base,3,3,367,1100,0.699969,0.025625,580.8,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,Ankh3-large,fx_scalar,3,3,367,1100,0.726527,0.045670,588.2,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,Ankh3-large,fx_mlp,3,3,367,1100,0.730148,0.034339,771.3,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,Ankh3-xl,base,3,3,367,1100,0.717762,0.024103,768.9,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,Ankh3-xl,fx_scalar,3,3,367,1100,0.720139,0.020312,1011.2,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,Ankh3-xl,fx_mlp,3,3,367,1100,0.739294,0.010637,935.8,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,AIDO-16B,base,0,3,,,,,,,empty
+Honest ladder — S1102 (1100 muts),S1102 by-complex,AIDO-16B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — S1102 (1100 muts),S1102 by-complex,AIDO-16B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — S1102 (1100 muts),S1102 by-complex,MINT,base,3,3,367,1100,0.695626,0.061039,470.5,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 by-complex,MINT,fx_scalar,0,3,,,,,,,empty
+Honest ladder — S1102 (1100 muts),S1102 by-complex,MINT,fx_mlp,0,3,,,,,,,empty
+Honest ladder — S1102 (1100 muts),S1102 clustered,Ankh-large,base,3,3,367,1100,0.364184,0.199174,694.9,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,Ankh-large,fx_scalar,3,3,367,1100,0.493981,0.140260,918.3,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,Ankh-large,fx_mlp,3,3,367,1100,0.490436,0.159408,618.5,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ProstT5,base,3,3,367,1100,0.171742,0.131148,823.3,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ProstT5,fx_scalar,3,3,367,1100,0.462124,0.090709,931.9,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ProstT5,fx_mlp,3,3,367,1100,0.466976,0.119620,402.6,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,SaProt,base,3,3,367,1100,0.420631,0.166500,527.9,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,SaProt,fx_scalar,3,3,367,1100,0.515813,0.110783,835.1,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,SaProt,fx_mlp,3,3,367,1100,0.511415,0.124339,743.4,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,SaProt-1.3B,base,3,3,367,1100,0.441321,0.010261,551.7,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,SaProt-1.3B,fx_scalar,3,3,367,1100,0.475880,0.033652,335.8,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,SaProt-1.3B,fx_mlp,3,3,367,1100,0.521833,0.089530,79837.2,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM2-3B,base,3,3,367,1100,0.313606,0.203548,1236.0,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM2-3B,fx_scalar,3,3,367,1100,0.494618,0.145508,1268.5,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM2-3B,fx_mlp,3,3,367,1100,0.512893,0.129804,1218.4,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM3-1.4B,base,3,3,367,1100,-0.046982,0.091025,602.5,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM3-1.4B,fx_scalar,3,3,367,1100,0.225645,0.133753,843.5,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM3-1.4B,fx_mlp,3,3,367,1100,0.334362,0.057778,604.6,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM-C 600M,base,3,3,367,1100,0.426816,0.152151,2122.8,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM-C 600M,fx_scalar,3,3,367,1100,0.464070,0.129065,705.5,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM-C 600M,fx_mlp,3,3,367,1100,0.487508,0.247304,591.7,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM-C 6B,base,3,3,367,1100,0.532956,0.221645,459.8,CUDA*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM-C 6B,fx_scalar,3,3,367,1100,0.540184,0.217599,411.2,CUDA*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,ESM-C 6B,fx_mlp,3,3,367,1100,0.528229,0.193086,500.2,CUDA*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,Ankh3-large,base,3,3,367,1100,0.337460,0.162050,925.5,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,Ankh3-large,fx_scalar,3,3,367,1100,0.415532,0.051165,723.4,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,Ankh3-large,fx_mlp,3,3,367,1100,0.441747,0.109661,618.3,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,Ankh3-xl,base,3,3,367,1100,0.378647,0.099777,1071.3,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,Ankh3-xl,fx_scalar,3,3,367,1100,0.497271,0.059471,1701.2,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,Ankh3-xl,fx_mlp,3,3,367,1100,0.487822,0.116013,1028.2,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,AIDO-16B,base,0,3,,,,,,,empty
+Honest ladder — S1102 (1100 muts),S1102 clustered,AIDO-16B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — S1102 (1100 muts),S1102 clustered,AIDO-16B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — S1102 (1100 muts),S1102 clustered,MINT,base,3,3,367,1100,0.229310,0.085413,418.1,MPS*,done
+Honest ladder — S1102 (1100 muts),S1102 clustered,MINT,fx_scalar,0,3,,,,,,,empty
+Honest ladder — S1102 (1100 muts),S1102 clustered,MINT,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-SP,Ankh-large,base,3,3,1388,4165,0.222386,0.076346,4362.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,Ankh-large,fx_scalar,3,3,1388,4165,0.457043,0.081039,4332.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,Ankh-large,fx_mlp,3,3,1388,4165,0.521911,0.082848,3754.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ProstT5,base,3,3,1388,4165,0.102688,0.063129,4168.3,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ProstT5,fx_scalar,3,3,1388,4165,0.452142,0.006682,3939.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ProstT5,fx_mlp,3,3,1388,4165,0.496839,0.019823,5580.7,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,SaProt,base,3,3,1388,4165,0.087341,0.047253,4011.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,SaProt,fx_scalar,3,3,1388,4165,0.424891,0.010786,3796.3,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,SaProt,fx_mlp,3,3,1388,4165,0.498456,0.032474,3269.9,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,SaProt-1.3B,base,3,3,1388,4165,0.114014,0.017868,3077.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,SaProt-1.3B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-SP,SaProt-1.3B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM2-3B,base,3,3,1388,4165,0.163436,0.092646,8525.9,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM2-3B,fx_scalar,3,3,1388,4165,0.460361,0.060938,4704.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM2-3B,fx_mlp,3,3,1388,4165,0.505245,0.043995,4446.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM3-1.4B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM3-1.4B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM3-1.4B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM-C 600M,base,3,3,1388,4165,0.273520,0.159012,2800.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM-C 600M,fx_scalar,3,3,1388,4165,0.333028,0.125746,2913.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM-C 600M,fx_mlp,3,3,1388,4165,0.478568,0.059272,2290.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM-C 6B,base,3,3,1388,4165,0.341261,0.134721,2894.7,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM-C 6B,fx_scalar,3,3,1388,4165,0.501977,0.077107,2499.2,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,ESM-C 6B,fx_mlp,3,3,1388,4165,0.523695,0.084306,2115.4,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,Ankh3-large,base,3,3,1388,4165,0.154480,0.063118,1795.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,Ankh3-large,fx_scalar,3,3,1388,4165,0.448774,0.023493,1939.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,Ankh3-large,fx_mlp,3,3,1388,4165,0.486606,0.024989,1973.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,Ankh3-xl,base,3,3,1388,4165,0.246173,0.161519,3666.9,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,Ankh3-xl,fx_scalar,3,3,1388,4165,0.461732,0.035489,3452.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,Ankh3-xl,fx_mlp,3,3,1388,4165,0.503445,0.048619,3193.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,AIDO-16B,base,3,3,1388,4165,0.155495,0.112377,3368.7,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,AIDO-16B,fx_scalar,3,3,1388,4165,0.459070,0.025961,2678.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,AIDO-16B,fx_mlp,3,3,1388,4165,0.505394,0.050577,2431.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-SP,MINT,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-SP,MINT,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-SP,MINT,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,Ankh-large,base,3,3,1388,4165,0.547676,0.080896,3335.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,Ankh-large,fx_scalar,3,3,1388,4165,0.603252,0.055085,4445.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,Ankh-large,fx_mlp,3,3,1388,4165,0.634508,0.050662,3637.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ProstT5,base,3,3,1388,4165,0.520335,0.089755,4302.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ProstT5,fx_scalar,3,3,1388,4165,0.607809,0.059956,3823.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ProstT5,fx_mlp,3,3,1388,4165,0.593307,0.076407,2755.3,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,SaProt,base,3,3,1388,4165,0.423742,0.026604,5672.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,SaProt,fx_scalar,3,3,1388,4165,0.558562,0.008918,5534.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,SaProt,fx_mlp,3,3,1388,4165,0.575070,0.012805,6057.9,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,SaProt-1.3B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,SaProt-1.3B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,SaProt-1.3B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM2-3B,base,3,3,1388,4165,0.552603,0.089297,15220.9,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM2-3B,fx_scalar,3,3,1388,4165,0.632730,0.068075,9350.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM2-3B,fx_mlp,3,3,1388,4165,0.631239,0.057791,7606.9,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM3-1.4B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM3-1.4B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM3-1.4B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM-C 600M,base,3,3,1388,4165,0.536308,0.087363,3023.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM-C 600M,fx_scalar,3,3,1388,4165,0.630440,0.066741,4654.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM-C 600M,fx_mlp,3,3,1388,4165,0.585096,0.058721,3210.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM-C 6B,base,3,3,1388,4165,0.578221,0.107059,2959.4,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM-C 6B,fx_scalar,3,3,1388,4165,0.621994,0.056411,2866.4,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,ESM-C 6B,fx_mlp,3,3,1388,4165,0.621826,0.036018,2432.8,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,Ankh3-large,base,3,3,1388,4165,0.542583,0.089056,2524.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,Ankh3-large,fx_scalar,3,3,1388,4165,0.607956,0.063964,3281.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,Ankh3-large,fx_mlp,3,3,1388,4165,0.595733,0.071619,2704.3,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,Ankh3-xl,base,3,3,1388,4165,0.544701,0.109543,3608.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,Ankh3-xl,fx_scalar,3,3,1388,4165,0.621772,0.066346,3371.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,Ankh3-xl,fx_mlp,3,3,1388,4165,0.629107,0.063475,3563.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,AIDO-16B,base,3,3,1388,4165,0.538735,0.101554,4444.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,AIDO-16B,fx_scalar,3,3,1388,4165,0.627578,0.067444,4671.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,AIDO-16B,fx_mlp,3,3,1388,4165,0.612929,0.051560,3109.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,MINT,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,MINT,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-SP,MINT,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,Ankh-large,base,3,3,545,1636,0.168584,0.184002,458.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,Ankh-large,fx_scalar,3,3,545,1636,0.470265,0.155350,1522.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,Ankh-large,fx_mlp,3,3,545,1636,0.545358,0.092493,1074.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ProstT5,base,3,3,545,1636,0.076291,0.135482,943.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ProstT5,fx_scalar,3,3,545,1636,0.505841,0.119458,1668.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ProstT5,fx_mlp,3,3,545,1636,0.510141,0.078555,735.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,SaProt,base,3,3,545,1636,0.075484,0.230945,541.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,SaProt,fx_scalar,3,3,545,1636,0.209681,0.288395,688.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,SaProt,fx_mlp,3,3,545,1636,0.327376,0.180116,661.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,SaProt-1.3B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,SaProt-1.3B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,SaProt-1.3B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM2-3B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM2-3B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM2-3B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM3-1.4B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM3-1.4B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM3-1.4B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM-C 600M,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM-C 600M,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM-C 600M,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM-C 6B,base,3,3,545,1636,0.317271,0.163686,1639.1,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM-C 6B,fx_scalar,3,3,545,1636,0.466859,0.140047,1628.2,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,ESM-C 6B,fx_mlp,3,3,545,1636,0.571147,0.067453,1522.0,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,Ankh3-large,base,3,3,545,1636,0.176795,0.166677,507.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,Ankh3-large,fx_scalar,3,3,545,1636,0.419501,0.143136,1069.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,Ankh3-large,fx_mlp,3,3,545,1636,0.492129,0.156235,827.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,Ankh3-xl,base,3,3,545,1636,0.261499,0.145970,952.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,Ankh3-xl,fx_scalar,3,3,545,1636,0.375502,0.229587,2188.3,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,Ankh3-xl,fx_mlp,3,3,545,1636,0.545616,0.067380,1445.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,AIDO-16B,base,3,3,545,1636,0.158770,0.109979,1016.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,AIDO-16B,fx_scalar,3,3,545,1636,0.374005,0.066719,1200.9,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,AIDO-16B,fx_mlp,3,3,545,1636,0.268527,0.304293,1109.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK clustered-MP,MINT,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,MINT,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK clustered-MP,MINT,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,Ankh-large,base,3,3,545,1636,0.604523,0.076916,794.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,Ankh-large,fx_scalar,3,3,545,1636,0.609684,0.060614,831.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,Ankh-large,fx_mlp,3,3,545,1636,0.670866,0.040623,1029.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ProstT5,base,3,3,545,1636,0.550158,0.158379,648.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ProstT5,fx_scalar,3,3,545,1636,0.565826,0.153803,729.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ProstT5,fx_mlp,3,3,545,1636,0.637702,0.056480,640.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,SaProt,base,3,3,545,1636,0.236764,0.276329,688.3,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,SaProt,fx_scalar,3,3,545,1636,0.335085,0.209694,625.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,SaProt,fx_mlp,3,3,545,1636,0.302967,0.208368,674.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,SaProt-1.3B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,SaProt-1.3B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,SaProt-1.3B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM2-3B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM2-3B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM2-3B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM3-1.4B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM3-1.4B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM3-1.4B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM-C 600M,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM-C 600M,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM-C 600M,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM-C 6B,base,3,3,545,1636,0.612225,0.027708,1131.7,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM-C 6B,fx_scalar,3,3,545,1636,0.663699,0.038635,991.9,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,ESM-C 6B,fx_mlp,3,3,545,1636,0.670795,0.010231,1153.2,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,Ankh3-large,base,3,3,545,1636,0.573080,0.091258,622.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,Ankh3-large,fx_scalar,3,3,545,1636,0.608705,0.075489,574.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,Ankh3-large,fx_mlp,3,3,545,1636,0.618797,0.065526,621.4,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,Ankh3-xl,base,3,3,545,1636,0.605104,0.064774,1136.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,Ankh3-xl,fx_scalar,3,3,545,1636,0.651513,0.066767,1104.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,Ankh3-xl,fx_mlp,3,3,545,1636,0.669986,0.036409,1395.3,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,AIDO-16B,base,3,3,545,1636,0.539825,0.136297,970.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,AIDO-16B,fx_scalar,3,3,545,1636,0.603971,0.057464,932.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,AIDO-16B,fx_mlp,3,3,545,1636,0.599236,0.097182,1134.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,MINT,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,MINT,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-MP,MINT,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,Ankh-large,base,3,3,1934,5801,0.566085,0.092670,4160.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,Ankh-large,fx_scalar,3,3,1934,5801,0.649669,0.106064,7992.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,Ankh-large,fx_mlp,3,3,1934,5801,0.608071,0.095432,8356.9,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ProstT5,base,3,3,1934,5801,0.562054,0.086683,3520.9,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ProstT5,fx_scalar,3,3,1934,5801,0.644852,0.074266,5983.3,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ProstT5,fx_mlp,3,3,1934,5801,0.630119,0.085772,4988.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,SaProt,base,3,3,1934,5801,0.386421,0.076219,3051.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,SaProt,fx_scalar,3,3,1934,5801,0.590633,0.052199,6721.7,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,SaProt,fx_mlp,3,3,1934,5801,0.577778,0.057931,7432.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,SaProt-1.3B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,SaProt-1.3B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,SaProt-1.3B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM2-3B,base,3,3,1934,5801,0.581137,0.095689,7991.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM2-3B,fx_scalar,3,3,1934,5801,0.659284,0.090023,6384.8,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM2-3B,fx_mlp,3,3,1934,5801,0.648242,0.095355,7719.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM3-1.4B,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM3-1.4B,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM3-1.4B,fx_mlp,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM-C 600M,base,3,3,1934,5801,0.602145,0.099565,2682.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM-C 600M,fx_scalar,3,3,1934,5801,0.669812,0.079039,6086.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM-C 600M,fx_mlp,3,3,1934,5801,0.652546,0.076301,5404.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM-C 6B,base,3,3,1934,5801,0.620382,0.099400,4870.4,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM-C 6B,fx_scalar,3,3,1934,5801,0.679773,0.100102,5134.9,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,ESM-C 6B,fx_mlp,3,3,1934,5801,0.678171,0.088941,4320.9,CUDA*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,Ankh3-large,base,3,3,1934,5801,0.437422,0.274825,3535.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,Ankh3-large,fx_scalar,3,3,1934,5801,0.617136,0.134069,3117.1,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,Ankh3-large,fx_mlp,3,3,1934,5801,0.634113,0.132299,2445.0,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,Ankh3-xl,base,3,3,1934,5801,0.596885,0.113336,4654.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,Ankh3-xl,fx_scalar,3,3,1934,5801,0.681833,0.096304,5363.9,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,Ankh3-xl,fx_mlp,3,3,1934,5801,0.658223,0.107963,4628.5,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,AIDO-16B,base,3,3,1934,5801,0.586227,0.080551,5449.3,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,AIDO-16B,fx_scalar,3,3,1934,5801,0.650564,0.109379,5331.6,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,AIDO-16B,fx_mlp,3,3,1934,5801,0.662410,0.094477,3936.2,MPS*,done
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,MINT,base,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,MINT,fx_scalar,0,3,,,,,,,empty
+Honest ladder — full-SKEMPI,fullSK bycomplex-ALL,MINT,fx_mlp,0,3,,,,,,,empty
+CATH-superfamily hold-out (full-SKEMPI),CATH,Ankh-large,base,1,1,687,687,0.516464,0.000000,3274.3,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,Ankh-large,fx_scalar,1,1,687,687,0.658648,0.000000,4895.7,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,Ankh-large,fx_mlp,1,1,687,687,0.541851,0.000000,3874.9,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ProstT5,base,1,1,687,687,0.297117,0.000000,3349.4,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ProstT5,fx_scalar,1,1,687,687,0.544270,0.000000,2838.3,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ProstT5,fx_mlp,1,1,687,687,0.514161,0.000000,2601.2,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,SaProt,base,1,1,687,687,0.380287,0.000000,3448.3,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,SaProt,fx_scalar,1,1,687,687,0.546528,0.000000,4232.8,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,SaProt,fx_mlp,1,1,687,687,0.528634,0.000000,3068.2,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,SaProt-1.3B,base,0,1,,,,,,,empty
+CATH-superfamily hold-out (full-SKEMPI),CATH,SaProt-1.3B,fx_scalar,0,1,,,,,,,empty
+CATH-superfamily hold-out (full-SKEMPI),CATH,SaProt-1.3B,fx_mlp,0,1,,,,,,,empty
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM2-3B,base,1,1,687,687,0.453059,0.000000,7572.4,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM2-3B,fx_scalar,1,1,687,687,0.585466,0.000000,9933.3,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM2-3B,fx_mlp,1,1,687,687,0.539306,0.000000,8897.5,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM3-1.4B,base,0,1,,,,,,,empty
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM3-1.4B,fx_scalar,0,1,,,,,,,empty
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM3-1.4B,fx_mlp,0,1,,,,,,,empty
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM-C 600M,base,1,1,687,687,0.570369,0.000000,6353.8,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM-C 600M,fx_scalar,1,1,687,687,0.610317,0.000000,3309.2,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM-C 600M,fx_mlp,1,1,687,687,0.574011,0.000000,3391.7,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM-C 6B,base,1,1,687,687,0.519961,0.000000,4845.7,CUDA*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM-C 6B,fx_scalar,1,1,687,687,0.624488,0.000000,5589.3,CUDA*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,ESM-C 6B,fx_mlp,1,1,687,687,0.620939,0.000000,7960.9,CUDA*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,Ankh3-large,base,1,1,687,687,0.267275,0.000000,2499.6,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,Ankh3-large,fx_scalar,1,1,687,687,0.557834,0.000000,3745.8,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,Ankh3-large,fx_mlp,1,1,687,687,0.499458,0.000000,3507.7,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,Ankh3-xl,base,1,1,687,687,0.616246,0.000000,4789.3,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,Ankh3-xl,fx_scalar,1,1,687,687,0.592478,0.000000,4843.4,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,Ankh3-xl,fx_mlp,1,1,687,687,0.533395,0.000000,4799.6,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,AIDO-16B,base,1,1,687,687,0.486977,0.000000,5510.8,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,AIDO-16B,fx_scalar,1,1,687,687,0.564643,0.000000,7614.6,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,AIDO-16B,fx_mlp,1,1,687,687,0.542405,0.000000,4715.0,MPS*,done
+CATH-superfamily hold-out (full-SKEMPI),CATH,MINT,base,0,1,,,,,,,empty
+CATH-superfamily hold-out (full-SKEMPI),CATH,MINT,fx_scalar,0,1,,,,,,,empty
+CATH-superfamily hold-out (full-SKEMPI),CATH,MINT,fx_mlp,0,1,,,,,,,empty

@@ -1,0 +1,50 @@
+Composition of the benchmark subsets, under four grouping units.
+
+Every view holds the mutations fixed and changes only what a group is. Going down the
+list is the leakage ladder: the stricter the split, the coarser the unit it must hold out
+whole, and the fewer independent units the benchmark actually contains.
+
+Mutations per complex
+----------------------------------------------------------------------------------------
+                           groups     from  mutations  largest   top 3  singletons
+S1102                         111      111       1102      16%     48%          59
+SKEMPI single-point           315      315       4165       6%     15%         103
+SKEMPI multi-point            146      146       1636       8%     19%          41
+SKEMPI single + multi         337      337       5801       5%     14%          91
+
+Complexes under <=60% sequence clustering
+----------------------------------------------------------------------------------------
+                           groups     from  mutations  largest   top 3  singletons
+S1102                          36      111       1102      54%     63%           1
+SKEMPI single-point            93      315       4165      40%     57%           5
+SKEMPI multi-point             61      146       1636      19%     47%          17
+
+The 'from' column is the collapse: that many complexes become that many families.
+A by-complex hold-out treats the left number as its supply of independent units;
+the right number is how many there are once homology is taken seriously.
+
+Complexes under CATH superfamily grouping
+----------------------------------------------------------------------------------------
+                           groups     from  mutations  largest   top 3  singletons
+S1102                          88      111       1102      16%     48%          44
+SKEMPI single-point           159      315       4165      14%     35%          18
+SKEMPI multi-point             88      146       1636      14%     33%          30
+SKEMPI single + multi         166      337       5801      14%     34%          12
+
+Finer than the sequence clustering rather than coarser, because single-linkage
+merges aggressively through shared inhibitor chains while the both-partners rule
+keeps distinct antigen/antibody pairings apart. Definition-sensitive, and the
+strictest rung only in the sense that it controls a different axis.
+
+Per-structure Spearman coverage at T>=10
+----------------------------------------------------------------------------------------
+                          complexes   scored  mutations   scored  largest
+S1102                           111       24       1102      923      16%
+SKEMPI single-point             315       96       4165     3536       6%
+SKEMPI multi-point              146       43       1636     1323       8%
+SKEMPI single + multi           337      121       5801     5106       5%
+
+The metric averages over complexes with at least 10 mutations. It keeps
+most of the mutations and a minority of the complexes -- and complexes are the
+unit it averages over, so the effective sample size is the smaller number.
+

@@ -1,0 +1,357 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite both this repository and the original
+  MuLAN paper listed under `references`.
+title: "MuLAN fork: leakage-controlled PLM + FoldX evaluation for protein-protein binding ddG"
+abstract: >-
+  A research fork of MuLAN extending it with multiple protein-language-model
+  embedding backends, a FoldX binding-ddG augmentation channel, and
+  leakage-controlled evaluation protocols (by-complex, sequence-clustered, and
+  CATH-superfamily hold-out) scored with per-structure Spearman correlation for
+  direct comparison with the published ddG frontier.
+type: software
+authors:
+  - family-names: Chin
+    given-names: Connor
+    email: cchin29@stanford.edu
+    affiliation: Stanford University
+version: "0.1.0"
+date-released: "2026-09-12"
+license: CC-BY-NC-SA-4.0
+license-url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+url: "https://github.com/cchin29/mulan-plm-foldx"
+repository-code: "https://github.com/cchin29/mulan-plm-foldx"
+# `version` tracks pyproject.toml and must be bumped with it -- a CITATION.cff that names a
+# different version than the package is worse than one that names none.
+#
+# `date-released` matches the tag it was written in; bump it with `version`. Add a Zenodo DOI
+# under `identifiers:` in the same pass if one is minted.
+keywords:
+  - protein-protein interaction
+  - binding free energy
+  - ddG
+  - SKEMPI
+  - protein language model
+  - FoldX
+  - data leakage
+  - light attention
+references:
+  - type: article
+    title: >-
+      MuLAN: Mutation-driven Light Attention Networks for investigating
+      protein-protein interactions from sequences
+    authors:
+      - family-names: Lombardi
+        given-names: Gianluca
+      - family-names: Carbone
+        given-names: Alessandra
+    year: 2024
+    doi: 10.1101/2024.08.24.609515
+    journal: bioRxiv
+    notes: >-
+      Upstream work that this repository forks. Canonical at
+      https://gitlab.lcqb.upmc.fr/lombardi/mulan, mirrored at
+      https://github.com/GianLMB/mulan.
+
+  # Every ddG label in this repository. SKEMPI 2.0 is CC BY 4.0, so attribution is a licence
+  # term, not a courtesy; NOTICE states which files adapt it and how.
+  - type: article
+    title: >-
+      SKEMPI 2.0: an updated benchmark of changes in protein–protein binding energy,
+      kinetics and thermodynamics upon mutation
+    authors:
+      - family-names: Jankauskaitė
+        given-names: Justina
+      - family-names: Jiménez-García
+        given-names: Brian
+      - family-names: Dapkūnas
+        given-names: Justas
+      - family-names: Fernández-Recio
+        given-names: Juan
+      - family-names: Moal
+        given-names: Iain H.
+    year: 2019
+    doi: 10.1093/bioinformatics/bty635
+    journal: Bioinformatics
+    volume: 35
+    issue: 3
+    start: 462
+    end: 469
+
+  # The program behind the FoldX channel, which is what every arm above `base` reads. The
+  # producing pipeline lives in skempi-foldx; the computed outputs ship here.
+  - type: article
+    title: "FoldX 5.0: working with RNA, small molecules and a new graphical interface"
+    authors:
+      - family-names: Delgado
+        given-names: Javier
+      - family-names: Radusky
+        given-names: Leandro G.
+      - family-names: Cianferoni
+        given-names: Damiano
+      - family-names: Serrano
+        given-names: Luis
+    year: 2019
+    doi: 10.1093/bioinformatics/btz184
+    journal: Bioinformatics
+    volume: 35
+    issue: 20
+    start: 4168
+    end: 4169
+
+  # The CATH-superfamily hold-out is the primary evaluation tier here, and the partition is not
+  # ours: it is a join onto the static `cath_fold` column USP-ddG ships, following the protocol
+  # CATH-ddG introduced. Which of the two first constructed it cannot be established from either
+  # repository, so both are cited and neither is claimed as sole originator. See NOTICE.
+  - type: article
+    title: >-
+      CATH-ddG: towards robust mutation effect prediction on protein–protein interactions
+      out of CATH homologous superfamily
+    authors:
+      - family-names: Yu
+        given-names: Guanglei
+      - family-names: Bi
+        given-names: Xuehua
+      - family-names: Ma
+        given-names: Teng
+      - family-names: Li
+        given-names: Yaohang
+      - family-names: Wang
+        given-names: Jianxin
+    year: 2025
+    doi: 10.1093/bioinformatics/btaf228
+    journal: Bioinformatics
+    volume: 41
+    issue: Supplement_1
+    start: i362
+    end: i372
+  - type: article
+    title: >-
+      USP-ddG: a unified structural paradigm with data efficacy and mixture-of-experts for
+      predicting mutational effects on protein–protein interactions
+    authors:
+      - family-names: Yu
+        given-names: Guanglei
+      - family-names: Bi
+        given-names: Xuehua
+      - family-names: Zhao
+        given-names: Qichang
+      - family-names: Wang
+        given-names: Jianxin
+    year: 2026
+    doi: 10.1093/bioinformatics/btag249
+    journal: Bioinformatics
+    volume: 42
+    issue: Supplement_1
+    notes: >-
+      Ships the `cath_fold` column the CATH partition is joined from. The journal version;
+      it was preprinted as bioRxiv 10.1101/2025.11.09.687124.
+
+  # The classification underneath that partition. CC BY 4.0, which carries a citation requirement.
+  - type: article
+    title: "CATH: increased structural coverage of functional space"
+    authors:
+      - family-names: Sillitoe
+        given-names: Ian
+      - family-names: Bordin
+        given-names: Nicola
+      - family-names: Dawson
+        given-names: Natalie
+      - family-names: Orengo
+        given-names: Christine A.
+    year: 2021
+    doi: 10.1093/nar/gkaa1079
+    journal: Nucleic Acids Research
+    volume: 49
+    issue: D1
+    start: D266
+    end: D273
+    notes: "First three authors plus the senior author; see the paper for the full list."
+
+  # Supplies the PDB-chain to CATH-superfamily mapping behind the leakage analysis. CC BY 4.0.
+  - type: article
+    title: >-
+      SIFTS: updated Structure Integration with Function, Taxonomy and Sequences resource
+      allows 40-fold increase in coverage of structure-based annotations for proteins
+    authors:
+      - family-names: Dana
+        given-names: Jose M.
+      - family-names: Gutmanas
+        given-names: Aleksandras
+      - family-names: Tyagi
+        given-names: Nidhi
+      - family-names: Velankar
+        given-names: Sameer
+    year: 2019
+    doi: 10.1093/nar/gky1114
+    journal: Nucleic Acids Research
+    volume: 47
+    issue: D1
+    start: D482
+    end: D489
+    notes: "First three authors plus the senior author; see the paper for the full list."
+
+  # Not dependencies, but they set the numbers: the S4169 selection fixed the per-complex
+  # mutation lists for 2,494 of the 4,238 shipped single-point FoldX records, and a FoldX ddG
+  # depends on every entry before it in the list it was computed with. S4169 is **mCSM-PPI2's**
+  # selection -- GeoPPI's own paper attributes it to Rodrigues et al., and the two files agree
+  # row for row on all 4,169 PDB identifiers and all 4,169 ddG values. GeoPPI follows it as the
+  # copy these lists were taken from, since its renumbering is what the `_source` labels record.
+  - type: article
+    title: "mCSM-PPI2: predicting the effects of mutations on protein–protein interactions"
+    authors:
+      - family-names: Rodrigues
+        given-names: Carlos H. M.
+      - family-names: Myung
+        given-names: Yoochan
+      - family-names: Pires
+        given-names: Douglas E. V.
+      - family-names: Ascher
+        given-names: David B.
+    year: 2019
+    doi: 10.1093/nar/gkz383
+    journal: Nucleic Acids Research
+    volume: 47
+    issue: W1
+    start: W338
+    end: W344
+    notes: >-
+      Origin of the S4169 selection. Article CC BY 4.0; the dataset page is marked Open
+      Knowledge.
+  - type: article
+    title: >-
+      Deep geometric representations for modeling effects of mutations on protein-protein
+      binding affinity
+    authors:
+      - family-names: Liu
+        given-names: Xianggen
+      - family-names: Luo
+        given-names: Yunan
+      - family-names: Li
+        given-names: Pengyong
+      - family-names: Song
+        given-names: Sen
+      - family-names: Peng
+        given-names: Jian
+    year: 2021
+    doi: 10.1371/journal.pcbi.1009284
+    journal: PLOS Computational Biology
+    volume: 17
+    issue: 8
+    start: e1009284
+    notes: >-
+      The copy S4169 was obtained from (MIT licensed). It renumbered residues and renamed
+      columns; the row set and the ddG values are mCSM-PPI2's, unchanged.
+
+  # Built the <=60% sequence-identity clustered splits, which is one of the three leakage-control
+  # protocols the headline numbers are reported under.
+  - type: article
+    title: >-
+      MMseqs2 enables sensitive protein sequence searching for the analysis of massive
+      data sets
+    authors:
+      - family-names: Steinegger
+        given-names: Martin
+      - family-names: Söding
+        given-names: Johannes
+    year: 2017
+    doi: 10.1038/nbt.3988
+    journal: Nature Biotechnology
+    volume: 35
+    issue: 11
+    start: 1026
+    end: 1028
+
+  # The structures the FoldX channel was computed on. Not redistributed here; the outputs are.
+  - type: article
+    title: "The Protein Data Bank"
+    authors:
+      - family-names: Berman
+        given-names: Helen M.
+      - family-names: Westbrook
+        given-names: John
+      - family-names: Feng
+        given-names: Zukang
+      - family-names: Bourne
+        given-names: Philip E.
+    year: 2000
+    doi: 10.1093/nar/28.1.235
+    journal: Nucleic Acids Research
+    volume: 28
+    issue: 1
+    start: 235
+    end: 242
+    notes: "First three authors plus the senior author; see the paper for the full list."
+
+  # The predicted structures the per-residue structural context is computed from. Not
+  # redistributed, but values derived from them are (experiments/structctx_sweep/results/*.json),
+  # and AFDB is CC BY 4.0 -- so this is a licence term, like SKEMPI and CATH above. AlphaFold DB
+  # asks for the method paper and the database paper separately; both are here.
+  - type: article
+    title: "Highly accurate protein structure prediction with AlphaFold"
+    authors:
+      - family-names: Jumper
+        given-names: John
+      - family-names: Evans
+        given-names: Richard
+      - family-names: Pritzel
+        given-names: Alexander
+      - family-names: Hassabis
+        given-names: Demis
+    year: 2021
+    doi: 10.1038/s41586-021-03819-2
+    journal: Nature
+    volume: 596
+    start: 583
+    end: 589
+    notes: "First three authors plus the senior author; see the paper for the full list."
+  - type: article
+    title: >-
+      AlphaFold Protein Structure Database 2025: a redesigned interface and updated
+      structural coverage
+    authors:
+      - family-names: Bertoni
+        given-names: Damian
+      - family-names: Tsenkov
+        given-names: Maxim
+      - family-names: Magana
+        given-names: Paulyna
+      - family-names: Velankar
+        given-names: Sameer
+    year: 2025
+    doi: 10.1093/nar/gkaf1226
+    journal: Nucleic Acids Research
+    volume: 54
+    issue: D1
+    start: D358
+    end: D362
+    notes: >-
+      The database scripts/uniprot_visualize.py queries, and the paper AlphaFold DB currently
+      asks users to cite. It supersedes the 2024 database paper (10.1093/nar/gkad1011).
+      First three authors plus the senior author.
+
+  # Produces the secondary structure and the absolute solvent accessibility that the RSA values
+  # in experiments/structctx_sweep/results/*.json are computed from.
+  - type: article
+    title: >-
+      Dictionary of protein secondary structure: pattern recognition of hydrogen-bonded
+      and geometrical features
+    authors:
+      - family-names: Kabsch
+        given-names: Wolfgang
+      - family-names: Sander
+        given-names: Christian
+    year: 1983
+    doi: 10.1002/bip.360221211
+    journal: Biopolymers
+    volume: 22
+    issue: 12
+    start: 2577
+    end: 2637
+
+# The published comparators in the README leaderboard (CATH-ddG, USP-ddG, flex-ddG, BA-DDG,
+# Prompt-DDG, RDE-Network, DiffAffinity, PPIformer, ProtBFF) are transcribed in
+# data/benchmarks/frontier.tsv with a per-row source, which is where they belong -- they are
+# numbers this work is measured against, not components of it. The PLM backbones are likewise
+# runtime choices rather than components; scripts_plots/results_matrix.py maps each tag to its
+# model.

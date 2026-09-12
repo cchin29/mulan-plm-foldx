@@ -1,0 +1,45 @@
+{
+  "uniprot_id": "P04637",
+  "mask": 0.0,
+  "primary": "cb",
+  "sites": [
+    {
+      "position": 175,
+      "aa": "R",
+      "rsa": 0.021897810218978103,
+      "rsa_percentile": 0.08142493638676845,
+      "contact_count": 3,
+      "contact_percentile": 0.9923664122137404,
+      "buried": true
+    },
+    {
+      "position": 248,
+      "aa": "R",
+      "rsa": 0.718978102189781,
+      "rsa_percentile": 0.6768447837150128,
+      "contact_count": 0,
+      "contact_percentile": 0.5139949109414759,
+      "buried": false
+    },
+    {
+      "position": 273,
+      "aa": "R",
+      "rsa": 0.29927007299270075,
+      "rsa_percentile": 0.3053435114503817,
+      "contact_count": 0,
+      "contact_percentile": 0.5139949109414759,
+      "buried": false
+    }
+  ],
+  "sanity": {
+    "n_residues": 393,
+    "core_median_cc": 1.0,
+    "surf_median_cc": 0.0,
+    "core_n": 97,
+    "surf_n": 283
+  },
+  "discrimination": {
+    "auroc_contact_vs_bulk": 0.49230769230769234,
+    "cliffs_delta_func_vs_core": -0.2508591065292096
+  }
+}

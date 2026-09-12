@@ -1,0 +1,4 @@
+arm,n,pearson,spearman,rmse,mae,rmse_corr,mae_corr,ps_pearson_T10,ps_spearman_T10,ps_ncomplex_T10,ps_pearson_T5,ps_spearman_T5,ps_ncomplex_T5,auroc_destab,auroc_strong,prec_at50,recall_at50,spearman_foldavg,spearman_foldavg_sd,pearson_foldavg,pearson_foldavg_sd,n_folds_scored
+esmc6b_base,5801,0.5949,0.4680,1.7922,1.2221,1.6895,1.2110,0.3368,0.2935,121,0.2874,0.2572,183,0.6964,0.7620,0.8200,0.0267,0.4687,0.0237,0.5971,0.1164,3
+esmc6b_foldx,5801,0.6765,0.5900,1.6076,1.1055,1.5480,1.0944,0.5022,0.4506,121,0.4348,0.3856,183,0.7504,0.8282,1.0000,0.0326,0.5953,0.0545,0.6842,0.0774,3
+esmc6b_foldx_scalar,5801,0.6967,0.6099,1.5670,1.0785,1.5078,1.0680,0.5112,0.4707,121,0.4515,0.3976,183,0.7643,0.8379,0.9800,0.0320,0.6105,0.0417,0.6936,0.0797,3

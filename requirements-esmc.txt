@@ -1,0 +1,21 @@
+# ESM-C / ESM3 embedding GENERATION environment. Install into its own venv:
+#
+#     python -m venv ~/.venvs/mulan-esmc
+#     ~/.venvs/mulan-esmc/bin/pip install -r requirements-esmc.txt
+#
+# Do NOT install this repository's package here, and do NOT install `esm` into a training
+# environment. Generation and training are separate jobs with incompatible `transformers` pins,
+# and they only work because they never share an interpreter. Training reads cached {id}.pt
+# tensors and never imports `esm`. See docs/EMBEDDING_SETUP.md §0.
+#
+# transformers is pinned exactly, not lower-bounded. 4.48.1 is the highest version the SDK's
+# own `transformers<4.48.2` ceiling permits, and it is the version every ESM-C number in this
+# repository was generated with. A newer transformers can change what an embedding *means*
+# without raising anything.
+
+esm==3.2.3
+transformers==4.48.1
+
+# torch is deliberately unpinned: the CPU and CUDA builds differ per machine (2.12.1+cpu and
+# 2.6.0+cu124 were both used). Install the right build first, from https://pytorch.org.
+torch

@@ -1,0 +1,49 @@
+==== per-structure Spearman (T>=10) with 95% cluster-bootstrap CI ====
+qualifying complexes per arm: {'ankh3_large_base': 24, 'ankh3_large_foldx': 24, 'ankh3_large_foldx_scalar': 24, 'ankh3_xl_base': 24, 'ankh3_xl_foldx': 24, 'ankh3_xl_foldx_scalar': 24, 'ankh_base': 24, 'ankh_foldx': 24, 'ankh_foldx_scalar': 24, 'esm2_base': 24, 'esm2_foldx': 24, 'esm2_foldx_scalar': 24, 'esmc600m_base': 24, 'esmc600m_foldx': 24, 'esmc600m_foldx_scalar': 24, 'esmc6b_base': 24, 'esmc6b_foldx': 24, 'esmc6b_foldx_scalar': 24, 'mint_base': 24, 'prostt5_base': 24, 'prostt5_foldx': 24, 'prostt5_foldx_scalar': 24, 'saprot_base': 24, 'saprot_foldx': 24, 'saprot_foldx_scalar': 24}
+complexes common across all present arms: 24
+
+               arm    mean  [  2.5%, 97.5%]
+    ankh3_xl_foldx   0.476  [ 0.413, 0.538]
+      saprot_foldx   0.471  [ 0.415, 0.528]
+ankh3_xl_foldx_scalar   0.470  [ 0.401, 0.534]
+        esm2_foldx   0.462  [ 0.399, 0.521]
+esmc600m_foldx_scalar   0.460  [ 0.406, 0.517]
+esmc6b_foldx_scalar   0.460  [ 0.361, 0.548]
+saprot_foldx_scalar   0.456  [ 0.393, 0.518]
+ ankh3_large_foldx   0.435  [ 0.370, 0.499]
+     prostt5_foldx   0.435  [ 0.367, 0.500]
+        ankh_foldx   0.432  [ 0.364, 0.494]
+prostt5_foldx_scalar   0.432  [ 0.358, 0.501]
+ ankh_foldx_scalar   0.426  [ 0.359, 0.494]
+ esm2_foldx_scalar   0.395  [ 0.314, 0.473]
+ankh3_large_foldx_scalar   0.391  [ 0.319, 0.464]
+      esmc6b_foldx   0.384  [ 0.277, 0.472]
+       esmc6b_base   0.370  [ 0.256, 0.467]
+    esmc600m_foldx   0.364  [ 0.262, 0.458]
+     esmc600m_base   0.267  [ 0.159, 0.370]
+         esm2_base   0.239  [ 0.115, 0.357]
+       saprot_base   0.199  [ 0.079, 0.318]
+     ankh3_xl_base   0.197  [ 0.099, 0.291]
+         ankh_base   0.127  [ 0.017, 0.225]
+  ankh3_large_base   0.107  [ 0.024, 0.185]
+         mint_base   0.087  [ 0.000, 0.178]
+      prostt5_base   0.019  [-0.079, 0.123]
+
+==== paired contrasts (delta = foldx_variant - base, shared complex resample) ====
+                      contrast   dmean  [  2.5%, 97.5%]  P(>0)
+        ankh_foldx - ankh_base   0.306  [ 0.209, 0.407]  1.000
+ ankh_foldx_scalar - ankh_base   0.300  [ 0.192, 0.414]  1.000
+  prostt5_foldx - prostt5_base   0.416  [ 0.302, 0.532]  1.000
+prostt5_foldx_scalar - prostt5_base   0.413  [ 0.288, 0.534]  1.000
+    saprot_foldx - saprot_base   0.272  [ 0.151, 0.397]  1.000
+saprot_foldx_scalar - saprot_base   0.257  [ 0.167, 0.353]  1.000
+esmc600m_foldx - esmc600m_base   0.097  [ 0.005, 0.192]  0.981
+esmc600m_foldx_scalar - esmc600m_base   0.193  [ 0.106, 0.282]  1.000
+    esmc6b_foldx - esmc6b_base   0.015  [-0.089, 0.109]  0.632
+esmc6b_foldx_scalar - esmc6b_base   0.090  [ 0.004, 0.175]  0.979
+        esm2_foldx - esm2_base   0.223  [ 0.100, 0.342]  1.000
+ esm2_foldx_scalar - esm2_base   0.156  [ 0.040, 0.268]  0.994
+ankh3_large_foldx - ankh3_large_base   0.328  [ 0.249, 0.410]  1.000
+ankh3_large_foldx_scalar - ankh3_large_base   0.284  [ 0.208, 0.359]  1.000
+ankh3_xl_foldx - ankh3_xl_base   0.278  [ 0.179, 0.376]  1.000
+ankh3_xl_foldx_scalar - ankh3_xl_base   0.273  [ 0.166, 0.371]  1.000

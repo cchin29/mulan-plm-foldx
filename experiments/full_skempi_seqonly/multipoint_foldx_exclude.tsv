@@ -1,0 +1,3 @@
+#complex_grouping(code.g1.g2)	foldx_used_grouping	n_built_rows	reason
+2C5D.AB.CD	A_C	19	FoldX scored this pdb under grouping A_C only; rows built under a different #Pdb grouping were analysed against the wrong interface
+3SE3.B.C	B_A	2	FoldX scored this pdb under grouping B_A only; rows built under a different #Pdb grouping were analysed against the wrong interface

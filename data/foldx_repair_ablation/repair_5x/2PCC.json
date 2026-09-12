@@ -1,0 +1,103 @@
+{
+ "muts": {
+  "AB86G": {
+   "Interaction Energy": 0.4558,
+   "Backbone Hbond": 0.0,
+   "Sidechain Hbond": 0.0,
+   "Van der Waals": 0.2718,
+   "Electrostatics": 0.0,
+   "Solvation Polar": -0.1949,
+   "Solvation Hydrophobic": 0.4892,
+   "Van der Waals clashes": 0.0,
+   "entropy sidechain": 0.0,
+   "entropy mainchain": -0.0829,
+   "torsional clash": -0.0273,
+   "backbone clash": -0.0388,
+   "cleaned": "AB86G"
+  },
+  "DA34A": {
+   "Interaction Energy": 1.1259,
+   "Backbone Hbond": 0.0265,
+   "Sidechain Hbond": 0.0,
+   "Van der Waals": 0.1513,
+   "Electrostatics": 1.0162,
+   "Solvation Polar": -0.584,
+   "Solvation Hydrophobic": 0.0386,
+   "Van der Waals clashes": -0.0132,
+   "entropy sidechain": 0.0891,
+   "entropy mainchain": 0.0806,
+   "torsional clash": -0.0015,
+   "backbone clash": -0.0613,
+   "cleaned": "DA34A"
+  },
+  "EA290A": {
+   "Interaction Energy": 1.7669,
+   "Backbone Hbond": 0.0,
+   "Sidechain Hbond": 1.602,
+   "Van der Waals": 0.254,
+   "Electrostatics": 0.5706,
+   "Solvation Polar": -0.3603,
+   "Solvation Hydrophobic": 0.3118,
+   "Van der Waals clashes": -0.015,
+   "entropy sidechain": -0.9718,
+   "entropy mainchain": -0.0159,
+   "torsional clash": -0.0555,
+   "backbone clash": 0.0,
+   "cleaned": "EA290A"
+  },
+  "KB77A": {
+   "Interaction Energy": 0.2516,
+   "Backbone Hbond": 0.0,
+   "Sidechain Hbond": 0.0,
+   "Van der Waals": 0.0047,
+   "Electrostatics": 0.1499,
+   "Solvation Polar": 0.0,
+   "Solvation Hydrophobic": 0.009,
+   "Van der Waals clashes": 0.0,
+   "entropy sidechain": -0.0453,
+   "entropy mainchain": 0.0,
+   "torsional clash": 0.0,
+   "backbone clash": 0.0,
+   "cleaned": "KB77A"
+  },
+  "KB92A": {
+   "Interaction Energy": 0.4149,
+   "Backbone Hbond": 0.0,
+   "Sidechain Hbond": 0.0,
+   "Van der Waals": 0.0159,
+   "Electrostatics": 0.2754,
+   "Solvation Polar": -0.0418,
+   "Solvation Hydrophobic": 0.005,
+   "Van der Waals clashes": -0.0117,
+   "entropy sidechain": -0.0585,
+   "entropy mainchain": -0.0272,
+   "torsional clash": -0.0003,
+   "backbone clash": 0.0,
+   "cleaned": "KB92A"
+  },
+  "VA197A": {
+   "Interaction Energy": 1.0817,
+   "Backbone Hbond": 0.0,
+   "Sidechain Hbond": 0.0,
+   "Van der Waals": 0.4673,
+   "Electrostatics": 0.0,
+   "Solvation Polar": -0.4058,
+   "Solvation Hydrophobic": 0.7861,
+   "Van der Waals clashes": 0.0,
+   "entropy sidechain": -0.277,
+   "entropy mainchain": 0.512,
+   "torsional clash": -0.0008,
+   "backbone clash": -0.0025,
+   "cleaned": "VA197A"
+  }
+ },
+ "meta": {
+  "pdb": "2PCC",
+  "mode": "author",
+  "n_requested": 6,
+  "repair_iterations": 5,
+  "validation_failed": [],
+  "n_ok": 6,
+  "groups": "A,B"
+ }
+}

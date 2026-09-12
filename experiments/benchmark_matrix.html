@@ -1,0 +1,258 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SKEMPI ΔΔG benchmark matrix</title>
+<style>
+  :root{ color-scheme:light; --ink:#1a1d21; --mut:#6b7280; --line:#e5e7eb; --mulan:#1d4ed8; --mulanbg:#eff4ff; }
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:22px}
+  h1{font-size:19px;margin:0 0 2px}
+  .sub{color:var(--mut);font-size:12.5px;margin-bottom:12px}
+  .legend{font-size:11.5px;color:#374151;background:#f9fafb;border:1px solid var(--line);border-radius:8px;padding:8px 11px;margin-bottom:14px}
+  .legend b{color:#111}
+  table{border-collapse:separate;border-spacing:0;width:100%;font-size:12px}
+  th,td{padding:6px 7px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap}
+  thead th{position:sticky;top:0;background:#fff;z-index:2;font-size:10.5px;color:#374151;border-bottom:2px solid #d1d5db}
+  .grp{font-size:9.5px;text-transform:uppercase;letter-spacing:.03em;color:#9ca3af;border-bottom:1px solid var(--line);background:#fcfcfd}
+  .grp .pooled{color:#7c3aed} .grp .psg{color:#15803d} .grp .clu{color:#b45309}
+  td.m,th.m{text-align:left}  td.m{font-weight:600}
+  td.date{text-align:left;color:var(--mut);font-size:11px}
+  .tag{font-size:9px;color:#6b7280;vertical-align:super;margin-left:1px}
+  .dot{color:#111}   .dash{color:#cbd5e1}
+  .pool{background:#f3e8ff;color:#6b21a8;border-radius:5px;padding:1px 5px;font-weight:600;font-variant-numeric:tabular-nums}
+  .pool.sp{background:#ecfccb;color:#3f6212}   /* pooled Spearman = green-yellow pill */
+  .colsep{border-left:2px solid #d8b4fe}  .colsep2{border-left:2px solid #bbf7d0}  .colsep3{border-left:2px solid #fed7aa}
+  tr.mulan td.m{color:var(--mulan)}
+  tr.grouphdr{cursor:pointer}  tr.grouphdr:hover td{background:#e3ecff}
+  tr.grouphdr td{background:var(--mulanbg);border-top:2px solid #c7d7fe}
+  .chev{display:inline-block;width:12px;color:var(--mulan);transition:transform .15s;font-size:10px}
+  tr.open .chev{transform:rotate(90deg)}
+  tr.sub{display:none;background:#fbfcff}  tr.sub.show{display:table-row}
+  tr.sub td.emb{text-align:left;color:#374151;font-weight:600;padding-left:22px}
+  tr.sub td.arm{text-align:left;color:#6b7280;font-size:11px}
+  td.val{font-variant-numeric:tabular-nums;font-weight:600;color:#0b1324}
+  td.best{outline:2px solid #1d4ed8;outline-offset:-2px;border-radius:4px}
+  .callout{margin:16px 0 6px;padding:11px 13px;border:1px solid #fde68a;background:#fffbeb;border-radius:9px;font-size:13px}
+  .rank{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#92400e;margin-top:4px}
+  .notes{font-size:11.5px;color:#4b5563;margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
+  .notes li{margin:3px 0}
+  .refs{margin-top:16px;border-top:1px solid var(--line);padding-top:10px;font-size:11px;color:#4b5563}
+  .refs h3{font-size:13px;margin:0 0 6px;color:#111}  .refs ol{margin:0;padding-left:20px} .refs li{margin:2px 0}
+  .refs a{color:#1d4ed8;text-decoration:none}
+</style>
+
+<h1>SKEMPI&nbsp;v2 ΔΔG — benchmark &amp; split coverage</h1>
+<div class="sub"><b>Color = metric:</b> <span style="color:#6b21a8;font-weight:700">purple = Pearson</span>, <span style="color:#3f6212;font-weight:700">green-yellow = Spearman</span>. <b>Shape = aggregation:</b> <span class="pool sp">pill</span> = pooled · <span style="background:hsl(115,70%,74%);padding:1px 5px;border-radius:2px">filled cell</span> = per-structure. Click a <b style="color:#1d4ed8">MuLAN</b> row to expand embedding × arm.</div>
+
+<div class="legend">
+  <b>Splits (introduced by):</b> CV10 leaky per-mutation 10-fold (classical / MuLAN lineage) · byCplx whole-PDB-out 3-fold (<b>RDE-Network</b>, 2023) · CATH superfamily hold-out TM&lt;0.6 (<b>CATH-ddG</b>, 2025). <b>Clustered tier</b>, two criteria: <b>iDist≤0.03</b> = interface deduplication (<b>PPIRef/PPIformer</b>, 2024; per-protein Spearman) vs <b>CD-HIT≤60%</b> = sequence-identity clustering (<b>ProtBFF</b>, 2025; MuLAN uses this), shown as <b>pooled</b> Spearman &amp; Pearson — the only clustered metric ProtBFF reports. <b>MuLAN clusters by sequence identity, not iDist interface dedup.</b> &nbsp;
+  <b>Tags:</b> <span class="tag">ᵖᶜ</span>pooled Pearson · <span class="tag">ᵖ</span>pooled Spearman · <span class="tag">ᴿ</span>CATH re-eval (USP/CATH-ddG) · <span class="tag">ˢ</span>Prompt-DDG Tab.1 · <span class="tag">ᴮ</span>BA-DDG Tab.1 · <span class="tag">ᶜ</span>CATH-ddG Suppl.S2 · <span class="tag">✦</span>pending · ● uses split · — n/a. Green cells shaded by ρ. MuLAN full-SKEMPI byCplx = single-point 96 complexes; CATH = 13; CD-HIT pooled over 4,165 single-point muts.
+</div>
+
+<table id="t">
+  <thead>
+    <tr class="grp">
+      <th class="m"></th><th></th>
+      <th colspan="2">Dataset</th>
+      <th colspan="4">OOD sets</th>
+      <th class="pooled colsep">Leaky</th>
+      <th class="psg colsep2" colspan="3">Per-structure Spearman ρ (T≥10)</th>
+      <th class="clu colsep3" colspan="3">Clustered tier</th>
+    </tr>
+    <tr>
+      <th class="m">Method</th><th class="m">Date (venue)</th>
+      <th>SKEMPI</th><th>S/M</th>
+      <th>SARS</th><th>HER2</th><th>AbBiB</th><th>Other</th>
+      <th class="colsep">CV10<span class="tag">ᵖᶜ</span></th>
+      <th class="colsep2">CV10</th><th>byCplx</th><th>CATH</th>
+      <th class="colsep3">iDist≤.03<span class="tag">Sp</span></th><th style="font-weight:800;color:#111">CD-HIT Sp<span class="tag">ᵖ</span></th><th>CD-HIT Ps<span class="tag">ᵖ</span></th>
+    </tr>
+  </thead>
+  <tbody id="body"></tbody>
+</table>
+
+<div class="callout">
+  <b>Dataset-matched clustered comparison (full SKEMPI, CD-HIT ≤60% sequence identity, pooled — the only apples-to-apples with ProtBFF):</b>
+  <div class="rank"><b>MuLAN+FoldX 0.561</b> P &gt; ProtBFF <b>0.514</b> P &gt; ProMIM 0.486 &gt; ProSST-base 0.428 &gt; ESM2-base 0.194 &nbsp;(pooled Pearson, single+multi rung). MuLAN sits <b>above ProtBFF</b> on both readings of the metric. This line read "MuLAN below" off 0.407 P until 2026-08-05, from the 28%-FoldX-coverage lineage on the single-point rung.</div>
+  ProSST/ProMIM/ESM2 numbers are from <b>ProtBFF Table 2</b> (same CD-HIT 60% split; dataset = SKEMPI2 minus the 10 largest complexes ≈ 6,631 muts vs MuLAN's 4,165 single-point — close, not identical). The S1102 clustered numbers (~0.65 P) are higher only because S1102 is a curated easy subset. No frontier paper reports <i>per-structure</i> Spearman on a sequence-clustered split.
+</div>
+
+<div style="margin:16px 0 6px;font-size:12.5px">
+  <b>AUROC — sign-of-effect (destabilizing vs not), the frontier's classification metric.</b> The clean
+  comparison is <b>CATH (both all-muts)</b>, where MuLAN is highly competitive: its FoldX arm (ESM-C 6B +
+  FoldX scalar) <b>0.791</b> is 2nd, above CATH-ddG; its best single arm reaches <b>0.806</b> (Ankh-large
+  base). <b>Expand the MuLAN row</b> for all embedding × arm. AUROC sits in a narrow band — read ordering,
+  not gaps — far more competitive than MuLAN's mid-pack per-structure Spearman.
+  <table style="border-collapse:separate;border-spacing:0;font-size:12px;margin-top:6px;max-width:520px">
+    <thead><tr>
+      <th style="text-align:left;padding:5px 8px;border-bottom:2px solid #d1d5db;font-size:11px;color:#374151">Method</th>
+      <th style="padding:5px 8px;border-bottom:2px solid #d1d5db;font-size:11px;color:#374151">CATH (all-muts)</th>
+      <th style="padding:5px 8px;border-bottom:2px solid #d1d5db;font-size:11px;color:#374151">by-complex</th></tr></thead>
+    <tbody id="aurobody" style="font-variant-numeric:tabular-nums"></tbody>
+  </table>
+  <div style="font-size:11px;color:#6b7280;margin-top:5px">§ MuLAN by-complex is <b>all-muts</b> (best arm 0.760; ESM-C 6B + FoldX scalar 0.732) — it pools MuLAN's separate single-point (0.726) + multi-point (0.772) runs (two models, vs the frontier's one), so it's composition-matched to the frontier column, but still below the DL frontier (0.74–0.78). MuLAN's AUROC edge is on the harder <b>CATH</b> tier, not the easier by-complex. The collapsed MuLAN row shows the best value in each column (different arms); expand for all. AUROC = MuLAN <code>auroc_destab</code>. CATH from USP-ddG Table 1; by-complex from BA-DDG Table 1 / CATH-ddG Suppl.S2. ProtBFF &amp; GearBind report no AUROC. Precision@k is MuLAN-only — see METRIC_RATIONALE.</div>
+</div>
+
+<ul class="notes">
+  <li><b>Per-structure Spearman comparators (green):</b> byCplx — RDE 0.401 / DiffAffinity 0.397 / Prompt-DDG 0.426 / CATH-ddG 0.460 / BA-DDG 0.513 vs MuLAN full-SKEMPI 0.467; CATH — USP-ddG 0.493 / CATH-ddG 0.494 vs MuLAN 0.438. GearBind byCplx 0.525 is <i>pooled</i> (5-fold), not per-structure.</li>
+  <li><b>Clustered tier is three different things:</b> PPIformer's iDist≤0.03 (interface) 0.44 ≠ CD-HIT≤60% (sequence). CD-HIT is shown pooled because that's all ProtBFF reports; MuLAN's pooled CD-HIT (full-SKEMPI 0.561 P / 0.549 S) is the fair ProtBFF comparison — regenerate via <code>gen_benchmark_matrix_data.py</code>.</li>
+  <li>Provenance: <b>ˢ</b> Prompt-DDG Tab.1 · <b>ᴮ</b> BA-DDG Tab.1 · <b>ᶜ</b> CATH-ddG Suppl.S2 · <b>ᴿ</b> USP/CATH-ddG CATH re-evals. USP-ddG reports no by-complex by design; GearBind not on by-complex/CATH. MuLAN+Ankh (original) = pooled Pearson only.</li>
+</ul>
+
+<div class="refs">
+  <h3>References (DOIs)</h3>
+  <ol>
+    <li><b>SKEMPI v2</b> — Jankauskaitė et al., <i>Bioinformatics</i> 2019 · <a href="https://doi.org/10.1093/bioinformatics/bty635">10.1093/bioinformatics/bty635</a></li>
+    <li><b>MuLAN</b> — bioRxiv 2024 · <a href="https://doi.org/10.1101/2024.08.24.609515">10.1101/2024.08.24.609515</a></li>
+    <li><b>RDE-Network</b> — Luo et al., ICLR 2023 · <a href="https://arxiv.org/abs/2210.06525">arXiv:2210.06525</a></li>
+    <li><b>DiffAffinity</b> — Liu et al., NeurIPS 2023 · <a href="https://arxiv.org/abs/2310.03962">arXiv:2310.03962</a></li>
+    <li><b>PPIformer</b> — Bushuiev et al., ICLR 2024 · <a href="https://arxiv.org/abs/2310.18515">arXiv:2310.18515</a></li>
+    <li><b>Prompt-DDG</b> — Wu et al., ICML 2024 · <a href="https://arxiv.org/abs/2405.10348">arXiv:2405.10348</a></li>
+    <li><b>GearBind</b> — Cai et al., <i>Nat. Commun.</i> 2024 · <a href="https://doi.org/10.1038/s41467-024-51563-8">10.1038/s41467-024-51563-8</a> · <a href="https://arxiv.org/abs/2304.08818">arXiv:2304.08818</a></li>
+    <li><b>BA-DDG</b> — ICLR 2025 · <a href="https://arxiv.org/abs/2410.09543">arXiv:2410.09543</a></li>
+    <li><b>CATH-ddG</b> — Yu et al., <i>Bioinformatics</i> 2025 (ISMB) · <a href="https://doi.org/10.1093/bioinformatics/btaf228">10.1093/bioinformatics/btaf228</a></li>
+    <li><b>USP-ddG</b> — bioRxiv 2025 · <a href="https://doi.org/10.1101/2025.11.09.687124">10.1101/2025.11.09.687124</a></li>
+    <li><b>ProtBFF</b> — bioRxiv 2025 · <a href="https://doi.org/10.64898/2025.12.23.696257">10.64898/2025.12.23.696257</a></li>
+    <li><b>ProSST</b> — Li et al., NeurIPS 2024 · bioRxiv <a href="https://doi.org/10.1101/2024.04.15.589672">10.1101/2024.04.15.589672</a></li>
+    <li><b>ProMIM</b> — Mo et al., 2024 · <a href="https://arxiv.org/abs/2405.17802">arXiv:2405.17802</a></li>
+  </ol>
+  <div style="margin-top:6px"><b>Split provenance:</b> by-complex 3-fold — <b>RDE-Network</b> (arXiv:2210.06525); iDist ≤0.03 interface dedup — <b>PPIRef/PPIformer</b> (arXiv:2310.18515, Zenodo 10.5281/zenodo.12789167); CD-HIT ≤60% sequence identity — <b>ProtBFF</b> (10.64898/2025.12.23.696257), tool CD-HIT (Fu et al. 2012, 10.1093/bioinformatics/bts565); CATH-superfamily hold-out — <b>CATH-ddG</b> (10.1093/bioinformatics/btaf228, reused by USP-ddG).</div>
+  <div style="margin-top:5px;color:#9ca3af">Also cited: Surface-VQMAE, ProMIM (BA-DDG baselines); FoldX 5 · foldxsuite.crg.eu. MuLAN cells regenerated by <code>experiments/gen_benchmark_matrix_data.py</code>.</div>
+</div>
+
+<script>
+const N=null, DOT="●";
+const P=(v,t)=>({v,t:t||""});          // per-structure number (heat)
+const POOLT=(txt,t)=>({pooltxt:txt,t});// pooled chip
+// papers: [m,date,skempi,sm,[sars,her2,abbib,other], cv10P, [cv10psS, byCplx, CATH, iDist, cdhitSp, cdhitPs]]
+const papers=[
+ ["RDE-Network","2023 · ICLR","full","S+M",[N,N,N,N], N, [N,P(0.401,"ˢ"),P(0.288,"ᴿ"),N,N,N]],
+ ["DiffAffinity","2023 · NeurIPS","full","S+M",[N,N,N,N], N, [N,P(0.397,"ˢ"),P(0.249,"ᴿ"),N,N,N]],
+ ["PPIformer","2024 · ICLR","full","S+M",[DOT,N,N,"staphylokinase"], N, [N,N,P(0.216,"ᴿ"),P(0.44),N,N]],
+ ["Prompt-DDG","2024 · ICML","full","S+M",[N,N,N,N], N, [N,P(0.426,"ˢ"),P(0.303,"ᴿ"),N,N,N]],
+ ["GearBind","2024 · Nat. Commun.","full","S+M",[DOT,DOT,N,"CR3022 wet-lab"], N, [N,POOLT("0.525","ᵖ"),N,N,N,N]],
+ ["BA-DDG","2025 · ICLR","full","S+M",[N,N,DOT,N], N, [N,P(0.513,"ᴮ"),P(0.402,"ᴿ"),N,N,N]],
+ ["CATH-ddG","2025 · Bioinf./ISMB","full","S+M",[N,DOT,N,N], N, [N,P(0.460,"ᶜ"),P(0.494),N,N,N]],
+ ["USP-ddG","2025-11 · bioRxiv","full","S+M",[DOT,DOT,DOT,N], N, [N,N,P(0.493),N,N,N]],
+ ["ProSST (base)","2024 · NeurIPS","full","S+M",[N,N,N,N], N, [N,N,N,N,POOLT("0.354","ᵖ"),POOLT("0.428","ᵖ")]],
+ ["ProMIM","2024 · arXiv","full","S+M",[DOT,N,N,N], N, [N,N,N,N,POOLT("0.464","ᵖ"),POOLT("0.486","ᵖ")]],
+ ["ProtBFF","2025-12 · bioRxiv","full","S",[DOT,N,N,N], N, [N,N,N,N,POOLT("0.477","ᵖ"),POOLT("0.514","ᵖ")]],
+ ["MuLAN+Ankh","2024-08 · bioRxiv","S1102","S",[N,N,N,N], POOLT("≈0.85","ᵖᶜ"), [N,N,N,N,N,N],"mulan"],
+];
+// full-SKEMPI expanded: [emb,arm, byCplx_psS, cdhitSp_pooled, cdhitPs_pooled, cath_psS]
+const fullsk={hdr:["MuLAN SKEMPI best","this work · 2026-07","full","S+M"], kind:"full",
+ sub:[
+  ["ESM-C 6B","base",0.310,0.249,0.400,0.360],["","+ FoldX scalar",0.451,0.472,0.548,0.438],["","+ FoldX MLP",0.457,0.484,0.522,0.431],
+  ["ESM-C 600M","base",0.227,0.282,0.406,0.117],["","+ FoldX scalar",0.434,0.270,0.241,0.351],["","+ FoldX MLP",0.467,0.480,0.484,0.370],
+  ["SaProt","base",0.120,0.033,0.081,0.229],["","+ FoldX scalar",0.411,0.386,0.409,0.398],["","+ FoldX MLP",0.435,0.483,0.484,0.397],
+  ["ProstT5","base",0.194,0.032,0.086,0.070],["","+ FoldX scalar",0.452,0.430,0.439,0.415],["","+ FoldX MLP",0.464,0.480,0.458,0.398],
+  ["ESM2-3B","base",0.261,0.231,0.227,0.243],["","+ FoldX scalar",0.459,0.456,0.490,0.375],["","+ FoldX MLP",0.445,0.488,0.489,0.352],
+  ["Ankh-large","base",0.284,0.186,0.260,0.331],["","+ FoldX scalar",0.435,0.466,0.482,0.421],["","+ FoldX MLP",0.444,0.509,0.529,0.387],
+  ["Ankh3-large","base",0.203,0.093,0.146,0.148],["","+ FoldX scalar",0.436,0.411,0.440,0.355],["","+ FoldX MLP",0.449,0.466,0.463,0.392],
+  ["Ankh3-xl","base",0.268,0.247,0.376,0.266],["","+ FoldX scalar",0.463,0.449,0.475,0.414],["","+ FoldX MLP",0.454,0.482,0.494,0.414],
+  ["AIDO-16B","base",0.180,0.182,0.233,0.248],["","+ FoldX scalar",0.447,0.432,0.456,0.417],["","+ FoldX MLP",0.435,0.487,0.497,0.377],
+ ]};
+// S1102 ladder expanded: [emb,arm, cv10_pooledP, cv10_psS, byCplx_psS, cdhitSp_pooled, cdhitPs_pooled]
+const ladder={hdr:["MuLAN S1102 best","this work · 2026-07","S1102","S"], kind:"ladder",
+ sub:[
+  ["ESM-C 6B","base",0.886,0.489,0.452,0.448,0.642],["","+ FoldX scalar",0.892,0.579,0.546,0.516,0.648],["","+ FoldX MLP",0.890,0.564,0.551,0.469,0.609],
+  ["ESM-C 600M","base",0.841,0.325,0.283,0.465,0.433],["","+ FoldX scalar",null,null,0.528,0.513,0.430],["","+ FoldX MLP",0.858,0.508,0.494,0.462,0.570],
+  ["SaProt","base",0.856,0.377,0.325,0.304,0.312],["","+ FoldX scalar",null,null,0.552,0.415,0.384],["","+ FoldX MLP",0.867,0.546,0.491,0.474,0.504],
+  ["ProstT5","base",0.829,0.412,0.296,0.078,0.210],["","+ FoldX scalar",null,null,0.549,0.402,0.457],["","+ FoldX MLP",0.842,0.568,0.453,0.430,0.510],
+  ["ESM2-3B","base",0.838,0.354,0.325,0.362,0.415],["","+ FoldX scalar",null,null,0.480,0.514,0.522],["","+ FoldX MLP",0.857,0.564,0.474,0.528,0.549],
+  ["Ankh-large","base",0.844,0.387,0.289,0.311,0.422],["","+ FoldX scalar",null,null,0.495,0.442,0.513],["","+ FoldX MLP",0.860,0.521,0.482,0.438,0.530],
+  ["Ankh3-large","base",null,null,0.281,0.193,0.305],["","+ FoldX scalar",null,null,0.523,0.358,0.402],["","+ FoldX MLP",null,null,0.436,0.420,0.467],
+  ["Ankh3-xl","base",null,null,0.349,0.317,0.387],["","+ FoldX scalar",null,null,0.540,0.430,0.459],["","+ FoldX MLP",null,null,0.457,0.447,0.509],
+  ["MINT (multi-chain)","base",0.856,null,0.316,0.167,0.245],
+ ]};
+
+// per-structure Spearman = filled green-yellow (yellow at low ρ -> green at high)
+function heat(v){ if(v===null||v===undefined||isNaN(v))return""; const x=Math.max(-0.05,Math.min(0.60,v)),t=(x+0.05)/0.65;
+  return `background:hsl(${55+t*75},70%,${92-t*30}%)`; }
+const fmt=v=>(v===null||v===undefined?"":v.toFixed(3).replace(/^(-?)0/,"$1"));
+function oodCell(x){ if(x===null)return`<td class="dash">—</td>`; if(x===DOT)return`<td><span class="dot">●</span></td>`;
+  return`<td style="font-size:10px;color:#4b5563;white-space:normal;max-width:110px">${x}</td>`; }
+function poolCell(c,sep){ const cl=sep?"colsep":""; if(c===null)return`<td class="dash ${cl}">—</td>`;
+  return`<td class="${cl}"><span class="pool">${c.pooltxt}</span><span class="tag">${c.t||""}</span></td>`; }
+function psCell(c,cl,metric){ cl=cl||"";
+  if(c===null||c===undefined)return`<td class="dash ${cl}">—</td>`;
+  if(c.pooltxt!==undefined){const pc=metric==="sp"?"pool sp":"pool";return`<td class="${cl}"><span class="${pc}">${c.pooltxt}</span><span class="tag">${c.t||""}</span></td>`;}
+  if(c.dot)return`<td class="${cl}"><span class="dot">●</span>${c.t?`<span class="tag">${c.t}</span>`:""}</td>`;
+  return`<td class="val ${cl}" style="${heat(c.v)}">${fmt(c.v)}${c.t?`<span class="tag">${c.t}</span>`:""}</td>`; }
+// value-cell renderers for sub-rows: heatTd=per-structure filled; chipTd=pooled pill (metric 'sp'|'pe')
+function heatTd(v,cl,best){ cl=cl||""; if(v===null)return`<td class="dash ${cl}">—</td>`; const b=best?"font-weight:800;":""; return`<td class="val ${cl}" style="${heat(v)};${b}">${fmt(v)}</td>`; }
+function chipTd(v,cl,metric,best){ cl=cl||""; if(v===null)return`<td class="dash ${cl}">—</td>`; const pc=metric==="pe"?"pool":"pool sp"; const b=best?"font-weight:800;":""; return`<td class="${cl}"><span class="${pc}" style="${b}">${fmt(v)}</span></td>`; }
+
+const body=document.getElementById("body"); let html="";
+const SEP=["colsep2","","","colsep3","",""]; // separators for the 6 ps columns
+const MET=["sp","sp","sp","sp","sp","pe"];   // metric per ps column: cdhitPs(=idx5)=Pearson(purple), rest Spearman
+for(const p of papers){
+  const cls=p[7]==="mulan"?"mulan":"";
+  html+=`<tr class="${cls}"><td class="m">${p[0]}</td><td class="date">${p[1]}</td><td>${p[2]}</td><td>${p[3]}</td>`+
+        p[4].map(oodCell).join("")+ poolCell(p[5],true)+ p[6].map((c,i)=>psCell(c,SEP[i],MET[i])).join("")+`</tr>`;
+}
+function maxCol(sub,i){ let m=-9; for(const r of sub){ const v=r[i]; if(v!==null&&v>m)m=v; } return m; }
+function group(g,gid){
+  const S=g.sub;
+  const bh=(v,cl)=> v===null||v<-8?`<td class="dash ${cl||''}">—</td>`:`<td class="val best ${cl||''}" style="${heat(v)}">${fmt(v)}</td>`;
+  const bc=(v,cl,metric)=> v===null||v<-8?`<td class="dash ${cl||''}">—</td>`:`<td class="${cl||''}"><span class="${metric==='pe'?'pool':'pool sp'}">${fmt(v)}</span></td>`;
+  let hpool,cells;
+  if(g.kind==="full"){ // sub: byCplx(2) cdhitSp(3) cdhitPs(4) cath(5)
+    hpool=`<td class="dash colsep">—</td>`;
+    cells=`<td class="dash colsep2">—</td>`+bh(maxCol(S,2))+bh(maxCol(S,5))+`<td class="dash colsep3">—</td>`+bc(maxCol(S,3),"","sp")+bc(maxCol(S,4),"","pe");
+  }else{ // ladder sub: cv10P(2) cv10psS(3) byCplx(4) cdhitSp(5) cdhitPs(6)
+    hpool=`<td class="colsep"><span class="pool">${fmt(maxCol(S,2))}</span></td>`;
+    cells=bh(maxCol(S,3),"colsep2")+bh(maxCol(S,4))+`<td class="dash">—</td>`+`<td class="dash colsep3">—</td>`+bc(maxCol(S,5),"","sp")+bc(maxCol(S,6),"","pe");
+  }
+  let h=`<tr class="mulan grouphdr" data-g="${gid}"><td class="m"><span class="chev">▶</span> ${g.hdr[0]}</td>`+
+        `<td class="date">${g.hdr[1]}</td><td>${g.hdr[2]}</td><td>${g.hdr[3]}</td>`+
+        `<td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td>`+hpool+cells+`</tr>`;
+  const mx = {}; [2,3,4,5,6].forEach(i=>mx[i]=maxCol(S,i)); // per-column maxima for bolding best
+  for(const r of S){
+    const emb=r[0],arm=r[1]; let sc;
+    if(g.kind==="full"){ // cv10psS —, byCplx r2, CATH r5, iDist —, cdhitSp r3, cdhitPs r4
+      sc=`<td class="dash colsep2">—</td>`+heatTd(r[2],"",r[2]===mx[2])+heatTd(r[5],"",r[5]===mx[5])+`<td class="dash colsep3">—</td>`+chipTd(r[3],"","sp",r[3]===mx[3])+chipTd(r[4],"","pe",r[4]===mx[4]);
+    }else{ // cv10psS r3, byCplx r4, CATH —, iDist —, cdhitSp r5, cdhitPs r6 ; leaky poolCell r2 (Pearson)
+      const lp=r[2]===null?`<td class="dash colsep">—</td>`:`<td class="colsep"><span class="pool"${r[2]===mx[2]?' style="font-weight:800"':''}>${fmt(r[2])}</span></td>`;
+      sc=lp+heatTd(r[3],"colsep2",r[3]===mx[3])+heatTd(r[4],"",r[4]===mx[4])+`<td class="dash">—</td>`+`<td class="dash colsep3">—</td>`+chipTd(r[5],"","sp",r[5]===mx[5])+chipTd(r[6],"","pe",r[6]===mx[6]);
+      h+=`<tr class="sub s${gid}"><td class="emb">${emb}</td><td class="arm">${arm}</td><td></td><td></td><td></td><td></td><td></td><td></td>${sc}</tr>`;
+      continue;
+    }
+    h+=`<tr class="sub s${gid}"><td class="emb">${emb}</td><td class="arm">${arm}</td><td></td><td></td><td></td><td></td><td></td><td></td>`+
+       `<td class="dash colsep">—</td>`+sc+`</tr>`;
+  }
+  return h;
+}
+html+=group(fullsk,"G1"); html+=group(ladder,"G2");
+body.innerHTML=html;
+
+// ---- AUROC companion table: frontier rows (sorted by CATH) + expandable MuLAN group at bottom ----
+const aurF=[["USP-ddG",0.802,null],["CATH-ddG",0.781,0.776],["flex-ddG",0.764,null],["FoldX",0.754,0.658],
+  ["RDE-Network",0.745,0.745],["BA-DDG",0.732,0.773],["DiffAffinity",0.625,0.744],["Prompt-DDG",null,0.757],["ProMIM",null,0.760]];
+// [emb, arm, CATH auroc_destab, by-complex all-muts auroc] — regen via gen_benchmark_matrix_data.py
+const aurM=[
+  ["ESM-C 6B","base",0.787,0.691],["","+ FoldX scalar",0.791,0.732],["","+ FoldX MLP",0.748,0.743],
+  ["ESM-C 600M","base",0.732,0.663],["","+ FoldX scalar",0.779,0.721],["","+ FoldX MLP",0.777,0.719],
+  ["SaProt","base",0.716,0.588],["","+ FoldX scalar",0.774,0.674],["","+ FoldX MLP",0.750,0.679],
+  ["ProstT5","base",0.700,0.629],["","+ FoldX scalar",0.766,0.714],["","+ FoldX MLP",0.745,0.754],
+  ["ESM2-3B","base",0.745,0.658],["","+ FoldX scalar",0.786,0.725],["","+ FoldX MLP",0.736,0.730],
+  ["Ankh-large","base",0.806,0.680],["","+ FoldX scalar",0.805,0.740],["","+ FoldX MLP",0.748,0.755],
+  ["Ankh3-large","base",0.724,0.663],["","+ FoldX scalar",0.791,0.720],["","+ FoldX MLP",0.718,0.732],
+  ["Ankh3-xl","base",0.781,0.682],["","+ FoldX scalar",0.791,0.743],["","+ FoldX MLP",0.750,0.760],
+  ["AIDO-16B","base",0.680,0.654],["","+ FoldX scalar",0.780,0.720],["","+ FoldX MLP",0.754,0.721]];
+const f3=v=>(v===null||v===undefined)?"—":v.toFixed(3);
+const eb="border-bottom:1px solid #eee";
+let ah="";
+for(const [nm,c,b] of aurF)
+  ah+=`<tr><td style="text-align:left;padding:4px 8px;${eb}">${nm}</td><td style="padding:4px 8px;${eb}">${f3(c)}</td><td style="padding:4px 8px;${eb}">${f3(b)}</td></tr>`;
+const bC=Math.max(...aurM.map(r=>r[2]).filter(x=>x!==null)), bB=Math.max(...aurM.map(r=>r[3]).filter(x=>x!==null));
+const gs="border-top:2px solid #c7d7fe;background:#eff4ff;color:#1d4ed8;font-weight:700;padding:5px 8px";
+ah+=`<tr class="mulan grouphdr" data-g="A"><td style="text-align:left;${gs}"><span class="chev">▶</span> MuLAN best (any arm)</td><td style="${gs}">${f3(bC)}</td><td style="${gs}">${f3(bB)}<span class="tag">§</span></td></tr>`;
+for(const [emb,arm,c,b] of aurM){
+  const sd="padding:3px 8px;border-bottom:1px solid #f3f4f6;font-size:11px;color:#374151;";
+  ah+=`<tr class="sub sA"><td style="text-align:left;padding-left:22px;${sd}">${emb?("<b>"+emb+"</b> · "):""}${arm}</td><td style="${sd}${c===bC?'font-weight:800;':''}">${f3(c)}</td><td style="${sd}${b===bB?'font-weight:800;':''}">${f3(b)}</td></tr>`;
+}
+document.getElementById("aurobody").innerHTML=ah;
+
+document.querySelectorAll("tr.grouphdr").forEach(h=>{ h.addEventListener("click",()=>{ h.classList.toggle("open");
+  document.querySelectorAll("tr.s"+h.dataset.g).forEach(s=>s.classList.toggle("show")); }); });
+</script>

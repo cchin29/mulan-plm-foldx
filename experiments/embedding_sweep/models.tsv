@@ -1,0 +1,14 @@
+#tag	plm_model_name	embeddings_dir
+ankh	ankh	scratch/embeddings
+prostt5	prostt5	scratch/embeddings_prostt5
+esm2	esm	scratch/emb_esm2_aug
+esmc6b	esmc_6b	scratch/embeddings_esmc6b
+esmc600m	esmc_600m	scratch/embeddings_esmc600m
+aido	aido	scratch/embeddings_aido
+ankh3_large	ankh3_large	scratch/embeddings_ankh3_large_nlu
+ankh3_xl	ankh3_xl	scratch/embeddings_ankh3_xl_nlu
+saprot	saprot	scratch/emb_saprot
+saprot13b	saprot13b	scratch/emb_saprot13b
+esm3	esm3_sm_open_v1	scratch/embeddings_esm3
+mint	mint	scratch/embeddings_mint
+mint_mono	mint	scratch/embeddings_mint_mono

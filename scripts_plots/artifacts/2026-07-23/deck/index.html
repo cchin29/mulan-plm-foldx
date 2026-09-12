@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MuLAN — leakage-controlled evaluation</title>
+<link rel="stylesheet" href="vendor/reveal.css">
+<link rel="stylesheet" href="vendor/white.css">
+<style>
+  :root{
+    --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+    --split:#2a78d6; --mulan:#008300; --sota:#4a3aa7; --accent:#1c5cab; --warn:#e0913a; --start:#d03b3b;
+  }
+  .reveal{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);}
+  .reveal h1{font-size:1.7em;line-height:1.1} .reveal h2{font-size:1.15em;color:var(--ink);text-transform:none;margin:0 0 .1em}
+  .reveal section{text-align:left;top:2%!important}
+  .kicker{font-size:.42em;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.2em}
+  .take{font-size:.6em;line-height:1.3;background:#f2f6fc;border-left:4px solid var(--split);border-radius:6px;padding:.5em .7em;margin:.3em 0 .5em;color:var(--ink)}
+  .take.no{background:#fbeeee;border-left-color:var(--start)} .take.yes{background:#eef7ee;border-left-color:var(--mulan)}
+  .reveal ul{font-size:.5em;line-height:1.35;margin:.2em 0 .2em 1em}
+  .reveal li{margin:.12em 0}
+  .fig{display:flex;align-items:center;justify-content:center}
+  .fig img{max-height:64vh;max-width:100%;border:1px solid #e1e0d9;border-radius:8px;background:#fff}
+  .two{display:flex;gap:14px} .two img{max-height:56vh;max-width:49%;border:1px solid #e1e0d9;border-radius:8px}
+  .framey{width:100%;height:66vh;border:1px solid #e1e0d9;border-radius:8px;background:#fff}
+  .foot{position:absolute;bottom:8px;right:14px;font-size:.3em;color:var(--muted)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:.66em;margin-bottom:34px}
+  .grid2 ul{font-size:.62em}
+  table.mini{font-size:.66em;border-collapse:collapse;margin-top:.2em}
+  table.mini td,table.mini th{border-bottom:1px solid #e1e0d9;padding:3px 10px;text-align:right}
+  table.mini td:first-child,table.mini th:first-child{text-align:left}
+  .num{font-variant-numeric:tabular-nums}
+  .reveal .slides section .big{font-size:.62em;color:var(--ink2)}
+</style>
+</head>
+<body>
+<!-- Superseded-deck banner. Fixed rather than a slide, so it is visible from whichever slide a
+     reader lands on; the numbers below are quotable out of context and several are retracted. -->
+<div style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#c44536;color:#fff;
+            font:600 13px/1.5 system-ui,sans-serif;padding:7px 14px;text-align:center">
+  SUPERSEDED — deck of 2026-07-23, kept as a record of what was presented on that date.
+  Several figures predate the 2026-07-30 FoldX coverage fix, and the CATH per-structure
+  &rho; of 0.411 shown here was retracted: the corrected value on the literal CATH-superfamily
+  hold-out is <b>0.438</b>. Do not quote any number from this deck. See
+  <code>docs/RESULTS.md</code> and <code>scripts_plots/DECK_AND_FIGURE_PROVENANCE.md</code>.
+</div>
+<div class="reveal"><div class="slides">
+
+<!-- TITLE -->
+<section>
+  <div class="kicker">MuLAN — project deck (draft)</div>
+  <h1>MuLAN under leakage-controlled evaluation</h1>
+  <p class="big">PLM and architecture comparison under frontier-standard ΔΔG evaluation, with attention-based interaction-site analysis.</p>
+  <ul>
+    <li><b>Performance comparison</b> — PLMs × modified heads vs baseline, across split tiers</li>
+    <li><b>Dataset and evaluation methodology</b> — full SKEMPI, per-structure metric, leakage ladder</li>
+    <li><b>Attention and interaction-site prediction</b> — do the tested PLMs improve on the baseline?</li>
+  </ul>
+</section>
+
+<!-- ============ COMPARISON ============ -->
+
+<section>
+  <div class="kicker">Comparison · Performance vs PLM scale</div>
+  <h2>ΔΔG performance vs PLM scale (CV10, pooled Pearson)</h2>
+  <div class="take">In <b>pooled Pearson on per-mutation 10-fold CV</b>, every backbone sits near the paper's MuLAN-Ankh <b>0.868</b> and ESM-C 6B tops it — scaling <i>looks</i> like a clean win.</div>
+  <div class="fig"><img src="assets/ddg_scaling.png" alt="ddG performance vs PLM scale, CV10 pooled Pearson"></div>
+  <div class="foot">y = ΔΔG Pearson r (S1102 CV10) · x = model scale</div>
+</section>
+
+<section>
+  <div class="kicker">Comparison · Leakage-controlled performance</div>
+  <h2>Per-structure Spearman across the leakage ladder</h2>
+  <div class="take">Panel 1 is that same plot. Panels 2–4 are the <b>same models on the same scale axis</b> in <b>per-structure Spearman</b> across the leakage ladder (by-complex → CD-HIT ≤60% → CATH). Numbers drop and spread; <b>the FoldX channel — not raw scale — drives the lift</b>; ESM-C 6B + FoldX leads and lands in the frontier band.</div>
+  <div class="fig"><img src="assets/ppS_scaling.png" alt="MuLAN across PLM scale: per-structure Spearman across the leakage ladder"></div>
+  <div class="foot">base (navy) → +FoldX scalar (orange) → +FoldX MLP (blue) · violet = frontier band</div>
+</section>
+
+<section>
+  <div class="kicker">Comparison · Benchmark detail</div>
+  <h2>PLM × architecture × split benchmark</h2>
+  <div class="take">Base PLMs collapse out-of-family; a cheap <b>FoldX</b> channel rescues and holds. <b>ESM-C 6B + FoldX scalar</b> leads (by-complex 0.354 · clustered 0.250 · CATH 0.411) — mid-pack on the leakage-controlled frontier.</div>
+  <iframe class="framey" src="assets/benchmark_matrix.html" title="SKEMPI benchmark matrix"></iframe>
+  <div class="foot">interactive — click the MuLAN rows to expand every embedding × arm</div>
+</section>
+
+<!-- ============ DATASET & METHODOLOGY ============ -->
+
+<section>
+  <div class="kicker">Dataset &amp; methodology · Datasets and mutations</div>
+  <h2>Dataset and mutation generation</h2>
+  <div class="grid2">
+    <div>
+      <ul>
+        <li>Curated <b>experimental</b> ΔΔG from <b>SKEMPI 2.0</b> — measured Kd, <b>not synthetic</b> (<span class="num">ΔΔG = −RT·ln(Kd_mut/Kd_wt)</span>)</li>
+        <li>We now run the <b>full set</b>, not the paper's S1102/S1131 subsets (lineage: S1131 ⊂ S4169; S2003 = non-Ala half)</li>
+        <li><b>Single-chain-per-partner</b> restriction (MuLAN takes one sequence per partner)</li>
+        <li>Single- and multi-point mutations</li>
+      </ul>
+    </div>
+    <div>
+      <div class="take" style="border-left-color:var(--accent)"><b>How a data point is built</b><br>
+      WT + mutant sequence → <b>FoldX BuildModel</b> generates the mutant structure (FoldX arm) → PLM embedding → ΔΔG head</div>
+      <ul><li>The "mutations are generated" step is literally the FoldX mutant-structure build; the ΔΔG labels themselves are measured, not generated.</li></ul>
+    </div>
+  </div>
+  <div class="foot">source: BENCHMARK_DATASETS.md · FOLDX_SUMMARY.md</div>
+</section>
+
+<section>
+  <div class="kicker">Dataset &amp; methodology · Evaluation timeline</div>
+  <h2>Metric and leakage-control timeline (2023–2025)</h2>
+  <div class="take">A stricter <b>split</b> (remove homology leakage) and the right <b>metric</b> (per-structure Spearman). Every step lowered the reported number by removing inflation — colour = split tier, light→dark = leaky→strictest.</div>
+  <div class="fig"><img src="assets/fishbone.png" alt="Fishbone timeline of metric and leakage-control changes"></div>
+</section>
+
+<section>
+  <div class="kicker">Dataset &amp; methodology · Metric</div>
+  <h2>Pooled Pearson vs per-structure Spearman</h2>
+  <div class="take">Per-structure Spearman answers the design question (rank mutations <i>within</i> a complex). Pooled Pearson is inflated by the spread <i>between</i> complexes — <b>exactly where homology leakage hides</b>. Smaller numbers = the evaluation getting stricter, not the model getting worse.</div>
+  <iframe class="framey" src="assets/metric_rationale.html" title="Metric rationale"></iframe>
+</section>
+
+<!-- ============ INTERACTION SITES ============ -->
+
+<section>
+  <div class="kicker">Interaction sites · Setup and reproduction</div>
+  <h2>Attention-based interface prediction: setup and reproduction</h2>
+  <div class="grid2">
+    <div>
+      <ul>
+        <li><b>Task:</b> MuLAN per-residue attention → score as an interface-residue classifier (AUROC) vs residue-level labels across the PDB</li>
+        <li><b>Online labels:</b> Zenodo 18175031 (Cα-8 Å), 224,888 chains</li>
+        <li><b>We reproduced the paper's Interactome AUROC exactly</b> before comparing backbones</li>
+      </ul>
+    </div>
+    <div>
+      <table class="mini">
+        <tr><th>class</th><th>paper</th><th>ours</th></tr>
+        <tr><td>all interactions</td><td class="num">0.642</td><td class="num"><b>0.642</b></td></tr>
+        <tr><td>protein–protein</td><td class="num">0.612</td><td class="num">0.607</td></tr>
+        <tr><td>DNA / RNA</td><td class="num">0.763</td><td class="num">0.782</td></tr>
+        <tr><td>ligand</td><td class="num">0.660</td><td class="num">0.671</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot">pipeline validated → the backbone comparison is trustworthy</div>
+</section>
+
+<section>
+  <div class="kicker">Interaction sites · PLM comparison</div>
+  <h2>Interface prediction across PLM backbones</h2>
+  <div class="take no">Across 11 backbones (S1102) and the leakage-controlled full-SKEMPI set, <b>no PLM significantly beats Ankh-large</b>; ESM-C 6B and AIDO-16B land near the bottom.</div>
+  <div class="two" style="justify-content:center">
+    <img src="assets/s1102_interface.png" alt="S1102 attention-interface AUROC by backbone" style="max-height:27vh">
+    <img src="assets/skempi_full_interface.png" alt="Full-SKEMPI leakage-controlled attention-interface AUROC" style="max-height:27vh">
+  </div>
+  <div class="fig" style="margin-top:6px"><img src="assets/point3_scatter.png" alt="Attention-interface AUROC vs PLM scale" style="max-height:30vh"></div>
+</section>
+
+<section>
+  <div class="kicker">Interaction sites · Interpretation</div>
+  <h2>Attention-interface localization vs ΔΔG accuracy</h2>
+  <div class="take yes">ESM-C 6B is the <b>best ΔΔG arm</b> yet <b>near-worst at localizing interfaces</b> — ~0.19 below its own 600M sibling. The two are different read-outs of the same head.</div>
+  <ul>
+    <li><b>Mechanism:</b> large PLMs delocalize — a rich pooled vector wins ΔΔG, so the head no longer needs to concentrate attention at the interface (no localization term in the loss).</li>
+    <li><b>Distinct from ESM3</b> (massive-activation outliers, below chance) — ESM-C 6B's embeddings are healthy; its drop is delocalization, not an artifact.</li>
+    <li><b>Takeaway:</b> "attention recovers interfaces" is <b>Ankh-specific</b>, not a property that scales — worth flagging wherever the paper's interpretability claim is cited.</li>
+  </ul>
+</section>
+
+<!-- summary -->
+<section>
+  <div class="kicker">Summary</div>
+  <h2>Summary of findings</h2>
+  <ul>
+    <li><b>Comparison:</b> base PLMs collapse out-of-family; a cheap FoldX channel puts a <i>frozen</i> sequence model on the leakage-controlled frontier (CATH 0.411); ESM-C 6B + FoldX leads.</li>
+    <li><b>Dataset:</b> full experimental SKEMPI, FoldX-generated mutant structures, evaluated under progressively stricter homology hold-outs.</li>
+    <li><b>Attention:</b> reproduced the paper exactly; no PLM beats Ankh on interface localization and scaling hurts — the signal is Ankh-specific.</li>
+  </ul>
+  <div class="take" style="border-left-color:var(--muted)"><b>Open / next:</b> USP-ddG Table-1 numeric confirmation for the frontier callout · optional attention hardening (INTBuilder labels → Ankh at 0.757, DSSP/class stratification, Interactome-sample zoo).</div>
+</section>
+
+<!-- ===== APPENDIX ===== -->
+<section>
+  <div class="kicker">Appendix</div>
+  <h2>Data-leakage explainer</h2>
+  <iframe class="framey" src="assets/leakage_explainer.html" title="Leakage explainer"></iframe>
+</section>
+<section>
+  <div class="kicker">Appendix</div>
+  <h2>Generalization across split tiers</h2>
+  <div class="fig"><img src="assets/ppS_generalization.png" alt="Per-structure Spearman generalization"></div>
+</section>
+
+</div></div>
+<script src="vendor/reveal.js"></script>
+<script>Reveal.initialize({hash:true, width:1280, height:720, margin:0.04, controls:true, progress:true, slideNumber:'c/t'});</script>
+</body>
+</html>

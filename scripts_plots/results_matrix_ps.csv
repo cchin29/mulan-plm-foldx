@@ -1,0 +1,316 @@
+split,model,arm,ps_spearman_T10,n_muts,n_complex_T10,delta_vs_base,spearman_foldavg,spearman_foldavg_sd
+S1102 leaky (per-mut CV),Ankh-large,base,0.3874,1100,24,,,
+S1102 leaky (per-mut CV),Ankh-large,fx_mlp,0.5212,1100,24,+0.1338,,
+S1102 leaky (per-mut CV),ProstT5,base,0.4124,1100,24,,,
+S1102 leaky (per-mut CV),ProstT5,fx_mlp,0.5679,1100,24,+0.1555,,
+S1102 leaky (per-mut CV),SaProt,base,0.3771,1100,24,,,
+S1102 leaky (per-mut CV),SaProt,fx_mlp,0.5465,1100,24,+0.1694,,
+S1102 leaky (per-mut CV),ESM2-3B,base,0.3545,1100,24,,,
+S1102 leaky (per-mut CV),ESM2-3B,fx_mlp,0.5638,1100,24,+0.2093,,
+S1102 leaky (per-mut CV),ESM-C 600M,base,0.3254,1100,24,,,
+S1102 leaky (per-mut CV),ESM-C 600M,fx_mlp,0.5081,1100,24,+0.1827,,
+S1102 leaky (per-mut CV),ESM-C 6B,base,0.4888,1100,24,,,
+S1102 leaky (per-mut CV),ESM-C 6B,fx_scalar,0.5789,1100,24,+0.0901,,
+S1102 leaky (per-mut CV),ESM-C 6B,fx_mlp,0.5636,1100,24,+0.0748,,
+S1102 by-complex,Ankh-large,base,0.2888,1100,24,,,
+S1102 by-complex,Ankh-large,fx_scalar,0.4947,1100,24,+0.2059,,
+S1102 by-complex,Ankh-large,fx_mlp,0.4820,1100,24,+0.1932,,
+S1102 by-complex,ProstT5,base,0.2962,1100,24,,,
+S1102 by-complex,ProstT5,fx_scalar,0.5493,1100,24,+0.2531,,
+S1102 by-complex,ProstT5,fx_mlp,0.4530,1100,24,+0.1568,,
+S1102 by-complex,SaProt,base,0.3249,1100,24,,,
+S1102 by-complex,SaProt,fx_scalar,0.5520,1100,24,+0.2271,,
+S1102 by-complex,SaProt,fx_mlp,0.4913,1100,24,+0.1664,,
+S1102 by-complex,ESM2-3B,base,0.3250,1100,24,,,
+S1102 by-complex,ESM2-3B,fx_scalar,0.4802,1100,24,+0.1552,,
+S1102 by-complex,ESM2-3B,fx_mlp,0.4740,1100,24,+0.1490,,
+S1102 by-complex,ESM-C 600M,base,0.2832,1100,24,,,
+S1102 by-complex,ESM-C 600M,fx_scalar,0.5282,1100,24,+0.2450,,
+S1102 by-complex,ESM-C 600M,fx_mlp,0.4941,1100,24,+0.2109,,
+S1102 by-complex,ESM-C 6B,base,0.4520,1100,24,,,
+S1102 by-complex,ESM-C 6B,fx_scalar,0.5464,1100,24,+0.0944,,
+S1102 by-complex,ESM-C 6B,fx_mlp,0.5511,1100,24,+0.0991,,
+S1102 by-complex,Ankh3-large,base,0.2811,1100,24,,,
+S1102 by-complex,Ankh3-large,fx_scalar,0.5231,1100,24,+0.2420,,
+S1102 by-complex,Ankh3-large,fx_mlp,0.4357,1100,24,+0.1546,,
+S1102 by-complex,Ankh3-xl,base,0.3495,1100,24,,,
+S1102 by-complex,Ankh3-xl,fx_scalar,0.5401,1100,24,+0.1906,,
+S1102 by-complex,Ankh3-xl,fx_mlp,0.4566,1100,24,+0.1071,,
+S1102 by-complex,MINT,base,0.3164,1100,24,,,
+S1102 clustered,Ankh-large,base,0.1265,1100,24,,,
+S1102 clustered,Ankh-large,fx_scalar,0.4264,1100,24,+0.2999,,
+S1102 clustered,Ankh-large,fx_mlp,0.4325,1100,24,+0.3060,,
+S1102 clustered,ProstT5,base,0.0195,1100,24,,,
+S1102 clustered,ProstT5,fx_scalar,0.4323,1100,24,+0.4128,,
+S1102 clustered,ProstT5,fx_mlp,0.4351,1100,24,+0.4156,,
+S1102 clustered,SaProt,base,0.1990,1100,24,,,
+S1102 clustered,SaProt,fx_scalar,0.4564,1100,24,+0.2574,,
+S1102 clustered,SaProt,fx_mlp,0.4712,1100,24,+0.2722,,
+S1102 clustered,ESM2-3B,base,0.2392,1100,24,,,
+S1102 clustered,ESM2-3B,fx_scalar,0.3948,1100,24,+0.1556,,
+S1102 clustered,ESM2-3B,fx_mlp,0.4622,1100,24,+0.2230,,
+S1102 clustered,ESM-C 600M,base,0.2670,1100,24,,,
+S1102 clustered,ESM-C 600M,fx_scalar,0.4602,1100,24,+0.1932,,
+S1102 clustered,ESM-C 600M,fx_mlp,0.3638,1100,24,+0.0968,,
+S1102 clustered,ESM-C 6B,base,0.3697,1100,24,,,
+S1102 clustered,ESM-C 6B,fx_scalar,0.4596,1100,24,+0.0899,,
+S1102 clustered,ESM-C 6B,fx_mlp,0.3843,1100,24,+0.0146,,
+S1102 clustered,Ankh3-large,base,0.1074,1100,24,,,
+S1102 clustered,Ankh3-large,fx_scalar,0.3912,1100,24,+0.2838,,
+S1102 clustered,Ankh3-large,fx_mlp,0.4354,1100,24,+0.3280,,
+S1102 clustered,Ankh3-xl,base,0.1974,1100,24,,,
+S1102 clustered,Ankh3-xl,fx_scalar,0.4702,1100,24,+0.2728,,
+S1102 clustered,Ankh3-xl,fx_mlp,0.4758,1100,24,+0.2784,,
+S1102 clustered,MINT,base,0.0869,1100,24,,,
+fullSK clustered-SP,Ankh-large,base,0.1417,4165,96,,0.1892,0.0515
+fullSK clustered-SP,Ankh-large,fx_scalar,0.4059,4165,96,+0.2642,0.4622,0.0443
+fullSK clustered-SP,Ankh-large,fx_mlp,0.4275,4165,96,+0.2858,0.5050,0.0443
+fullSK clustered-SP,ProstT5,base,0.0537,4165,96,,0.0710,0.0391
+fullSK clustered-SP,ProstT5,fx_scalar,0.4097,4165,96,+0.3560,0.4527,0.0313
+fullSK clustered-SP,ProstT5,fx_mlp,0.4437,4165,96,+0.3900,0.4921,0.0200
+fullSK clustered-SP,SaProt,base,0.0820,4165,96,,0.0536,0.0279
+fullSK clustered-SP,SaProt,fx_scalar,0.3923,4165,96,+0.3103,0.4096,0.0370
+fullSK clustered-SP,SaProt,fx_mlp,0.4270,4165,96,+0.3450,0.4921,0.0236
+fullSK clustered-SP,SaProt-1.3B,base,0.0778,4165,96,,0.1057,0.0338
+fullSK clustered-SP,ESM2-3B,base,0.1193,4165,96,,0.2126,0.1067
+fullSK clustered-SP,ESM2-3B,fx_scalar,0.3949,4165,96,+0.2756,0.4524,0.0409
+fullSK clustered-SP,ESM2-3B,fx_mlp,0.4323,4165,96,+0.3130,0.5012,0.0277
+fullSK clustered-SP,ESM-C 600M,base,0.1522,4165,96,,0.2474,0.1372
+fullSK clustered-SP,ESM-C 600M,fx_scalar,0.3546,4165,96,+0.2024,0.3209,0.1294
+fullSK clustered-SP,ESM-C 600M,fx_mlp,0.4225,4165,96,+0.2703,0.4755,0.0328
+fullSK clustered-SP,ESM-C 6B,base,0.1934,4165,96,,0.2630,0.0864
+fullSK clustered-SP,ESM-C 6B,fx_scalar,0.4166,4165,96,+0.2232,0.4687,0.0371
+fullSK clustered-SP,ESM-C 6B,fx_mlp,0.4463,4165,96,+0.2529,0.5036,0.0297
+fullSK clustered-SP,Ankh3-large,base,0.0920,4165,96,,0.1085,0.0173
+fullSK clustered-SP,Ankh3-large,fx_scalar,0.3883,4165,96,+0.2963,0.4279,0.0157
+fullSK clustered-SP,Ankh3-large,fx_mlp,0.4386,4165,96,+0.3466,0.4759,0.0244
+fullSK clustered-SP,Ankh3-xl,base,0.1438,4165,96,,0.2248,0.1138
+fullSK clustered-SP,Ankh3-xl,fx_scalar,0.4109,4165,96,+0.2671,0.4557,0.0412
+fullSK clustered-SP,Ankh3-xl,fx_mlp,0.4314,4165,96,+0.2876,0.4897,0.0309
+fullSK clustered-SP,AIDO-16B,base,0.1201,4165,96,,0.1451,0.1222
+fullSK clustered-SP,AIDO-16B,fx_scalar,0.3971,4165,96,+0.2770,0.4423,0.0179
+fullSK clustered-SP,AIDO-16B,fx_mlp,0.4283,4165,96,+0.3082,0.4899,0.0225
+fullSK bycomplex-SP,Ankh-large,base,0.2843,4165,96,,0.3893,0.0911
+fullSK bycomplex-SP,Ankh-large,fx_scalar,0.4350,4165,96,+0.1507,0.5339,0.0307
+fullSK bycomplex-SP,Ankh-large,fx_mlp,0.4436,4165,96,+0.1593,0.5630,0.0333
+fullSK bycomplex-SP,ProstT5,base,0.1937,4165,96,,0.3247,0.0846
+fullSK bycomplex-SP,ProstT5,fx_scalar,0.4519,4165,96,+0.2582,0.5499,0.0337
+fullSK bycomplex-SP,ProstT5,fx_mlp,0.4636,4165,96,+0.2699,0.5637,0.0295
+fullSK bycomplex-SP,SaProt,base,0.1205,4165,96,,0.2009,0.0830
+fullSK bycomplex-SP,SaProt,fx_scalar,0.4106,4165,96,+0.2901,0.4681,0.0481
+fullSK bycomplex-SP,SaProt,fx_mlp,0.4348,4165,96,+0.3143,0.5016,0.0540
+fullSK bycomplex-SP,ESM2-3B,base,0.2614,4165,96,,0.3742,0.1190
+fullSK bycomplex-SP,ESM2-3B,fx_scalar,0.4587,4165,96,+0.1973,0.5350,0.0312
+fullSK bycomplex-SP,ESM2-3B,fx_mlp,0.4445,4165,96,+0.1831,0.5543,0.0211
+fullSK bycomplex-SP,ESM-C 600M,base,0.2269,4165,96,,0.3736,0.0871
+fullSK bycomplex-SP,ESM-C 600M,fx_scalar,0.4337,4165,96,+0.2068,0.5293,0.0307
+fullSK bycomplex-SP,ESM-C 600M,fx_mlp,0.4668,4165,96,+0.2399,0.5285,0.0182
+fullSK bycomplex-SP,ESM-C 6B,base,0.3096,4165,96,,0.4234,0.0860
+fullSK bycomplex-SP,ESM-C 6B,fx_scalar,0.4509,4165,96,+0.1413,0.5388,0.0285
+fullSK bycomplex-SP,ESM-C 6B,fx_mlp,0.4566,4165,96,+0.1470,0.5597,0.0095
+fullSK bycomplex-SP,Ankh3-large,base,0.2030,4165,96,,0.3347,0.1321
+fullSK bycomplex-SP,Ankh3-large,fx_scalar,0.4356,4165,96,+0.2326,0.5213,0.0293
+fullSK bycomplex-SP,Ankh3-large,fx_mlp,0.4488,4165,96,+0.2458,0.5530,0.0379
+fullSK bycomplex-SP,Ankh3-xl,base,0.2679,4165,96,,0.4058,0.1039
+fullSK bycomplex-SP,Ankh3-xl,fx_scalar,0.4625,4165,96,+0.1946,0.5574,0.0398
+fullSK bycomplex-SP,Ankh3-xl,fx_mlp,0.4544,4165,96,+0.1865,0.5690,0.0340
+fullSK bycomplex-SP,AIDO-16B,base,0.1803,4165,96,,0.3449,0.1685
+fullSK bycomplex-SP,AIDO-16B,fx_scalar,0.4466,4165,96,+0.2663,0.5367,0.0211
+fullSK bycomplex-SP,AIDO-16B,fx_mlp,0.4350,4165,96,+0.2547,0.5517,0.0301
+fullSK bycomplex-ALL,Ankh-large,base,0.2471,5801,121,,0.4497,0.0177
+fullSK bycomplex-ALL,Ankh-large,fx_scalar,0.4451,5801,121,+0.1980,0.5934,0.0648
+fullSK bycomplex-ALL,Ankh-large,fx_mlp,0.4578,5801,121,+0.2107,0.5631,0.0593
+fullSK bycomplex-ALL,ProstT5,base,0.2000,5801,121,,0.4094,0.0237
+fullSK bycomplex-ALL,ProstT5,fx_scalar,0.4594,5801,121,+0.2594,0.6054,0.0541
+fullSK bycomplex-ALL,ProstT5,fx_mlp,0.4571,5801,121,+0.2571,0.5943,0.0719
+fullSK bycomplex-ALL,SaProt,base,0.1907,5801,121,,0.2327,0.0476
+fullSK bycomplex-ALL,SaProt,fx_scalar,0.4553,5801,121,+0.2646,0.5274,0.0465
+fullSK bycomplex-ALL,SaProt,fx_mlp,0.4453,5801,121,+0.2546,0.5360,0.0312
+fullSK bycomplex-ALL,ESM2-3B,base,0.2507,5801,121,,0.4488,0.0253
+fullSK bycomplex-ALL,ESM2-3B,fx_scalar,0.4490,5801,121,+0.1983,0.5827,0.0468
+fullSK bycomplex-ALL,ESM2-3B,fx_mlp,0.4597,5801,121,+0.2090,0.5980,0.0414
+fullSK bycomplex-ALL,ESM-C 600M,base,0.2666,5801,121,,0.4557,0.0435
+fullSK bycomplex-ALL,ESM-C 600M,fx_scalar,0.4563,5801,121,+0.1897,0.6053,0.0433
+fullSK bycomplex-ALL,ESM-C 600M,fx_mlp,0.4641,5801,121,+0.1975,0.6091,0.0394
+fullSK bycomplex-ALL,ESM-C 6B,base,0.2948,5801,121,,0.4852,0.0218
+fullSK bycomplex-ALL,ESM-C 6B,fx_scalar,0.4444,5801,121,+0.1496,0.5991,0.0450
+fullSK bycomplex-ALL,ESM-C 6B,fx_mlp,0.4794,5801,121,+0.1846,0.6160,0.0546
+fullSK bycomplex-ALL,Ankh3-large,base,0.1579,5801,121,,0.3484,0.1180
+fullSK bycomplex-ALL,Ankh3-large,fx_scalar,0.4063,5801,121,+0.2484,0.5427,0.0911
+fullSK bycomplex-ALL,Ankh3-large,fx_mlp,0.4421,5801,121,+0.2842,0.5815,0.0799
+fullSK bycomplex-ALL,Ankh3-xl,base,0.2457,5801,121,,0.4705,0.0447
+fullSK bycomplex-ALL,Ankh3-xl,fx_scalar,0.4584,5801,121,+0.2127,0.6128,0.0625
+fullSK bycomplex-ALL,Ankh3-xl,fx_mlp,0.4393,5801,121,+0.1936,0.6029,0.0638
+fullSK bycomplex-ALL,AIDO-16B,base,0.2596,5801,121,,0.4523,0.0184
+fullSK bycomplex-ALL,AIDO-16B,fx_scalar,0.4567,5801,121,+0.1971,0.5762,0.0629
+fullSK bycomplex-ALL,AIDO-16B,fx_mlp,0.4497,5801,121,+0.1901,0.5940,0.0696
+fullSK clustered-ALL,Ankh-large,base,0.1094,5801,121,,0.2143,0.0308
+fullSK clustered-ALL,Ankh-large,fx_scalar,0.4177,5801,121,+0.3083,0.5290,0.0297
+fullSK clustered-ALL,Ankh-large,fx_mlp,0.4100,5801,121,+0.3006,0.5362,0.0060
+fullSK clustered-ALL,ProstT5,base,0.0608,5801,121,,0.1003,0.0339
+fullSK clustered-ALL,ProstT5,fx_scalar,0.4151,5801,121,+0.3543,0.5099,0.0272
+fullSK clustered-ALL,ProstT5,fx_mlp,0.4220,5801,121,+0.3612,0.5401,0.0282
+fullSK clustered-ALL,SaProt,base,0.1385,5801,121,,0.1247,0.0423
+fullSK clustered-ALL,SaProt,fx_scalar,0.4145,5801,121,+0.2760,0.4911,0.0130
+fullSK clustered-ALL,SaProt,fx_mlp,0.4234,5801,121,+0.2849,0.5285,0.0236
+fullSK clustered-ALL,ESM2-3B,base,0.1488,5801,121,,0.2727,0.1065
+fullSK clustered-ALL,ESM2-3B,fx_scalar,0.4018,5801,121,+0.2530,0.5026,0.0190
+fullSK clustered-ALL,ESM2-3B,fx_mlp,0.4060,5801,121,+0.2572,0.5461,0.0292
+fullSK clustered-ALL,ESM-C 600M,base,0.0839,5801,121,,0.2116,0.0944
+fullSK clustered-ALL,ESM-C 600M,fx_scalar,0.3870,5801,121,+0.3031,0.5127,0.0387
+fullSK clustered-ALL,ESM-C 600M,fx_mlp,0.3493,5801,121,+0.2654,0.4197,0.1133
+fullSK clustered-ALL,ESM-C 6B,base,0.2058,5801,121,,0.3445,0.1034
+fullSK clustered-ALL,ESM-C 6B,fx_scalar,0.4144,5801,121,+0.2086,0.5175,0.0466
+fullSK clustered-ALL,ESM-C 6B,fx_mlp,0.4220,5801,121,+0.2162,0.5468,0.0419
+fullSK clustered-ALL,Ankh3-large,base,0.1546,5801,121,,0.2309,0.0183
+fullSK clustered-ALL,Ankh3-large,fx_scalar,0.3950,5801,121,+0.2404,0.4984,0.0082
+fullSK clustered-ALL,Ankh3-large,fx_mlp,0.4207,5801,121,+0.2661,0.5442,0.0253
+fullSK clustered-ALL,Ankh3-xl,base,0.1603,5801,121,,0.2540,0.0427
+fullSK clustered-ALL,Ankh3-xl,fx_scalar,0.4125,5801,121,+0.2522,0.5099,0.0273
+fullSK clustered-ALL,Ankh3-xl,fx_mlp,0.4106,5801,121,+0.2503,0.5420,0.0272
+fullSK clustered-ALL,AIDO-16B,base,0.1565,5801,121,,0.2054,0.0563
+fullSK clustered-ALL,AIDO-16B,fx_scalar,0.4156,5801,121,+0.2591,0.5147,0.0035
+fullSK clustered-ALL,AIDO-16B,fx_mlp,0.4040,5801,121,+0.2475,0.5377,0.0150
+fullSK clustered-ALL+aug,Ankh-large,base,0.1649,5801,121,,0.2415,0.0019
+fullSK clustered-ALL+aug,Ankh-large,fx_scalar,0.3936,5801,121,+0.2287,0.5143,0.0297
+fullSK clustered-ALL+aug,Ankh-large,fx_mlp,0.4087,5801,121,+0.2438,0.5232,0.0213
+fullSK clustered-ALL+aug,ESM-C 6B,base,0.1738,5801,121,,0.2832,0.1206
+fullSK clustered-ALL+aug,ESM-C 6B,fx_scalar,0.3954,5801,121,+0.2216,0.5187,0.0330
+fullSK clustered-ALL+aug,ESM-C 6B,fx_mlp,0.4159,5801,121,+0.2421,0.5420,0.0248
+fullSK clustered-ALL+aug,Ankh3-large,base,0.1556,5801,121,,0.2131,0.0158
+fullSK clustered-ALL+aug,Ankh3-xl,base,0.1554,5801,121,,0.2332,0.0395
+fullSK clustered-ALL+aug,AIDO-16B,base,0.1104,5801,121,,0.1693,0.0232
+fullSK clustered-ALL+aug,AIDO-16B,fx_scalar,0.4020,5801,121,+0.2916,0.5077,0.0110
+fullSK clustered-ALL+aug,AIDO-16B,fx_mlp,0.4029,5801,121,+0.2925,0.5314,0.0211
+fullSK CATH-all+aug,Ankh-large,base,0.2621,687,13,,0.4775,
+fullSK CATH-all+aug,Ankh-large,fx_scalar,0.4366,687,13,+0.1745,0.6255,
+fullSK CATH-all+aug,Ankh-large,fx_mlp,0.3897,687,13,+0.1276,0.5988,
+fullSK CATH-all+aug,ESM-C 6B,base,0.3274,687,13,,0.5049,
+fullSK CATH-all+aug,ESM-C 6B,fx_scalar,0.4630,687,13,+0.1356,0.6168,
+fullSK CATH-all+aug,ESM-C 6B,fx_mlp,0.4451,687,13,+0.1177,0.6164,
+fullSK CATH-all+aug,AIDO-16B,base,0.2205,687,13,,0.3142,
+fullSK CATH-all+aug,AIDO-16B,fx_scalar,0.3492,687,13,+0.1287,0.5370,
+fullSK CATH-all+aug,AIDO-16B,fx_mlp,0.3898,687,13,+0.1693,0.6119,
+fullSK MP-clustered,Ankh-large,base,0.0914,1636,43,,,
+fullSK MP-clustered,Ankh-large,fx_scalar,0.3307,1636,43,+0.2393,,
+fullSK MP-clustered,Ankh-large,fx_mlp,0.3550,1636,43,+0.2636,,
+fullSK MP-clustered,ProstT5,base,0.0668,1636,43,,,
+fullSK MP-clustered,ProstT5,fx_scalar,0.3435,1636,43,+0.2767,,
+fullSK MP-clustered,ProstT5,fx_mlp,0.3418,1636,43,+0.2750,,
+fullSK MP-clustered,SaProt,base,-0.0083,1636,43,,,
+fullSK MP-clustered,SaProt,fx_scalar,0.2263,1636,43,+0.2346,,
+fullSK MP-clustered,SaProt,fx_mlp,0.1944,1636,43,+0.2027,,
+fullSK MP-clustered,ESM-C 6B,base,0.1374,1636,43,,,
+fullSK MP-clustered,ESM-C 6B,fx_scalar,0.2697,1636,43,+0.1323,,
+fullSK MP-clustered,ESM-C 6B,fx_mlp,0.3197,1636,43,+0.1823,,
+fullSK MP-clustered,Ankh3-large,base,0.2010,1636,43,,,
+fullSK MP-clustered,Ankh3-large,fx_scalar,0.3087,1636,43,+0.1077,,
+fullSK MP-clustered,Ankh3-large,fx_mlp,0.2877,1636,43,+0.0867,,
+fullSK MP-clustered,Ankh3-xl,base,0.1445,1636,43,,,
+fullSK MP-clustered,Ankh3-xl,fx_scalar,0.2726,1636,43,+0.1281,,
+fullSK MP-clustered,Ankh3-xl,fx_mlp,0.3245,1636,43,+0.1800,,
+fullSK MP-clustered,AIDO-16B,base,0.0532,1636,43,,,
+fullSK MP-clustered,AIDO-16B,fx_scalar,0.2875,1636,43,+0.2343,,
+fullSK MP-clustered,AIDO-16B,fx_mlp,0.1723,1636,43,+0.1191,,
+fullSK MP-bycomplex,Ankh-large,base,0.3402,1636,43,,,
+fullSK MP-bycomplex,Ankh-large,fx_scalar,0.3967,1636,43,+0.0565,,
+fullSK MP-bycomplex,Ankh-large,fx_mlp,0.3914,1636,43,+0.0512,,
+fullSK MP-bycomplex,ProstT5,base,0.2765,1636,43,,,
+fullSK MP-bycomplex,ProstT5,fx_scalar,0.4163,1636,43,+0.1398,,
+fullSK MP-bycomplex,ProstT5,fx_mlp,0.4442,1636,43,+0.1677,,
+fullSK MP-bycomplex,SaProt,base,0.1758,1636,43,,,
+fullSK MP-bycomplex,SaProt,fx_scalar,0.3078,1636,43,+0.1320,,
+fullSK MP-bycomplex,SaProt,fx_mlp,0.2685,1636,43,+0.0927,,
+fullSK MP-bycomplex,ESM-C 6B,base,0.3743,1636,43,,,
+fullSK MP-bycomplex,ESM-C 6B,fx_scalar,0.3905,1636,43,+0.0162,,
+fullSK MP-bycomplex,ESM-C 6B,fx_mlp,0.4232,1636,43,+0.0489,,
+fullSK MP-bycomplex,Ankh3-large,base,0.2722,1636,43,,,
+fullSK MP-bycomplex,Ankh3-large,fx_scalar,0.3444,1636,43,+0.0722,,
+fullSK MP-bycomplex,Ankh3-large,fx_mlp,0.4148,1636,43,+0.1426,,
+fullSK MP-bycomplex,Ankh3-xl,base,0.3394,1636,43,,,
+fullSK MP-bycomplex,Ankh3-xl,fx_scalar,0.4047,1636,43,+0.0653,,
+fullSK MP-bycomplex,Ankh3-xl,fx_mlp,0.4325,1636,43,+0.0931,,
+fullSK MP-bycomplex,AIDO-16B,base,0.2633,1636,43,,,
+fullSK MP-bycomplex,AIDO-16B,fx_scalar,0.3569,1636,43,+0.0936,,
+fullSK MP-bycomplex,AIDO-16B,fx_mlp,0.3234,1636,43,+0.0601,,
+fullSK CATH-all,Ankh-large,base,0.3308,687,13,,0.5444,
+fullSK CATH-all,Ankh-large,fx_scalar,0.4210,687,13,+0.0902,0.6418,
+fullSK CATH-all,Ankh-large,fx_mlp,0.3870,687,13,+0.0562,0.5943,
+fullSK CATH-all,ProstT5,base,0.0704,687,13,,0.3494,
+fullSK CATH-all,ProstT5,fx_scalar,0.4150,687,13,+0.3446,0.5836,
+fullSK CATH-all,ProstT5,fx_mlp,0.3983,687,13,+0.3279,0.5904,
+fullSK CATH-all,SaProt,base,0.2285,687,13,,0.3652,
+fullSK CATH-all,SaProt,fx_scalar,0.3982,687,13,+0.1697,0.5733,
+fullSK CATH-all,SaProt,fx_mlp,0.3970,687,13,+0.1685,0.5948,
+fullSK CATH-all,ESM2-3B,base,0.2427,687,13,,0.4451,
+fullSK CATH-all,ESM2-3B,fx_scalar,0.3748,687,13,+0.1321,0.5920,
+fullSK CATH-all,ESM2-3B,fx_mlp,0.3522,687,13,+0.1095,0.5785,
+fullSK CATH-all,ESM-C 600M,base,0.1172,687,13,,0.4432,
+fullSK CATH-all,ESM-C 600M,fx_scalar,0.3513,687,13,+0.2341,0.5967,
+fullSK CATH-all,ESM-C 600M,fx_mlp,0.3703,687,13,+0.2531,0.6013,
+fullSK CATH-all,ESM-C 6B,base,0.3596,687,13,,0.5220,
+fullSK CATH-all,ESM-C 6B,fx_scalar,0.4378,687,13,+0.0782,0.6137,
+fullSK CATH-all,ESM-C 6B,fx_mlp,0.4310,687,13,+0.0714,0.6130,
+fullSK CATH-all,Ankh3-large,base,0.1480,687,13,,0.3086,
+fullSK CATH-all,Ankh3-large,fx_scalar,0.3552,687,13,+0.2072,0.5693,
+fullSK CATH-all,Ankh3-large,fx_mlp,0.3922,687,13,+0.2442,0.5651,
+fullSK CATH-all,Ankh3-xl,base,0.2664,687,13,,0.5423,
+fullSK CATH-all,Ankh3-xl,fx_scalar,0.4141,687,13,+0.1477,0.6062,
+fullSK CATH-all,Ankh3-xl,fx_mlp,0.4145,687,13,+0.1481,0.5999,
+fullSK CATH-all,AIDO-16B,base,0.2483,687,13,,0.3678,
+fullSK CATH-all,AIDO-16B,fx_scalar,0.4172,687,13,+0.1689,0.5857,
+fullSK CATH-all,AIDO-16B,fx_mlp,0.3767,687,13,+0.1284,0.5938,
+fullSK CATH-single,Ankh-large,base,0.3211,421,11,,,
+fullSK CATH-single,Ankh-large,fx_scalar,0.4482,421,11,+0.1271,,
+fullSK CATH-single,Ankh-large,fx_mlp,0.4825,421,11,+0.1614,,
+fullSK CATH-single,ProstT5,base,0.1646,421,11,,,
+fullSK CATH-single,ProstT5,fx_scalar,0.4415,421,11,+0.2769,,
+fullSK CATH-single,ProstT5,fx_mlp,0.4344,421,11,+0.2698,,
+fullSK CATH-single,SaProt,base,0.1258,421,11,,,
+fullSK CATH-single,SaProt,fx_scalar,0.4084,421,11,+0.2826,,
+fullSK CATH-single,SaProt,fx_mlp,0.4372,421,11,+0.3114,,
+fullSK CATH-single,ESM2-3B,base,0.2087,421,11,,,
+fullSK CATH-single,ESM2-3B,fx_scalar,0.4183,421,11,+0.2096,,
+fullSK CATH-single,ESM2-3B,fx_mlp,0.4301,421,11,+0.2214,,
+fullSK CATH-single,ESM-C 600M,base,0.1383,421,11,,,
+fullSK CATH-single,ESM-C 600M,fx_scalar,0.3711,421,11,+0.2328,,
+fullSK CATH-single,ESM-C 600M,fx_mlp,0.4375,421,11,+0.2992,,
+fullSK CATH-single,ESM-C 6B,base,0.3771,421,11,,,
+fullSK CATH-single,ESM-C 6B,fx_scalar,0.4563,421,11,+0.0792,,
+fullSK CATH-single,ESM-C 6B,fx_mlp,0.4952,421,11,+0.1181,,
+fullSK CATH-single,Ankh3-large,base,0.0512,421,11,,,
+fullSK CATH-single,Ankh3-large,fx_scalar,0.3816,421,11,+0.3304,,
+fullSK CATH-single,Ankh3-large,fx_mlp,0.4334,421,11,+0.3822,,
+fullSK CATH-single,Ankh3-xl,base,0.2625,421,11,,,
+fullSK CATH-single,Ankh3-xl,fx_scalar,0.4331,421,11,+0.1706,,
+fullSK CATH-single,Ankh3-xl,fx_mlp,0.4742,421,11,+0.2117,,
+fullSK CATH-single,AIDO-16B,base,0.2193,421,11,,,
+fullSK CATH-single,AIDO-16B,fx_scalar,0.4202,421,11,+0.2009,,
+fullSK CATH-single,AIDO-16B,fx_mlp,0.4246,421,11,+0.2053,,
+fullSK CATH-multiple,Ankh-large,base,0.4444,266,5,,,
+fullSK CATH-multiple,Ankh-large,fx_scalar,0.5558,266,5,+0.1114,,
+fullSK CATH-multiple,Ankh-large,fx_mlp,0.5375,266,5,+0.0931,,
+fullSK CATH-multiple,ProstT5,base,0.2772,266,5,,,
+fullSK CATH-multiple,ProstT5,fx_scalar,0.5679,266,5,+0.2907,,
+fullSK CATH-multiple,ProstT5,fx_mlp,0.5776,266,5,+0.3004,,
+fullSK CATH-multiple,SaProt,base,0.4495,266,5,,,
+fullSK CATH-multiple,SaProt,fx_scalar,0.5425,266,5,+0.0930,,
+fullSK CATH-multiple,SaProt,fx_mlp,0.5966,266,5,+0.1471,,
+fullSK CATH-multiple,ESM2-3B,base,0.6043,266,5,,,
+fullSK CATH-multiple,ESM2-3B,fx_scalar,0.5401,266,5,-0.0642,,
+fullSK CATH-multiple,ESM2-3B,fx_mlp,0.5252,266,5,-0.0791,,
+fullSK CATH-multiple,ESM-C 600M,base,0.3743,266,5,,,
+fullSK CATH-multiple,ESM-C 600M,fx_scalar,0.5131,266,5,+0.1388,,
+fullSK CATH-multiple,ESM-C 600M,fx_mlp,0.5763,266,5,+0.2020,,
+fullSK CATH-multiple,ESM-C 6B,base,0.4687,266,5,,,
+fullSK CATH-multiple,ESM-C 6B,fx_scalar,0.5258,266,5,+0.0571,,
+fullSK CATH-multiple,ESM-C 6B,fx_mlp,0.5094,266,5,+0.0407,,
+fullSK CATH-multiple,Ankh3-large,base,0.4287,266,5,,,
+fullSK CATH-multiple,Ankh3-large,fx_scalar,0.5814,266,5,+0.1527,,
+fullSK CATH-multiple,Ankh3-large,fx_mlp,0.5766,266,5,+0.1479,,
+fullSK CATH-multiple,Ankh3-xl,base,0.5866,266,5,,,
+fullSK CATH-multiple,Ankh3-xl,fx_scalar,0.5732,266,5,-0.0134,,
+fullSK CATH-multiple,Ankh3-xl,fx_mlp,0.5726,266,5,-0.0140,,
+fullSK CATH-multiple,AIDO-16B,base,0.3198,266,5,,,
+fullSK CATH-multiple,AIDO-16B,fx_scalar,0.5579,266,5,+0.2381,,
+fullSK CATH-multiple,AIDO-16B,fx_mlp,0.5834,266,5,+0.2636,,

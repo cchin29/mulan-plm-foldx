@@ -1,0 +1,41 @@
+
+==== per-structure Spearman (T>=10) with 95% cluster-bootstrap CI ====
+                 arm    mean  [  2.5%, 97.5%]
+  consensus_foldxmlp   0.586  [ 0.503, 0.665]
+    prostt5_foldxmlp   0.568  [ 0.491, 0.639]
+       esm2_foldxmlp   0.564  [ 0.480, 0.640]
+     esmc6b_foldxmlp   0.564  [ 0.474, 0.647]
+     saprot_foldxmlp   0.547  [ 0.449, 0.638]
+       ankh_foldxmlp   0.521  [ 0.419, 0.615]
+   esmc600m_foldxmlp   0.508  [ 0.400, 0.610]
+         esmc6b_base   0.489  [ 0.377, 0.596]
+          esmc6b_aug   0.464  [ 0.343, 0.577]
+       consensus_aug   0.450  [ 0.309, 0.583]
+      consensus_base   0.446  [ 0.304, 0.580]
+         prostt5_aug   0.435  [ 0.297, 0.559]
+            esm2_aug   0.422  [ 0.269, 0.567]
+        prostt5_base   0.412  [ 0.268, 0.550]
+           ankh_base   0.387  [ 0.242, 0.521]
+          saprot_aug   0.382  [ 0.221, 0.533]
+         saprot_base   0.377  [ 0.212, 0.532]
+        esmc600m_aug   0.355  [ 0.209, 0.494]
+           esm2_base   0.354  [ 0.189, 0.503]
+            ankh_aug   0.332  [ 0.190, 0.468]
+       esmc600m_base   0.325  [ 0.179, 0.469]
+        mint_complex   0.310  [ 0.157, 0.462]
+           mint_mono   0.285  [ 0.116, 0.444]
+
+==== paired contrasts (Δ = A − B, shared complex resample) ====
+                          contrast   dmean  [  2.5%, 97.5%]  P(>0)
+         esm2_foldxmlp - esm2_base   0.209  [ 0.115, 0.312]  1.000
+ esmc600m_foldxmlp - esmc600m_base   0.183  [ 0.102, 0.274]  1.000
+   prostt5_foldxmlp - prostt5_base   0.155  [ 0.058, 0.254]  0.999
+     saprot_foldxmlp - saprot_base   0.169  [ 0.086, 0.259]  1.000
+         ankh_foldxmlp - ankh_base   0.134  [ 0.070, 0.205]  1.000
+     esmc6b_foldxmlp - esmc6b_base   0.075  [ 0.010, 0.146]  0.990
+consensus_foldxmlp - consensus_base   0.140  [ 0.061, 0.223]  1.000
+consensus_foldxmlp - esmc6b_foldxmlp   0.022  [-0.031, 0.086]  0.774
+     esmc6b_foldxmlp - esmc6b_base   0.075  [ 0.010, 0.146]  0.990
+     mint_complex - consensus_base  -0.136  [-0.216,-0.061]  0.000
+          mint_complex - mint_mono   0.025  [-0.056, 0.101]  0.730
+        esmc6b_base - mint_complex   0.179  [ 0.081, 0.276]  1.000

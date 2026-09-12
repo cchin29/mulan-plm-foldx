@@ -1,0 +1,133 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mulan-plm-foldx"
+version = "0.1.0"
+description = "MuLAN fork: PLM + FoldX protein-protein binding ddG under leakage-controlled evaluation"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "CC-BY-NC-SA-4.0" }
+authors = [{ name = "Connor Chin", email = "cchin29@stanford.edu" }]
+keywords = ["protein-protein interaction", "ddG", "SKEMPI", "protein language model", "FoldX"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    # CC BY-NC-SA 4.0 is not an OSI-approved license; do not add an OSI classifier here,
+    # and do not publish this distribution to PyPI under a permissive classifier.
+    "License :: Free for non-commercial use",
+    "Programming Language :: Python :: 3",
+]
+
+# Base (training) environment. The T5/Ankh and ProstT5 paths are validated only against
+# 4.27-4.44 and every training run here used 4.44.x, but the requirement carries NO upper bound
+# and `mulan.plm.check_transformers` only WARNS -- so a fresh install resolves transformers 5.x,
+# imports fine, and can diverge quietly. Pin transformers explicitly in any environment whose
+# numbers you intend to compare against the ones reported here. Installing the `[struct]` extra
+# does not do it for you: foldenv 0.1.0 pins transformers <4.46, which resolves to 4.45.2 --
+# closer than 5.x, but one minor release past the validated range, and enough to trip the
+# warning.
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "tqdm",
+    "h5py",
+    "scikit-learn",
+    "torch>=2.0",
+    "transformers>=4.27",
+    "accelerate",
+    "sentencepiece",
+    # The FoldX score channel's producer half, extracted to its own project (MIT for the code,
+    # CC BY 4.0 for the SKEMPI-derived energies) so it is usable outside this non-commercial
+    # fork. Pure stdlib.
+    #
+    # A git URL, not `skempi-foldx==0.1.0`, for the same reason as `struct` below, and it is the
+    # same reason: skempi-foldx IS on PyPI, but only from 0.2.2 (2026-09-09). 0.1.0 predates that
+    # first upload and a PyPI version cannot be added after the fact, so there is no
+    # `skempi-foldx==0.1.0` to resolve and a bare requirement makes the README's own
+    # `pip install .` fail at resolution with "No matching distribution found". Direct references
+    # are fine here -- this distribution is not PyPI-publishable anyway (see the license
+    # classifier above).
+    #
+    # Pinned, not tracking the default branch. What this supplies here is the reader API, the
+    # term order and the INTRACTABLE registry -- NOT the energies actually scored, which come from
+    # the vendored data/foldx/ via a caller-supplied StoreSpec path. But term order is the column
+    # order of a decomposed split file, INTRACTABLE is asserted equal to curation's own block
+    # list by a test, and 0.2.0 changes the store (interface-collapse fix, union-list rebuild), as
+    # does 0.2.2, which republishes that same store on PyPI.
+    # Unpinned, any of those could move under a fresh install with no commit here.
+    #
+    # A tag is a MUTABLE ref: `git tag -f` would silently redirect this. A full commit SHA is the
+    # only immutable pin; using the tag trades that for readability, deliberately.
+    "skempi-foldx @ git+https://github.com/cchin29/skempi-foldx@v0.1.0",
+]
+
+[project.optional-dependencies]
+# ProstT5 structure-mode runs: pure-Python Foldseek-3Di encoder.
+struct3di = ["mini3di"]
+# NOTE: there is deliberately no `esmc` extra. ESM-C / ESM3 embedding GENERATION runs in its own
+# environment via requirements-esmc.txt (esm==3.2.3, transformers==4.48.1). It cannot be an extra
+# of this package: the SDK pins transformers<4.48.2, training runs 4.44.x, and an extra is ANDed
+# with the base requirements -- so any version of it either fails to resolve or forces one of the
+# two jobs onto a transformers it was never run with. Training never imports `esm`; it reads
+# cached embeddings. See docs/EMBEDDING_SETUP.md §0.
+# MINT multi-chain PLM. Needs the MINT source + checkpoint out of band; own virtualenv.
+mint = ["einops"]
+# Per-residue structural context (RSA / secondary structure / contacts). This lived here as
+# `mulan.structural_context` until it was extracted; it is now maintained separately and is a
+# dependency, not a subpackage.
+#
+# A git URL because of the pin, not because foldenv is unpublished: it is on PyPI, but only from
+# 0.1.1, and this is 0.1.0 -- the version the structural fields here were produced against. There
+# is no `foldenv==0.1.0` to resolve, so the tag is the only way to name it.
+#
+# Not tracking a later release either. foldenv 0.2.0 moved torch and transformers out of the core
+# requirements into a `[plm]` extra and put the transformers major.minor into the embedding cache
+# key, so adopting it changes both what a fresh install resolves and which cached tensors are
+# found. That is a re-run to validate, not a version bump.
+struct = ["foldenv @ git+https://github.com/cchin29/foldenv@v0.1.0"]
+# Figure generation.
+plots = ["matplotlib"]
+dev = ["pytest", "pytest-cov"]
+
+[project.urls]
+Homepage = "https://github.com/cchin29/mulan-plm-foldx"
+Repository = "https://github.com/cchin29/mulan-plm-foldx"
+"Upstream (canonical)" = "https://gitlab.lcqb.upmc.fr/lombardi/mulan"
+"Upstream (mirror)" = "https://github.com/GianLMB/mulan"
+"Upstream paper" = "https://doi.org/10.1101/2024.08.24.609515"
+
+[project.scripts]
+"plm-embed" = "mulan.scripts.generate_embeddings:main"
+"mulan-predict" = "mulan.scripts.predict:main"
+"mulan-att" = "mulan.scripts.extract_attentions:main"
+"mulan-landscape" = "mulan.scripts.compute_landscape:main"
+"mulan-train" = "mulan.scripts.train:main"
+
+# Current on-disk layout, inherited from upstream: the package is `mulan/` and the CLI
+# modules live in `scripts/`, remapped to `mulan.scripts`. WP3-WP5 move this to a src/
+# layout with mulan.plm / mulan.foldx / mulan.splits / mulan.metrics subpackages.
+[tool.setuptools]
+# Explicit package list, not `packages.find`. Discovery scans for DIRECTORIES matching the
+# include pattern, and the CLI package is the directory `scripts/` remapped to `mulan.scripts` —
+# so `include = ["mulan*"]` silently omitted it and every console script installed broken.
+packages = [
+    "mulan",
+    "mulan.foldx",
+    "mulan.metrics",
+    "mulan.plm",
+    "mulan.plm.backends",
+    "mulan.scripts",
+    "mulan.splits",
+]
+package-dir = { "mulan" = "mulan", "mulan.scripts" = "scripts" }
+
+[tool.pytest.ini_options]
+# `tests/` only. The suites under experiments/ need optional extras (foldenv) or a local
+# scratch/ tree, so including them made a bare `pytest` fail at COLLECTION — before running a
+# single test. Run those explicitly when their inputs are present.
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"

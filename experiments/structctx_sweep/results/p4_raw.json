@@ -1,0 +1,26 @@
+[
+  {
+    "table": "tien2013_theoretical",
+    "ss3_agreement": 0.9962,
+    "rsa_pearson": 0.9841,
+    "rsa_mae": 0.0266,
+    "n_compared": 263,
+    "passes_0.85_gate": true
+  },
+  {
+    "table": "tien2013_empirical",
+    "ss3_agreement": 0.9962,
+    "rsa_pearson": 0.9842,
+    "rsa_mae": 0.0279,
+    "n_compared": 263,
+    "passes_0.85_gate": true
+  },
+  {
+    "table": "sander_rost1994",
+    "ss3_agreement": 0.9962,
+    "rsa_pearson": 0.9841,
+    "rsa_mae": 0.0315,
+    "n_compared": 263,
+    "passes_0.85_gate": true
+  }
+]

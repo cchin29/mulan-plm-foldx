@@ -1,0 +1,61 @@
+# MuLAN ΔΔG scaling data — S1102, from-scratch, mutation-based 10-fold CV.
+# Source: RESULTS.md master table (§5, §5a, §11, §12) + runtime/footprint table (§7). Pearson r (PCC) vs encoder params.
+# TO ADD A RESULT: append a row and re-run `python plot_ddg_scaling.py`.
+#   series      : seq_cv10 (sequence-only CV) | aug_cv10 (+Tier-1 aug) | reference | pending
+#   status      : measured | reference | pending
+#   pcc/pcc_std : leave BLANK for pending rows (draws a vertical placeholder at `params`)
+#   label       : 1 = draw the big inline model label (like the reference figure); 0 = legend only
+#   dx,dy       : label offset in points (nudge to avoid overlaps); also nudges the pending label
+#   peak_ram_gb : MEASURED peak RAM for embedding generation (GB); blank = not measured. Drives the cost curve.
+#   emb_gen_min : embedding-generation wall time (minutes, 1444 seqs) on the PRIMARY platform (`platform` col); blank = not logged
+#   lineage     : model FAMILY tag. Rows sharing a non-blank tag are auto-connected by a line
+#                 (param-sorted), the reference-figure "within-family scaling" sweep. Blank = no line.
+#                 e.g. give ESM C 300M / 600M / 6B all lineage=esm_c to draw the ESM C scaling curve.
+#   emb_dim     : per-residue embedding vector length; shown on a 2nd line under the inline label. Blank = omit.
+#   est_ram_gb  : ESTIMATED peak RAM (GB) for a PENDING row — annotates its cost-panel placeholder. Blank otherwise.
+#   platform    : where this row's `emb_gen_min`/`peak_ram_gb` were MEASURED. Existing CPU runs use the tag
+#                 `Linux 40c CPU / 62G` (the 40-thread Linux driver box, 62 GB RAM ceiling). Blank = not
+#                 measured on that box (e.g. rows with no logged runtime/RAM, or MPS-only rows).
+#   emb_gen_min_mps : embedding-gen wall time (minutes, 1444 seqs) measured on Apple M4 Pro / 48 GB / MPS
+#                 (a SECOND platform, distinct from `platform`/`emb_gen_min`). Blank = not measured on MPS.
+#   run_platform : where this row's CV10 (the pcc/pcc_std number itself) was TRAINED — mps
+#                 (Apple M4 Pro / MPS) | linux (the Linux 40c CPU box) | reference (paper
+#                 number, not a run) | pending (no run yet). This is INDEPENDENT of
+#                 `platform`/`emb_gen_min_mps` above, which time *embedding generation* only
+#                 (e.g. ProstT5 has an MPS embedding-gen time but its CV10 itself ran on
+#                 Linux, so run_platform=linux). Drives the figure's seq/aug marker color:
+#                 mps -> magenta family, linux -> blue family.
+#   cv10_runtime_hhmm : this row's CV10 TRAINING wall-clock (the run that produced pcc/
+#                 pcc_std), formatted "H:MM" (e.g. "8:34" = 8h34m). Source: RESULTS.md
+#                 master table Runtime column (§5-§15). Two pairs share one wall-clock
+#                 split across two models (ProstT5/Ankh base = 8:34†, ProstT5/Ankh aug =
+#                 15:13‡, same †/‡ footnotes as the table) — each row still lists the
+#                 shared value since that's the true elapsed time charged to it. Blank
+#                 for the `reference` (paper) row and any `pending` row (no run yet).
+#   rt_dx,rt_dy : offset (points) for the small grey cv10_runtime_hhmm annotation, same
+#                 nudge idea as dx/dy but for the runtime text instead of the bold model
+#                 label. Blank -> default (base points: 11pt to the left; aug diamonds:
+#                 11pt to the right; both at marker height). Only set when the default
+#                 would collide with that point's own bold label or a neighbor's.
+model,params,pcc,pcc_std,series,status,label,dx,dy,peak_ram_gb,emb_gen_min,lineage,emb_dim,est_ram_gb,platform,emb_gen_min_mps,run_platform,cv10_runtime_hhmm,rt_dx,rt_dy
+ProstT5 (AA),1.21e9,0.805,0.055,seq_cv10,measured,1,0,-52,4.9,19,,1024,,Linux 40c CPU / 62G,2.0,linux,8:34,,
+Ankh-large,1.15e9,0.832,0.057,seq_cv10,measured,1,0,16,4.7,,Ankh,1536,,Linux 40c CPU / 62G,,linux,8:34,-11,
+ESM2-3B,2.8e9,0.816,0.054,seq_cv10,measured,1,8,-56,12,37,ESM2,2560,,Linux 40c CPU / 62G,,linux,8:00,-11,
+ESM C 6B,6.0e9,0.859,0.069,seq_cv10,measured,1,-28,15,29,69.7,ESM C,2560,,Linux 40c CPU / 62G,,linux,8:00,,
+ProstT5 (AA) +aug,1.21e9,0.819,0.060,aug_cv10,measured,0,0,0,,,,1024,,,,linux,15:13,,
+Ankh-large +aug,1.15e9,0.838,0.054,aug_cv10,measured,0,0,0,,,,1536,,,,linux,15:13,-11,
+ESM C 6B +aug,6.0e9,0.878,0.043,aug_cv10,measured,0,0,0,,,,2560,,,,linux,17:30,,
+MuLAN-Ankh (paper),1.15e9,0.868,,reference,reference,0,0,0,,,,1536,,,,reference,,,
+AIDO.Protein-16B,1.6e10,0.828,0.046,seq_cv10,measured,1,-24,26,32,311,,2304,,Linux 40c CPU / 62G,,linux,7:18,-11,
+AIDO.Protein-16B +aug,1.6e10,0.836,0.057,aug_cv10,measured,0,0,0,,,,2304,,,,linux,,,
+Ankh3-large,1.15e9,0.823,0.057,seq_cv10,measured,1,-52,-40,,,Ankh,1536,,,2.0,mps,1:00,-11,
+Ankh3-xl,3.48e9,0.831,0.056,seq_cv10,measured,1,0,16,,,Ankh,2560,,,10.1,mps,1:42,,
+Ankh3-large +aug,1.15e9,0.849,0.042,aug_cv10,measured,0,0,0,,,,1536,,,,mps,2:00,-11,
+Ankh3-xl +aug,3.48e9,0.855,0.043,aug_cv10,measured,0,0,0,,,,2560,,,,mps,3:24,,
+SaProt-650M\n(WT-3Di),6.5e8,0.842,0.050,seq_cv10,measured,1,-30,44,,,SaProt,1280,,,,mps,0:50,-11,
+SaProt-650M (WT-3Di) +aug,6.5e8,0.852,0.051,aug_cv10,measured,0,0,0,,,,1280,,,,mps,1:30,-11,
+ESM2-3B +aug,2.8e9,0.824,0.061,aug_cv10,measured,0,0,0,,,,2560,,,,mps,2:30,-11,
+SaProt-1.3B\n(AFDB),1.3e9,0.837,0.061,seq_cv10,measured,1,0,56,,,SaProt,1280,,,,mps,0:45,,
+SaProt-1.3B (AFDB) +aug,1.3e9,0.850,0.065,aug_cv10,measured,0,0,0,,,,1280,,,,mps,1:36,,
+ESM C 600M,6.0e8,0.831,0.059,seq_cv10,measured,1,-92,-27,,,ESM C,1152,,,,mps,0:43,-13,0
+ESM C 600M +aug,6.0e8,0.828,0.063,aug_cv10,measured,0,0,0,,,,1152,,,,mps,1:14,-13,0

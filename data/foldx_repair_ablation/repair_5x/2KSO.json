@@ -1,0 +1,88 @@
+{
+ "muts": {
+  "HB20E": {
+   "Interaction Energy": 0.0673,
+   "Backbone Hbond": 0.0008,
+   "Sidechain Hbond": 0.0,
+   "Van der Waals": 0.1203,
+   "Electrostatics": -0.2796,
+   "Solvation Polar": -0.0293,
+   "Solvation Hydrophobic": 0.1588,
+   "Van der Waals clashes": -0.0026,
+   "entropy sidechain": 0.4379,
+   "entropy mainchain": -0.0755,
+   "torsional clash": 0.0035,
+   "backbone clash": 0.0986,
+   "cleaned": "HB20E"
+  },
+  "KA10D": {
+   "Interaction Energy": 3.7236,
+   "Backbone Hbond": -0.0368,
+   "Sidechain Hbond": 0.4923,
+   "Van der Waals": 0.3817,
+   "Electrostatics": 1.174,
+   "Solvation Polar": 0.7213,
+   "Solvation Hydrophobic": 0.95,
+   "Van der Waals clashes": -0.1729,
+   "entropy sidechain": -0.8052,
+   "entropy mainchain": -0.0458,
+   "torsional clash": -0.0018,
+   "backbone clash": -0.147,
+   "cleaned": "KA10D"
+  },
+  "KA49D": {
+   "Interaction Energy": 1.7184,
+   "Backbone Hbond": -0.0025,
+   "Sidechain Hbond": 0.0,
+   "Van der Waals": 0.2482,
+   "Electrostatics": 0.9409,
+   "Solvation Polar": -0.1908,
+   "Solvation Hydrophobic": 0.4393,
+   "Van der Waals clashes": -0.0038,
+   "entropy sidechain": -0.3214,
+   "entropy mainchain": -0.0492,
+   "torsional clash": -0.003,
+   "backbone clash": -0.0958,
+   "cleaned": "KA49D"
+  },
+  "KA49E": {
+   "Interaction Energy": 1.1569,
+   "Backbone Hbond": 0.006,
+   "Sidechain Hbond": 0.0,
+   "Van der Waals": 0.104,
+   "Electrostatics": 0.6048,
+   "Solvation Polar": -0.0567,
+   "Solvation Hydrophobic": 0.2012,
+   "Van der Waals clashes": -0.009,
+   "entropy sidechain": -0.1459,
+   "entropy mainchain": -0.0018,
+   "torsional clash": 0.0015,
+   "backbone clash": -0.016,
+   "cleaned": "KA49E"
+  },
+  "RA43E": {
+   "Interaction Energy": 0.3456,
+   "Backbone Hbond": 0.0,
+   "Sidechain Hbond": 0.0,
+   "Van der Waals": 0.011,
+   "Electrostatics": 0.1818,
+   "Solvation Polar": -0.0182,
+   "Solvation Hydrophobic": 0.0054,
+   "Van der Waals clashes": -0.0014,
+   "entropy sidechain": -0.0043,
+   "entropy mainchain": 0.0143,
+   "torsional clash": -0.0,
+   "backbone clash": 0.0,
+   "cleaned": "RA43E"
+  }
+ },
+ "meta": {
+  "pdb": "2KSO",
+  "mode": "author",
+  "n_requested": 5,
+  "repair_iterations": 5,
+  "validation_failed": [],
+  "n_ok": 5,
+  "groups": "A,B"
+ }
+}

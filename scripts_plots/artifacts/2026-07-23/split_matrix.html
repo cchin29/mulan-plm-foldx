@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Split strategy × dataset — residual leakage matrix</title>
+<style>
+  :root{
+    --bg:#0e1621;--panel:#16202c;--panel2:#0f1a25;--ink:#e9eff6;--muted:#8ba0b6;--faint:#5f7186;
+    --line:#26374a;--same:#5590e6;--nd:#8b74e4;--fam:#bd77d8;--novel:#43b088;--strict:#7aa7e6;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.5;padding:30px 26px 60px;max-width:1120px;margin:0 auto}
+  h1{font-size:21px;margin:0 0 4px;font-weight:660}
+  .sub{color:var(--muted);font-size:13px;max-width:880px}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.04em;text-transform:uppercase;background:#1f3a28;color:#8fe0b4;border:1px solid #2f5c41;border-radius:20px;padding:2px 10px;margin:13px 0 18px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px 20px;margin-bottom:20px}
+  h2{font-size:15px;margin:0 0 3px} h3{font-size:14px;margin:0 0 3px}
+  .lead{color:var(--muted);font-size:12.5px;margin:4px 0 12px;max-width:900px} .lead b{color:var(--ink)}
+  table.mx{border-collapse:separate;border-spacing:0;width:100%}
+  .mx th.ds{text-align:center;color:var(--ink);font-weight:600;font-size:12px;padding:6px 6px}
+  .mx th.ds small{display:block;color:var(--faint);font-weight:400;font-size:9.5px;font-family:var(--mono)}
+  .mx th.corner{text-align:left;color:var(--muted);font-size:11px;padding:6px 10px;width:215px}
+  .mx th.grp{font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.05em;font-weight:500;padding:2px 6px;text-align:center}
+  .mx td.row{padding:5px 8px}
+  .strat{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);font-size:13px}
+  .strat .dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .strat small{display:block;color:var(--faint);font-weight:400;font-size:10px;font-family:var(--mono)}
+  .strat .papers{display:block;color:var(--strict);font-weight:500;font-size:9.5px;font-style:italic;margin-top:2px;line-height:1.25}
+  .cell{margin:3px;border-radius:8px;min-height:66px;padding:6px 4px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:var(--panel2);border:1px solid var(--line)}
+  .cell .pct{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+  .cell .pct .u{font-size:10px;font-weight:600}
+  .cell .bd{display:flex;gap:5px;font-size:10px;font-variant-numeric:tabular-nums;font-weight:700;line-height:1}
+  .cell .bd .t-same{color:var(--same)} .cell .bd .t-nd{color:var(--nd)} .cell .bd .t-fam{color:var(--fam)}
+  .cell .minibar{display:flex;width:48px;height:4px;border-radius:2px;overflow:hidden;background:#ffffff10}
+  .cell .minibar i{height:100%}
+  .cell .minibar i.same{background:var(--same)} .cell .minibar i.nd{background:var(--nd)} .cell .minibar i.fam{background:var(--fam)}
+  .cell.zero{background:#123026;border-color:#245a41} .cell.zero .pct{color:#84e0b4}
+  .cell.sep{border-left:2px solid #34506e}
+  .cell.refcell{background:#0f1a25;border-style:dashed;justify-content:center} .refx{font-size:11px;color:var(--faint);font-style:italic}
+  .legendrow{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:14px;font-size:11.5px;color:var(--muted)}
+  .lg{display:flex;align-items:center;gap:6px} .lg .sw{width:12px;height:12px;border-radius:3px;flex:none;display:inline-block}
+  .scale{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted)}
+  .grad{width:120px;height:11px;border-radius:3px;background:linear-gradient(90deg,#43b088,#e0913a,#e0533d)}
+  .note{color:var(--muted);font-size:12px;margin-top:12px} .note b{color:var(--ink)}
+  .cav{background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--nd);border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12.5px;color:var(--muted)} .cav b{color:var(--ink)}
+  .pcc td,.pcc th{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+  .pcc th{color:var(--muted);font-weight:500;font-size:11.5px} .pcc td:first-child,.pcc th:first-child{text-align:left}
+  .pcc .s2{font-weight:600;color:var(--ink)} .drop{color:var(--same);font-weight:600} .tbd{color:var(--faint);font-style:italic}
+  .foot{color:#5c6f84;font-size:12px;margin-top:8px;border-top:1px solid var(--line);padding-top:14px}
+  code{font-family:var(--mono);background:var(--panel2);padding:1px 5px;border-radius:4px;font-size:11.5px;color:#cdd9e6}
+</style>
+</head>
+<body>
+<div style="background:#c44536;color:#fff;font:600 13px/1.5 system-ui,sans-serif;padding:7px 14px;text-align:center">SUPERSEDED — archived with the deck of 2026-07-23, kept as a record of what was presented on that date. The CATH per-structure &rho; of 0.411 shown here was retracted; the corrected value on the literal CATH-superfamily hold-out is <b>0.438</b>. Do not quote any number from this page. See <code>docs/RESULTS.md</code> and <code>scripts_plots/DECK_AND_FIGURE_PROVENANCE.md</code>.</div>
+  <h1>Split strategy × dataset — residual leakage</h1>
+  <div class="sub">Rows = the four splitting strategies (each holds out a broader unit); columns = the four MuLAN benchmarks plus full SKEMPI. Each cell = the <b>cumulative residual</b> (% of test mutations still matched under that split) over its mutually-exclusive tier breakdown. The clustering tier is MuLAN's actual split: <b>mmseqs/CD-HIT ≤60% sequence identity, single-linkage</b> (not iDist interface dedup).</div>
+  <div class="tag">real MuLAN clustering · seq-id ≤60% · monotone</div>
+
+  <div class="panel">
+    <h2>Residual leakage — cumulative % over tier breakdown</h2>
+    <div class="lead">Sub-numbers (mutually exclusive, sum to the headline) split the residual into <span style="color:var(--same)">same-complex</span> + <span style="color:var(--nd)">seq-homolog ≤60%</span> + <span style="color:var(--fam)">CATH fold-family</span>. The headline note: <b>by-complex still leaks ~78–90%</b> because seq-id ≤60% single-linkage makes homologs pervasive (the protease-inhibitor family alone is one ~590-mutation cluster) — matching USP-ddG's independent finding that 88.7% of by-complex test mutations are "easy."</div>
+    <table class="mx">
+      <thead>
+        <tr><th class="corner"></th><th class="grp" colspan="4">MuLAN benchmarks (single-point)</th><th class="grp" colspan="2">full SKEMPI</th></tr>
+        <tr>
+          <th class="corner">split · unit held out</th>
+          <th class="ds">S1102<small>1100·110</small></th>
+          <th class="ds">S1131<small>1127·110</small></th>
+          <th class="ds">S2003<small>1124·174</small></th>
+          <th class="ds">S4169<small>2497·211</small></th>
+          <th class="ds">single<small>4165·314</small></th>
+          <th class="ds">multi<small>1636·144</small></th>
+        </tr>
+      </thead>
+      <tbody id="mxbody"></tbody>
+    </table>
+    <div class="legendrow">
+      <span class="lg"><span class="sw" style="background:var(--same)"></span>same-complex</span>
+      <span class="lg"><span class="sw" style="background:var(--nd)"></span>seq-homolog ≤60%</span>
+      <span class="lg"><span class="sw" style="background:var(--fam)"></span>CATH fold-family</span>
+      <span class="lg scale"><span>big # heat:</span><span>0</span><div class="grad"></div><span>100%</span></span>
+    </div>
+    <div class="note"><b>Reading the breakdown:</b> each sub-number counts every leaking mutation once at its <b>closest surviving match</b> (mutually exclusive) — so they sum to the headline, and are not overlapping "does a relative exist" exposures.</div>
+    <div class="cav">
+      <b>What each split buys</b> is the drop in the big number: <b>by-complex</b> removes the <span style="color:var(--same)">same-complex</span> tier (matches RDE) but barely dents homology; <b>clustered (CD-HIT ≤60% seq-id)</b> removes the <span style="color:var(--nd)">seq-homolog</span> tier (the big win — this is MuLAN's retrain split); a <b>CATH split</b> removes the remaining <span style="color:var(--fam)">fold-family</span> tier (~6–28%, distant homologs below 60% id) to reach 0.
+      <br><br><b>Notes.</b> The retrain clustering is <b>CD-HIT / mmseqs at ≥60% sequence identity / 0.8 cov</b> (ProtBFF's criterion), complexes single-linked if they share any chain-cluster — this is the tier carrying the this-work numbers (clust 0.250, etc.). The CATH tier uses the both-partners superfamily rule (either-side single-linkage collapses the set) and is a ~70%-coverage lower bound, antibody-Ig-fold sensitive. <i>The dashed <b>iDist interface-dedup</b> row is a <b>leakage diagnostic, not a split</b> — PPIRef/PPIformer's near-duplicate-only interface clustering at ≤0.03 (a different operation from the sequence-identity clustering, despite the shared word "cluster"). It removes duplicate interfaces only; that barely reduces leakage below by-complex (S1102 exact <b>87.5 → 80.2%</b>), which is why the iDist benchmark is still homology-leaky, and MuLAN does not train on it. Near-dup clusters were on hand for S1102 only, so its other cells read ≈ by-complex.</i>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Companion — measured accuracy down the ladder (retrained)</h2>
+    <div class="lead">Real retrain results, not the paper's Pearson: <b>per-structure Spearman ρ (T≥10)</b> — MuLAN's per-structure metric. Headline model <b>ESM-C 6B</b>, shown <b>base → best FoldX arm</b>. Individual benchmarks were only run leaky + by-complex; full SKEMPI has no per-mutation-CV rung — cells left blank accordingly.</div>
+    <table class="pcc">
+      <thead><tr><th>split</th><th>S1102</th><th>SKEMPI · single</th><th>SKEMPI · multi</th></tr></thead>
+      <tbody>
+        <tr><td class="s2">CV10 · mutation (leaky)</td><td>0.489 → 0.579</td><td class="tbd">—</td><td class="tbd">—</td></tr>
+        <tr><td class="s2">By-complex</td><td>0.452 → 0.551</td><td>0.310 → 0.357</td><td>0.374 → 0.423</td></tr>
+        <tr><td class="s2">Clustered (CD-HIT ≤60% seq-id)</td><td>0.370 → 0.460</td><td>0.193 → 0.251</td><td>0.137 → 0.320</td></tr>
+        <tr><td class="s2">CATH superfamily <span style="color:var(--faint);font-weight:400">· leakage-controlled headline</span></td><td class="tbd">—</td><td>0.377 → 0.386</td><td>0.469 → 0.541</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Down the S1102 ladder the base model falls <b>0.489 → 0.452 → 0.370</b> as leakage is removed — the leakage tax in the per-structure metric. FoldX features lift most under the strictest splits (multipoint clustered <b>0.137 → 0.320</b>, +0.18). <b>On the CATH-superfamily hold-out — the leakage-controlled comparison the Benchmark Matrix headlines</b> — MuLAN+FoldX reaches <b>0.411</b> (pooled CATH-all, ESM-C 6B) vs the CATH-native methods USP-ddG <b>0.493</b> / CATH-ddG <b>0.494</b>: just below on ρ, competitive on AUROC (MuLAN 2nd, above CATH-ddG). <span style="color:var(--faint)">n structures at T≥10: S1102 24 · SKEMPI-single 96 · multi 43 · CATH-single 11 / multi 5 — CATH is a curated frontier, so smaller and not directly comparable in magnitude across tiers. Ankh3-xl tracks ESM-C 6B closely. Source: <code>scripts_plots/results_matrix_ps.csv</code>.</span></div>
+  </div>
+
+  <div class="foot">Residual = finest surviving leak tier per split, mutually exclusive (novel excluded). Same-complex: complex with ≥2 mutations. Seq-homolog: a different complex single-linked at mmseqs ≥60% id / 0.8 cov (MuLAN <code>cluster_split.py</code>, cached <code>clust_mmseqs_*_id60</code>). CATH fold-family: a different complex sharing a CATH superfamily on both partners (SIFTS), in a different seq-cluster. Complex = PDB. Counts from MuLAN's on-disk split inputs (S1102_filtered = 1100; skempi_full single/multi = 4165/1636). Monotone CV10 ≥ by-complex ≥ iDist-dedup (diagnostic) ≥ clustered (CD-HIT ≤60%) ≥ CATH. PCC: MuLAN preprint Table 1.</div>
+
+<script>
+const MX=[
+  {strat:"CV10 · mutation",unit:"one mutation",papers:"MuLAN (current) · pre-2023 norm",dot:"var(--same)",cells:[
+    [["same",94.6],["nd",5.3]],[["same",94.9],["nd",4.9]],[["same",91.8],["nd",6.9],["fam",0.2]],
+    [["same",96.8],["nd",3.1]],[["same",97.5],["nd",2.4]],[["same",97.5],["nd",1.5]]]},
+  {strat:"By-complex",unit:"whole complex",papers:"RDE · DiffAffinity · GearBind · DDAffinity",dot:"var(--nd)",cells:[
+    [["nd",81.7],["fam",5.7]],[["nd",81.0],["fam",7.5]],[["nd",83.5],["fam",5.1]],
+    [["nd",73.8],["fam",4.4]],[["nd",79.6],["fam",6.3]],[["nd",87.1],["fam",3.1]]]},
+  {strat:"iDist interface-dedup",unit:"leakage diagnostic · not a split",papers:"PPIRef / PPIformer · interface dedup ≤0.03 · not MuLAN",dot:"var(--faint)",cells:[
+    [["nd",74.5],["fam",5.7]],"ref","ref","ref","ref","ref"]},
+  {strat:"Clustered (CD-HIT ≤60% seq-id)",unit:"MuLAN retrain split",papers:"ProtBFF (CD-HIT 60%) · MuLAN clustered",dot:"var(--fam)",cells:[
+    [["fam",6.5]],[["fam",13.5]],[["fam",14.9]],[["fam",26.7]],[["fam",26.1]],[["fam",27.9]]]},
+  {strat:"CATH family",unit:"fold superfamily",papers:"CATH-ddG · USP-ddG",dot:"var(--strict)",cells:[[],[],[],[],[],[]]}
+];
+function heat(v){const g=[67,176,136],a=[224,145,58],r=[224,83,61];let c;
+  if(v<=50){const t=v/50;c=g.map((x,i)=>Math.round(x+(a[i]-x)*t));}else{const t=(v-50)/50;c=a.map((x,i)=>Math.round(x+(r[i]-x)*t));}
+  return `rgb(${c[0]},${c[1]},${c[2]})`;}
+const tb=document.getElementById('mxbody');
+MX.forEach(row=>{
+  const tr=document.createElement('tr');
+  const th=document.createElement('td');th.className='row';
+  th.innerHTML=`<div class="strat"><span class="dot" style="background:${row.dot}"></span><span>${row.strat}<small>${row.unit}</small><span class="papers">${row.papers}</span></span></div>`;
+  tr.appendChild(th);
+  row.cells.forEach((tiers,ci)=>{
+    const td=document.createElement('td');const sep=ci===4?' sep':'';
+    if(tiers==='ref'){td.innerHTML=`<div class="cell refcell${sep}"><div class="refx">≈ by‑cx</div></div>`;tr.appendChild(td);return;}
+    if(tiers.length===0){td.innerHTML=`<div class="cell zero${sep}"><div class="pct">0<span class="u">%</span></div></div>`;tr.appendChild(td);return;}
+    const head=Math.round(tiers.reduce((a,t)=>a+t[1],0)*10)/10;
+    const bd=tiers.map(t=>`<span class="t-${t[0]}">${t[1]}</span>`).join('');
+    const bars=tiers.map(t=>`<i class="${t[0]}" style="width:${(t[1]/head*100).toFixed(1)}%"></i>`).join('');
+    td.innerHTML=`<div class="cell${sep}"><div class="pct" style="color:${heat(head)}">${head}<span class="u">%</span></div><div class="bd">${bd}</div><div class="minibar">${bars}</div></div>`;
+    tr.appendChild(td);
+  });
+  tb.appendChild(tr);
+});
+</script>
+</body>
+</html>

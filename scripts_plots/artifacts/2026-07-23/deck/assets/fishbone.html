@@ -1,0 +1,125 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>ΔΔG evaluation — metric & leakage-control timeline (fishbone)</title>
+<style>
+  :root{
+    --plane:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+    --font:system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  html,body{margin:0;background:var(--plane);color:var(--ink);font-family:var(--font)}
+  .wrap{max-width:1600px;margin:0 auto;padding:14px 16px 24px}
+  svg{width:100%;height:auto;display:block;background:var(--surface);border:1px solid rgba(11,11,11,0.10);border-radius:12px}
+  text{font-family:var(--font)}
+</style>
+<div style="background:#c44536;color:#fff;font:600 13px/1.5 system-ui,sans-serif;padding:7px 14px;text-align:center">SUPERSEDED — archived with the deck of 2026-07-23, kept as a record of what was presented on that date. The CATH per-structure &rho; of 0.411 shown here was retracted; the corrected value on the literal CATH-superfamily hold-out is <b>0.438</b>. Do not quote any number from this page. See <code>docs/RESULTS.md</code> and <code>scripts_plots/DECK_AND_FIGURE_PROVENANCE.md</code>.</div>
+
+<div class="wrap">
+<svg id="fb" viewBox="0 0 1600 900" role="img"
+     aria-label="Fishbone timeline of the shift to leakage-controlled, per-structure ΔΔG evaluation, 2023 to 2026.">
+</svg>
+</div>
+<script>
+const NS="http://www.w3.org/2000/svg";
+const svg=document.getElementById("fb");
+const C={split:"#2a78d6",metric:"#eb6834",sota:"#4a3aa7",mulan:"#008300",start:"#d03b3b",warn:"#e0913a",
+  t1:"#86b6ef",t2:"#2a78d6",t3:"#e08a2b",t4:"#6a3fb0",
+  ink:"#0b0b0b",ink2:"#52514e",muted:"#898781",surface:"#fcfcfb",border:"rgba(11,11,11,0.14)",axis:"#c3c2b7"};
+function el(t,a={}){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+function add(p,t,a){const e=el(t,a);p.appendChild(e);return e;}
+function txt(p,x,y,s,a={}){const e=add(p,"text",Object.assign({x,y},a));e.textContent=s;return e;}
+
+const SPINE_Y=440, X0=250, X1=1360, CW=204, GAP=64;
+
+/* ---- title + subtitle (wrapped, kept clear of legend) ---- */
+txt(svg,40,44,"From leaky CV to leakage-controlled ΔΔG evaluation",{"font-size":24,"font-weight":700,fill:C.ink});
+txt(svg,40,70,"Two coupled changes drove the field 2023→2025: a stricter split (remove homology leakage) and the",{"font-size":13,fill:C.ink2});
+txt(svg,40,88,"right metric (per-structure Spearman). Every step lowered the reported number by removing inflation.",{"font-size":13,fill:C.ink2});
+
+/* ---- legend (top-right): split-tier ramp, light → dark ---- */
+txt(svg,900,22,"SPLIT TIER  (leakage control · light = leakiest → dark = strictest)",
+  {"font-size":10.5,"font-weight":700,fill:C.ink2,"letter-spacing":0.4});
+const RAMP=[["t1","10-fold CV (leaky)"],["t2","by-complex"],["t3","clustered ≤60%"],["t4","CATH-superfamily (strictest)"]];
+const rbx=900, rby=30, rbw=140, rbh=15;
+RAMP.forEach(([k,lab],i)=>{
+  add(svg,"rect",{x:rbx+i*rbw,y:rby,width:rbw,height:rbh,fill:C[k],stroke:C.surface,"stroke-width":1});
+  txt(svg,rbx+i*rbw+rbw/2,rby+29,lab,{"font-size":9.5,fill:C.ink2,"text-anchor":"middle"});
+});
+/* separate keys: metric axis + this-work */
+add(svg,"rect",{x:rbx,y:70,width:13,height:13,rx:3,fill:C.muted});
+txt(svg,rbx+19,81,"metric axis",{"font-size":11,fill:C.ink2});
+add(svg,"rect",{x:rbx+128,y:70,width:13,height:13,rx:3,fill:C.surface,stroke:C.mulan,"stroke-width":2});
+txt(svg,rbx+128+19,81,"MuLAN (this work)",{"font-size":11,fill:C.ink2});
+txt(svg,900,102,"numbers = per-structure Spearman ρ (field-standard), unless marked pooled",{"font-size":11,fill:C.muted,"font-style":"italic"});
+
+/* ---- spine (time arrow) ---- */
+const defs=add(svg,"defs",{});
+const mk=add(defs,"marker",{id:"arrow",markerWidth:14,markerHeight:14,refX:9,refY:5,orient:"auto",markerUnits:"userSpaceOnUse"});
+add(mk,"path",{d:"M0,0 L10,5 L0,10 z",fill:C.ink2});
+add(svg,"line",{x1:X0,y1:SPINE_Y,x2:X1,y2:SPINE_Y,stroke:C.ink2,"stroke-width":4,"marker-end":"url(#arrow)"});
+
+/* ---- straddle blocks (start / goal) ---- */
+function block(cx,cy,w,h,color,title,lines){
+  const g=add(svg,"g",{});
+  add(g,"rect",{x:cx-w/2,y:cy-h/2,width:w,height:h,rx:10,fill:C.surface,stroke:color,"stroke-width":2});
+  add(g,"rect",{x:cx-w/2,y:cy-h/2,width:w,height:5,rx:2.5,fill:color});
+  txt(g,cx,cy-h/2+26,title,{"font-size":13,"font-weight":700,fill:C.ink,"text-anchor":"middle"});
+  lines.forEach((l,i)=>txt(g,cx,cy-h/2+45+i*16,l,{"font-size":11.5,fill:C.ink2,"text-anchor":"middle"}));
+}
+block(140,SPINE_Y,196,100,C.t1,"≤2023 · MuLAN-Ankh",
+  ["per-mutation 10-fold CV","pooled Pearson ≈ 0.85","leaky — not comparable"]);
+block(1470,SPINE_Y,232,108,C.t4,"Leakage-controlled evaluation",
+  ["per-structure Spearman","frontier-comparable","OOD ceiling ≈ 0.49 (CATH tier)"]);
+
+/* ---- rib cards ---- */
+function rib(spineX,side,color,cat,year,title,lines,cardStroke,cardStrokeW){
+  const n=lines.length, h=52+n*16+8;
+  const cy = side==="up" ? SPINE_Y-GAP-h/2 : SPINE_Y+GAP+h/2;
+  const nearY = side==="up" ? cy+h/2 : cy-h/2;
+  add(svg,"line",{x1:spineX,y1:SPINE_Y,x2:spineX,y2:nearY,stroke:color,"stroke-width":2,opacity:0.7});
+  add(svg,"circle",{cx:spineX,cy:SPINE_Y,r:5,fill:color,stroke:C.surface,"stroke-width":2});
+  const g=add(svg,"g",{}), left=spineX-CW/2, top=cy-h/2;
+  add(g,"rect",{x:left,y:top,width:CW,height:h,rx:10,fill:C.surface,stroke:cardStroke||C.border,"stroke-width":cardStrokeW||1});
+  add(g,"rect",{x:left,y:top,width:5,height:h,rx:2.5,fill:color});
+  txt(g,left+16,top+18,cat,{"font-size":9.5,"font-weight":700,fill:C.ink2,"letter-spacing":0.6});
+  txt(g,left+16,top+35,year+" · "+title,{"font-size":12.5,"font-weight":700,fill:C.ink});
+  lines.forEach((l,i)=>txt(g,left+16,top+53+i*16,l,{"font-size":11,fill:C.ink2}));
+}
+
+/* UP ribs */
+rib(380,"up",C.t2,"BY-COMPLEX","2023","RDE-Network",
+  ["by-complex split (rng 2022)","+ per-structure metric origin","removes same-complex leak"]);
+rib(820,"up",C.t4,"CATH","2025·07","CATH-ddG",
+  ["CATH-superfamily hold-out (TM<0.6)","fold-level OOD","per-struct ρ 0.494 (near-SOTA)"]);
+rib(1120,"up",C.t3,"CLUSTERED (CD-HIT ≤60%)","2025·12","ProtBFF",
+  ["CD-HIT ≤60% clustered split","seq/PLM frontier ρ 0.471","FoldX priors · scale ≠ win"]);
+
+/* DOWN ribs */
+rib(380,"down",C.muted,"METRIC AXIS (orthogonal)","2023","Metric shift",
+  ["pooled Pearson → per-structure","ranks mutations within a complex","adopted field-wide"]);
+rib(590,"down",C.t3,"CLUSTERED (interface)","2024","PPIRef / PPIformer",
+  ["interface de-dup (iDist)","removes near-duplicate interfaces","+ leakage paper (2404.10457)"]);
+rib(980,"down",C.t4,"CATH · SOTA","2025·11","USP-ddG",
+  ["CATH-superfamily · current SOTA","per-PPI ρ 0.493 · AUROC 0.802","88.7% of by-complex ‘easy’"]);
+rib(1270,"down",C.t4,"CATH · THIS WORK","now","MuLAN + FoldX",
+  ["CATH tier · per-struct ρ 0.411","> GNNs & interface-pretrained","from a frozen PLM"],C.mulan,2);
+
+/* ---- still-lacking panel ---- */
+(function(){
+  const x=1150,y=708,w=418,h=160,g=add(svg,"g",{});
+  add(g,"rect",{x,y,width:w,height:h,rx:10,fill:C.surface,stroke:C.border,"stroke-width":1});
+  add(g,"rect",{x,y,width:5,height:h,rx:2.5,fill:C.warn});
+  txt(g,x+18,y+26,"Still lacking (out-of-superfamily ΔΔG)",{"font-size":13,"font-weight":700,fill:C.ink});
+  ["SOTA is all structure-based; sequence-only lags (ESM2 0.19)",
+   "FoldX fixed-backbone caps the biophysical channel",
+   "interface-pretraining underdelivers OOD (< plain FoldX)",
+   "label-noise + antibody / OOD sets remain weak",
+   "no hosted leaderboard — match split AND metric to compare"].forEach((s,i)=>{
+    add(g,"circle",{cx:x+22,cy:y+48+i*20-4,r:2.4,fill:C.ink2});
+    txt(g,x+32,y+48+i*20,s,{"font-size":11.5,fill:C.ink2});
+  });
+})();
+
+/* footnote */
+txt(svg,40,884,"Per-structure ρ from paper tables (USP-ddG, CATH-ddG, ProtBFF); pooled ≈0.85 is the MuLAN CV10 headline. Source: experiments/BENCHMARK_MATRIX.md.",
+  {"font-size":10.5,fill:C.muted});
+</script>

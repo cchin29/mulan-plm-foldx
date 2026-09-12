@@ -1,0 +1,13 @@
+numpy
+scipy
+pandas
+tqdm
+h5py
+scikit-learn
+torch>=2.0
+transformers<4.45,>=4.27
+accelerate
+sentencepiece
+mini3di  # pure-Python Foldseek-3Di encoder, for ProstT5 structure-mode runs (experiments/gen_3di.py)
+pyyaml   # structural_context decisions.yaml loader
+biopython  # structural_context: mmCIF/PDB parsing, DSSP wrapper, NeighborSearch (Phase 2)

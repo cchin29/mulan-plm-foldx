@@ -1,0 +1,39 @@
+{
+  "tag": "saprot",
+  "n_folds": 4,
+  "expected_folds": 10,
+  "complete": false,
+  "pcc_mean": 0.8616774678230286,
+  "pcc_std": 0.04714563353987033,
+  "rmse_mean": 1.2534894347190857,
+  "rmse_std": 0.046133069131405205,
+  "folds": [
+    {
+      "fold": 0,
+      "pcc": 0.908977210521698,
+      "rmse": 1.3026429414749146
+    },
+    {
+      "fold": 1,
+      "pcc": 0.8772431015968323,
+      "rmse": 1.2746484279632568
+    },
+    {
+      "fold": 2,
+      "pcc": 0.7831530570983887,
+      "rmse": 1.178475022315979
+    },
+    {
+      "fold": 3,
+      "pcc": 0.8773365020751953,
+      "rmse": 1.2581913471221924
+    }
+  ],
+  "setup": {
+    "ES_SPLIT_METHOD": "random",
+    "ES_SEED": "42",
+    "ES_NUM_EPOCHS": "300",
+    "ES_PATIENCE": "30",
+    "ES_MODEL_CONFIG": "models/config/lightatt_default_config.json"
+  }
+}

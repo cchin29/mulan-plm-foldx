@@ -1,0 +1,98 @@
+[
+  {
+    "model": "ankh",
+    "dim": 1536,
+    "argmax_pos": 150,
+    "aligned": true,
+    "ratio_mut_over_median": 70.4,
+    "passes": true,
+    "rows": 286,
+    "seconds": 1.9
+  },
+  {
+    "model": "prostt5_aa",
+    "dim": 1024,
+    "argmax_pos": 150,
+    "aligned": true,
+    "ratio_mut_over_median": 63.0,
+    "passes": true,
+    "rows": 286,
+    "seconds": 5.1
+  },
+  {
+    "model": "ankh3_large",
+    "dim": 1536,
+    "argmax_pos": 150,
+    "aligned": true,
+    "ratio_mut_over_median": 63.2,
+    "passes": true,
+    "rows": 286,
+    "seconds": 7.4
+  },
+  {
+    "model": "ankh3_xl",
+    "dim": 2560,
+    "argmax_pos": 150,
+    "aligned": true,
+    "ratio_mut_over_median": 80.0,
+    "passes": true,
+    "rows": 286,
+    "seconds": 16.7
+  },
+  {
+    "model": "saprot",
+    "dim": 1280,
+    "argmax_pos": 150,
+    "aligned": true,
+    "ratio_mut_over_median": 66.3,
+    "passes": true,
+    "rows": 286,
+    "seconds": 4.4
+  },
+  {
+    "model": "saprot_1.3b",
+    "dim": 1280,
+    "argmax_pos": 150,
+    "aligned": true,
+    "ratio_mut_over_median": 86.6,
+    "passes": true,
+    "rows": 286,
+    "seconds": 8.4
+  },
+  {
+    "model": "esm2_3b",
+    "dim": 2560,
+    "argmax_pos": 150,
+    "aligned": true,
+    "ratio_mut_over_median": 14.0,
+    "passes": true,
+    "rows": 286,
+    "seconds": 15.1
+  },
+  {
+    "model": "esm2_650m",
+    "dim": 1280,
+    "argmax_pos": 150,
+    "aligned": true,
+    "ratio_mut_over_median": 31.0,
+    "passes": true,
+    "rows": 286,
+    "seconds": 73.1
+  },
+  {
+    "model": "esmc_600m",
+    "dim": 1152,
+    "argmax_pos": 150,
+    "aligned": true,
+    "ratio_mut_over_median": 27.0,
+    "passes": true,
+    "rows": 286,
+    "seconds": 1.4
+  },
+  {
+    "model": "esmc_6b",
+    "dim": 2560,
+    "status": "deferred_env",
+    "reason": "transformers 5.12.1 does not register the `esmc` model_type; esm SDK local loader is 300M/600M only (6B is Forge/cluster). Row-alignment validated via cluster benchmarks + M5 length-guard."
+  }
+]

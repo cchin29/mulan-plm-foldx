@@ -1,0 +1,3860 @@
+{
+  "meta": {
+    "sifts_source": "https://ftp.ebi.ac.uk/pub/databases/msd/sifts/flatfiles/csv/pdb_chain_cath_uniprot.csv.gz",
+    "global_chain_coverage_pct": 70.4,
+    "n_complexes_total": 452,
+    "n_cath_families": 260,
+    "n_unmapped_complexes": 147,
+    "unmapped_policy": "complex missing CATH on >=1 partner side is its own singleton family (cannot be 'exposed')",
+    "antibody_superfamily": "2.60.40.10"
+  },
+  "per_complex": {
+    "1A22_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "1A4Y_A_B": {
+      "partnerA_sf": [
+        "3.80.10.10"
+      ],
+      "partnerB_sf": [
+        "3.10.130.10"
+      ],
+      "family_id": "fam_0093"
+    },
+    "1ACB_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0000"
+    },
+    "1AK4_A_B": {
+      "partnerA_sf": [
+        "2.40.100.10"
+      ],
+      "partnerB_sf": [
+        "2.40.100.10"
+      ],
+      "family_id": "fam_0002"
+    },
+    "1B2S_A_B": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.10.450.30"
+      ],
+      "family_id": "fam_0004"
+    },
+    "1B2U_A_B": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.10.450.30"
+      ],
+      "family_id": "fam_0004"
+    },
+    "1B3S_A_B": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.10.450.30"
+      ],
+      "family_id": "fam_0004"
+    },
+    "1BRS_A_B": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.10.450.30"
+      ],
+      "family_id": "fam_0004"
+    },
+    "1CSE_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0011"
+    },
+    "1CSO_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0012"
+    },
+    "1CT0_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0013"
+    },
+    "1CT2_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0014"
+    },
+    "1CT4_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0015"
+    },
+    "1E96_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "1.25.40.10"
+      ],
+      "family_id": "fam_0018"
+    },
+    "1EAW_A_B": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "1EFN_A_B": {
+      "partnerA_sf": [
+        "2.30.30.40"
+      ],
+      "partnerB_sf": [
+        "3.30.62.10"
+      ],
+      "family_id": "fam_0019"
+    },
+    "1EMV_A_B": {
+      "partnerA_sf": [
+        "1.10.1200.20"
+      ],
+      "partnerB_sf": [
+        "3.90.540.10"
+      ],
+      "family_id": "fam_0136"
+    },
+    "1F47_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "3.30.1400.10"
+      ],
+      "family_id": "fam_0020"
+    },
+    "1FC2_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0022"
+    },
+    "1FCC_A_B": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1FFW_A_B": {
+      "partnerA_sf": [
+        "3.40.50.2300"
+      ],
+      "partnerB_sf": [
+        "3.30.70.400"
+      ],
+      "family_id": "fam_0025"
+    },
+    "1FR2_A_B": {
+      "partnerA_sf": [
+        "1.10.1200.20"
+      ],
+      "partnerB_sf": [
+        "3.90.540.10"
+      ],
+      "family_id": "fam_0136"
+    },
+    "1GC1_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0027"
+    },
+    "1GL0_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0029"
+    },
+    "1GL1_A_B": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "2.40.10.10"
+      ],
+      "family_id": "fam_0031"
+    },
+    "1H9D_A_B": {
+      "partnerA_sf": [
+        "2.60.40.720"
+      ],
+      "partnerB_sf": [
+        "2.40.250.10"
+      ],
+      "family_id": "fam_0034"
+    },
+    "1HE8_A_B": {
+      "partnerA_sf": [
+        "1.10.1070.11",
+        "1.25.40.70",
+        "2.60.40.150",
+        "3.10.20.90",
+        "3.30.1010.10"
+      ],
+      "partnerB_sf": [
+        "3.40.50.300"
+      ],
+      "family_id": "fam_0009"
+    },
+    "1IAR_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "1JCK_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.40.50.110",
+        "3.10.20.120"
+      ],
+      "family_id": "fam_0035"
+    },
+    "1JTG_A_B": {
+      "partnerA_sf": [
+        "3.40.710.10"
+      ],
+      "partnerB_sf": [
+        "3.30.1450.10"
+      ],
+      "family_id": "fam_0053"
+    },
+    "1KAC_A_B": {
+      "partnerA_sf": [
+        "2.60.90.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0116"
+    },
+    "1KTZ_A_B": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "2.10.60.10"
+      ],
+      "family_id": "fam_0130"
+    },
+    "1LFD_A_B": {
+      "partnerA_sf": [
+        "3.10.20.90"
+      ],
+      "partnerB_sf": [
+        "3.40.50.300"
+      ],
+      "family_id": "fam_0009"
+    },
+    "1M9E_A_B": {
+      "partnerA_sf": [
+        "2.40.100.10"
+      ],
+      "partnerB_sf": [
+        "2.40.100.10"
+      ],
+      "family_id": "fam_0002"
+    },
+    "1MAH_A_B": {
+      "partnerA_sf": [
+        "3.40.50.1820"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0040"
+    },
+    "1P69_A_B": {
+      "partnerA_sf": [
+        "2.60.90.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0116"
+    },
+    "1P6A_A_B": {
+      "partnerA_sf": [
+        "2.60.90.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0116"
+    },
+    "1PPF_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0046"
+    },
+    "1R0R_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0050"
+    },
+    "1S0W_A_B": {
+      "partnerA_sf": [
+        "3.40.710.10"
+      ],
+      "partnerB_sf": [
+        "3.40.710.10"
+      ],
+      "family_id": "fam_0052"
+    },
+    "1S1Q_A_B": {
+      "partnerA_sf": [
+        "3.10.110.10"
+      ],
+      "partnerB_sf": [
+        "3.10.20.90"
+      ],
+      "family_id": "fam_0054"
+    },
+    "1SBB_A_B": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.40.50.110",
+        "3.10.20.120"
+      ],
+      "family_id": "fam_0055"
+    },
+    "1SBN_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0056"
+    },
+    "1SGD_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0057"
+    },
+    "1SGE_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0058"
+    },
+    "1SGN_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0059"
+    },
+    "1SGP_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0060"
+    },
+    "1SGQ_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0061"
+    },
+    "1SGY_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0062"
+    },
+    "1SIB_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0063"
+    },
+    "1TM1_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0066"
+    },
+    "1TM3_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0067"
+    },
+    "1TM4_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0068"
+    },
+    "1TM5_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0069"
+    },
+    "1TM7_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0070"
+    },
+    "1TMG_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0071"
+    },
+    "1TO1_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0072"
+    },
+    "1UUZ_A_B": {
+      "partnerA_sf": [
+        "3.40.1420.10"
+      ],
+      "partnerB_sf": [
+        "3.40.1420.10"
+      ],
+      "family_id": "fam_0074"
+    },
+    "1X1X_A_B": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.10.450.30"
+      ],
+      "family_id": "fam_0004"
+    },
+    "1XD3_A_B": {
+      "partnerA_sf": [
+        "3.40.532.10"
+      ],
+      "partnerB_sf": [
+        "3.10.20.90"
+      ],
+      "family_id": "fam_0078"
+    },
+    "1Y1K_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0081"
+    },
+    "1Y33_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0083"
+    },
+    "1Y34_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0084"
+    },
+    "1Y3B_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0085"
+    },
+    "1Z7X_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0092"
+    },
+    "2A9K_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "3.90.176.10"
+      ],
+      "family_id": "fam_0094"
+    },
+    "2AJF_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0096"
+    },
+    "2B0Z_A_B": {
+      "partnerA_sf": [
+        "1.10.420.10",
+        "1.10.520.10"
+      ],
+      "partnerB_sf": [
+        "1.10.760.10"
+      ],
+      "family_id": "fam_0099"
+    },
+    "2B10_A_B": {
+      "partnerA_sf": [
+        "1.10.420.10",
+        "1.10.520.10"
+      ],
+      "partnerB_sf": [
+        "1.10.760.10"
+      ],
+      "family_id": "fam_0099"
+    },
+    "2B11_A_B": {
+      "partnerA_sf": [
+        "1.10.420.10",
+        "1.10.520.10"
+      ],
+      "partnerB_sf": [
+        "1.10.760.10"
+      ],
+      "family_id": "fam_0099"
+    },
+    "2B12_A_B": {
+      "partnerA_sf": [
+        "1.10.420.10",
+        "1.10.520.10"
+      ],
+      "partnerB_sf": [
+        "1.10.760.10"
+      ],
+      "family_id": "fam_0099"
+    },
+    "2B42_A_B": {
+      "partnerA_sf": [
+        "2.40.70.10"
+      ],
+      "partnerB_sf": [
+        "2.60.120.180"
+      ],
+      "family_id": "fam_0101"
+    },
+    "2BTF_A_B": {
+      "partnerA_sf": [
+        "3.30.420.40",
+        "3.90.640.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0103"
+    },
+    "2FTL_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0110"
+    },
+    "2G2U_A_B": {
+      "partnerA_sf": [
+        "3.40.710.10"
+      ],
+      "partnerB_sf": [
+        "3.30.1450.10"
+      ],
+      "family_id": "fam_0053"
+    },
+    "2G2W_A_B": {
+      "partnerA_sf": [
+        "3.40.710.10"
+      ],
+      "partnerB_sf": [
+        "3.30.1450.10"
+      ],
+      "family_id": "fam_0053"
+    },
+    "2GYK_A_B": {
+      "partnerA_sf": [
+        "1.10.1200.20"
+      ],
+      "partnerB_sf": [
+        "3.90.540.10"
+      ],
+      "family_id": "fam_0136"
+    },
+    "2HLE_A_B": {
+      "partnerA_sf": [
+        "2.60.120.260"
+      ],
+      "partnerB_sf": [
+        "2.60.40.420"
+      ],
+      "family_id": "fam_0231"
+    },
+    "2HRK_A_B": {
+      "partnerA_sf": [
+        "1.20.1050.10",
+        "3.40.30.70"
+      ],
+      "partnerB_sf": [
+        "1.20.1050.10"
+      ],
+      "family_id": "fam_0111"
+    },
+    "2I26_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0112"
+    },
+    "2I9B_A_B": {
+      "partnerA_sf": [
+        "2.10.25.10",
+        "2.40.20.10"
+      ],
+      "partnerB_sf": [
+        "2.10.25.10",
+        "2.40.20.10"
+      ],
+      "family_id": "fam_0113"
+    },
+    "2J0T_A_B": {
+      "partnerA_sf": [
+        "3.40.390.10"
+      ],
+      "partnerB_sf": [
+        "3.40.390.10"
+      ],
+      "family_id": "fam_0114"
+    },
+    "2J1K_A_B": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "2NU0_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0120"
+    },
+    "2NU1_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0122"
+    },
+    "2NU2_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0123"
+    },
+    "2NU4_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0124"
+    },
+    "2O3B_A_B": {
+      "partnerA_sf": [
+        "3.40.570.10"
+      ],
+      "partnerB_sf": [
+        "3.40.1460.10"
+      ],
+      "family_id": "fam_0128"
+    },
+    "2OOB_A_B": {
+      "partnerA_sf": [
+        "1.10.8.10"
+      ],
+      "partnerB_sf": [
+        "3.10.20.90"
+      ],
+      "family_id": "fam_0129"
+    },
+    "2PCB_A_B": {
+      "partnerA_sf": [
+        "1.10.420.10",
+        "1.10.520.10"
+      ],
+      "partnerB_sf": [
+        "1.10.760.10"
+      ],
+      "family_id": "fam_0099"
+    },
+    "2PCC_A_B": {
+      "partnerA_sf": [
+        "1.10.420.10",
+        "1.10.520.10"
+      ],
+      "partnerB_sf": [
+        "1.10.760.10"
+      ],
+      "family_id": "fam_0099"
+    },
+    "2SGP_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0131"
+    },
+    "2SGQ_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0132"
+    },
+    "2SIC_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0133"
+    },
+    "2VLN_A_B": {
+      "partnerA_sf": [
+        "1.10.1200.20"
+      ],
+      "partnerB_sf": [
+        "3.90.540.10"
+      ],
+      "family_id": "fam_0136"
+    },
+    "2VLO_A_B": {
+      "partnerA_sf": [
+        "1.10.1200.20"
+      ],
+      "partnerB_sf": [
+        "3.90.540.10"
+      ],
+      "family_id": "fam_0136"
+    },
+    "2VLQ_A_B": {
+      "partnerA_sf": [
+        "1.10.1200.20"
+      ],
+      "partnerB_sf": [
+        "3.90.540.10"
+      ],
+      "family_id": "fam_0136"
+    },
+    "2WPT_A_B": {
+      "partnerA_sf": [
+        "1.10.1200.20"
+      ],
+      "partnerB_sf": [
+        "3.90.540.10"
+      ],
+      "family_id": "fam_0136"
+    },
+    "3BK3_A_B": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "2.10.90.10"
+      ],
+      "family_id": "fam_0142"
+    },
+    "3BP8_A_B": {
+      "partnerA_sf": [
+        "1.10.10.10",
+        "3.30.420.40"
+      ],
+      "partnerB_sf": [
+        "1.10.10.10",
+        "3.30.420.40"
+      ],
+      "family_id": "fam_0144"
+    },
+    "3BTD_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0148"
+    },
+    "3BTE_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0149"
+    },
+    "3BTF_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0150"
+    },
+    "3BTG_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0151"
+    },
+    "3BTH_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0152"
+    },
+    "3BTM_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0153"
+    },
+    "3BTQ_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0154"
+    },
+    "3BTT_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0155"
+    },
+    "3BTW_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0157"
+    },
+    "3SGB_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0198"
+    },
+    "4CPA_A_B": {
+      "partnerA_sf": [
+        "3.40.630.10"
+      ],
+      "partnerB_sf": [
+        "3.40.630.10"
+      ],
+      "family_id": "fam_0209"
+    },
+    "1SMF_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0064"
+    },
+    "2GOX_A_B": {
+      "partnerA_sf": [
+        "1.50.10.20"
+      ],
+      "partnerB_sf": [
+        "1.10.10.1270"
+      ],
+      "family_id": "fam_0162"
+    },
+    "3D5R_A_B": {
+      "partnerA_sf": [
+        "1.50.10.20"
+      ],
+      "partnerB_sf": [
+        "1.50.10.20"
+      ],
+      "family_id": "fam_0161"
+    },
+    "3D5S_A_B": {
+      "partnerA_sf": [
+        "1.50.10.20"
+      ],
+      "partnerB_sf": [
+        "1.50.10.20"
+      ],
+      "family_id": "fam_0161"
+    },
+    "1Y3C_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0086"
+    },
+    "1Y48_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0088"
+    },
+    "1Y3D_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0087"
+    },
+    "1X1W_A_B": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.10.450.30"
+      ],
+      "family_id": "fam_0004"
+    },
+    "2VLP_A_B": {
+      "partnerA_sf": [
+        "1.10.1200.20"
+      ],
+      "partnerB_sf": [
+        "3.90.540.10"
+      ],
+      "family_id": "fam_0136"
+    },
+    "2C0L_A_B": {
+      "partnerA_sf": [
+        "1.25.40.10"
+      ],
+      "partnerB_sf": [
+        "3.30.1050.10"
+      ],
+      "family_id": "fam_0105"
+    },
+    "1GRN_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "1.10.555.10"
+      ],
+      "family_id": "fam_0033"
+    },
+    "3N4I_A_B": {
+      "partnerA_sf": [
+        "3.40.710.10"
+      ],
+      "partnerB_sf": [
+        "3.30.1450.10"
+      ],
+      "family_id": "fam_0053"
+    },
+    "1BP3_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "3N06_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "3N0P_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "3NCB_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "3NCC_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "1FY8_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0026"
+    },
+    "3TGK_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0200"
+    },
+    "1F5R_A_B": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0021"
+    },
+    "5F4E_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0252"
+    },
+    "3SF4_A_B": {
+      "partnerA_sf": [
+        "1.25.40.10"
+      ],
+      "partnerB_sf": [
+        "1.25.40.10"
+      ],
+      "family_id": "fam_0196"
+    },
+    "4G2V_A_B": {
+      "partnerA_sf": [
+        "1.25.40.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0215"
+    },
+    "4WND_A_B": {
+      "partnerA_sf": [
+        "1.25.40.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0242"
+    },
+    "3BX1_A_B": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.40.50.200"
+      ],
+      "family_id": "fam_0158"
+    },
+    "1FSS_A_B": {
+      "partnerA_sf": [
+        "3.40.50.1820"
+      ],
+      "partnerB_sf": [
+        "2.10.60.10"
+      ],
+      "family_id": "fam_0006"
+    },
+    "1B41_A_B": {
+      "partnerA_sf": [
+        "3.40.50.1820"
+      ],
+      "partnerB_sf": [
+        "2.10.60.10"
+      ],
+      "family_id": "fam_0006"
+    },
+    "3Q8D_A_B": {
+      "partnerA_sf": [
+        "1.20.1440.120",
+        "2.40.50.140"
+      ],
+      "partnerB_sf": [
+        "1.20.1440.120",
+        "2.40.50.140"
+      ],
+      "family_id": "fam_0186"
+    },
+    "3RF3_A_B": {
+      "partnerA_sf": [
+        "1.20.120.230"
+      ],
+      "partnerB_sf": [
+        "1.20.120.230"
+      ],
+      "family_id": "fam_0191"
+    },
+    "3BT1_A_B": {
+      "partnerA_sf": [
+        "2.10.25.10",
+        "2.40.20.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0146"
+    },
+    "4CVW_A_B": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "2.60.40.1130",
+        "2.60.40.1180",
+        "3.20.20.80"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10",
+        "2.60.40.1130",
+        "2.60.40.1180",
+        "3.20.20.80"
+      ],
+      "family_id": "fam_0049"
+    },
+    "3SEK_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.10.90.10"
+      ],
+      "family_id": "fam_0195"
+    },
+    "3KBH_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0171"
+    },
+    "4FZA_A_B": {
+      "partnerA_sf": [
+        "1.25.10.10"
+      ],
+      "partnerB_sf": [
+        "1.10.510.10",
+        "3.30.200.20"
+      ],
+      "family_id": "fam_0235"
+    },
+    "3MZW_A_B": {
+      "partnerA_sf": [
+        "2.10.220.10",
+        "3.80.20.20"
+      ],
+      "partnerB_sf": [
+        "1.20.5.420"
+      ],
+      "family_id": "fam_0178"
+    },
+    "3S9D_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "3SE4_A_B": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.20.1250.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "3SE3_A_B": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.20.1250.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "1E50_A_B": {
+      "partnerA_sf": [
+        "2.60.40.720"
+      ],
+      "partnerB_sf": [
+        "2.40.250.10"
+      ],
+      "family_id": "fam_0034"
+    },
+    "2DVW_A_B": {
+      "partnerA_sf": [
+        "1.25.40.20"
+      ],
+      "partnerB_sf": [
+        "1.10.8.60"
+      ],
+      "family_id": "fam_0109"
+    },
+    "3WWN_A_B": {
+      "partnerA_sf": [
+        "3.40.1160.10"
+      ],
+      "partnerB_sf": [
+        "2.20.28.160"
+      ],
+      "family_id": "fam_0207"
+    },
+    "3F1S_A_B": {
+      "partnerA_sf": [
+        "2.30.39.10",
+        "3.30.497.10"
+      ],
+      "partnerB_sf": [
+        "2.10.25.10",
+        "2.40.10.10"
+      ],
+      "family_id": "fam_0167"
+    },
+    "1KNE_A_B": {
+      "partnerA_sf": [
+        "2.40.50.40"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0038"
+    },
+    "4BFI_A_B": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4EKD_A_B": {
+      "partnerA_sf": [
+        "1.10.400.10",
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "1.10.167.10",
+        "1.10.196.10"
+      ],
+      "family_id": "fam_0213"
+    },
+    "4GNK_A_B": {
+      "partnerA_sf": [
+        "1.10.400.10",
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "1.10.238.10",
+        "2.30.29.240",
+        "2.60.40.150",
+        "3.20.20.190"
+      ],
+      "family_id": "fam_0009"
+    },
+    "4JEU_A_B": {
+      "partnerA_sf": [
+        "1.25.40.60",
+        "3.40.50.1910",
+        "3.40.50.2060",
+        "3.90.830.10"
+      ],
+      "partnerB_sf": [
+        "1.20.58.70"
+      ],
+      "family_id": "fam_0224"
+    },
+    "2C5D_A_B": {
+      "partnerA_sf": [
+        "2.60.120.200"
+      ],
+      "partnerB_sf": [
+        "2.60.120.200"
+      ],
+      "family_id": "fam_0239"
+    },
+    "4RA0_A_B": {
+      "partnerA_sf": [
+        "2.60.120.200"
+      ],
+      "partnerB_sf": [
+        "2.60.120.200"
+      ],
+      "family_id": "fam_0239"
+    },
+    "4YEB_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "3.80.10.10"
+      ],
+      "family_id": "fam_0244"
+    },
+    "5CXB_A_B": {
+      "partnerA_sf": [
+        "2.130.10.10"
+      ],
+      "partnerB_sf": [
+        "2.130.10.10"
+      ],
+      "family_id": "fam_0249"
+    },
+    "5CYK_A_B": {
+      "partnerA_sf": [
+        "2.130.10.10"
+      ],
+      "partnerB_sf": [
+        "2.130.10.10"
+      ],
+      "family_id": "fam_0249"
+    },
+    "4RS1_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0240"
+    },
+    "5E6P_A_B": {
+      "partnerA_sf": [
+        "1.10.506.10",
+        "3.10.20.90"
+      ],
+      "partnerB_sf": [
+        "2.30.42.10"
+      ],
+      "family_id": "fam_0251"
+    },
+    "2REX_A_B": {
+      "partnerA_sf": [
+        "3.10.20.90"
+      ],
+      "partnerB_sf": [
+        "3.40.50.300"
+      ],
+      "family_id": "fam_0009"
+    },
+    "3Q3J_A_B": {
+      "partnerA_sf": [
+        "3.10.20.90"
+      ],
+      "partnerB_sf": [
+        "3.40.50.300"
+      ],
+      "family_id": "fam_0009"
+    },
+    "3NVQ_A_B": {
+      "partnerA_sf": [
+        "2.130.10.10",
+        "2.60.40.10",
+        "3.30.1680.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0184"
+    },
+    "3NVN_A_B": {
+      "partnerA_sf": [
+        "2.130.10.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0182"
+    },
+    "1K8R_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "3.10.20.90"
+      ],
+      "family_id": "fam_0009"
+    },
+    "4G0N_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "3.10.20.90"
+      ],
+      "family_id": "fam_0009"
+    },
+    "3KUD_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "3.10.20.90"
+      ],
+      "family_id": "fam_0009"
+    },
+    "1GUA_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "3.10.20.90"
+      ],
+      "family_id": "fam_0009"
+    },
+    "1C1Y_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "3.10.20.90"
+      ],
+      "family_id": "fam_0009"
+    },
+    "3LNZ_A_B": {
+      "partnerA_sf": [
+        "1.10.245.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0175"
+    },
+    "1YCS_A_B": {
+      "partnerA_sf": [
+        "2.60.40.720"
+      ],
+      "partnerB_sf": [
+        "1.25.40.20",
+        "2.30.30.40"
+      ],
+      "family_id": "fam_0089"
+    },
+    "3EG5_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "1.10.20.40",
+        "1.10.238.150",
+        "1.25.10.10"
+      ],
+      "family_id": "fam_0163"
+    },
+    "5XCO_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0259"
+    },
+    "5UFE_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0256"
+    },
+    "5UFQ_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "3.40.50.300"
+      ],
+      "family_id": "fam_0257"
+    },
+    "4L0P_A_B": {
+      "partnerA_sf": [
+        "2.60.120.260"
+      ],
+      "partnerB_sf": [
+        "2.60.40.420"
+      ],
+      "family_id": "fam_0231"
+    },
+    "1KBH_A_B": {
+      "partnerA_sf": [
+        "6.10.140.20"
+      ],
+      "partnerB_sf": [
+        "1.10.1630.10"
+      ],
+      "family_id": "fam_0036"
+    },
+    "2KSO_A_B": {
+      "partnerA_sf": [
+        "1.10.150.50"
+      ],
+      "partnerB_sf": [
+        "1.10.150.50"
+      ],
+      "family_id": "fam_0118"
+    },
+    "1JTD_A_B": {
+      "partnerA_sf": [
+        "3.40.710.10"
+      ],
+      "partnerB_sf": [
+        "2.130.10.30"
+      ],
+      "family_id": "fam_0189"
+    },
+    "1WQJ_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "4.10.40.20"
+      ],
+      "family_id": "fam_0076"
+    },
+    "2AW2_A_B": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.10.50.10"
+      ],
+      "family_id": "fam_0098"
+    },
+    "2DSQ_A_B": {
+      "partnerA_sf": [
+        "4.10.40.20"
+      ],
+      "partnerB_sf": [
+        "4.10.40.20"
+      ],
+      "family_id": "fam_0107"
+    },
+    "2J12_A_B": {
+      "partnerA_sf": [
+        "2.60.90.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0116"
+    },
+    "3EQS_A_B": {
+      "partnerA_sf": [
+        "1.10.245.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0164"
+    },
+    "3EQY_A_B": {
+      "partnerA_sf": [
+        "1.10.245.10"
+      ],
+      "partnerB_sf": [
+        "1.10.245.10"
+      ],
+      "family_id": "fam_0165"
+    },
+    "3LB6_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "1.20.1250.10"
+      ],
+      "family_id": "fam_0174"
+    },
+    "3M62_A_B": {
+      "partnerA_sf": [
+        "3.30.40.10"
+      ],
+      "partnerB_sf": [
+        "3.10.20.90"
+      ],
+      "family_id": "fam_0177"
+    },
+    "3M63_A_B": {
+      "partnerA_sf": [
+        "3.30.40.10"
+      ],
+      "partnerB_sf": [
+        "3.10.20.90"
+      ],
+      "family_id": "fam_0177"
+    },
+    "3MZG_A_B": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "3QHY_A_B": {
+      "partnerA_sf": [
+        "3.40.710.10"
+      ],
+      "partnerB_sf": [
+        "2.130.10.30"
+      ],
+      "family_id": "fam_0189"
+    },
+    "3U82_A_B": {
+      "partnerA_sf": [
+        "2.70.230.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0234"
+    },
+    "3UIG_A_B": {
+      "partnerA_sf": [
+        "1.10.1170.10"
+      ],
+      "partnerB_sf": [
+        "1.10.1170.10"
+      ],
+      "family_id": "fam_0203"
+    },
+    "3UII_A_B": {
+      "partnerA_sf": [
+        "1.10.1170.10"
+      ],
+      "partnerB_sf": [
+        "1.10.1170.10"
+      ],
+      "family_id": "fam_0203"
+    },
+    "4HRN_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0219"
+    },
+    "4KRL_A_B": {
+      "partnerA_sf": [
+        "3.80.20.20"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0228"
+    },
+    "4KRO_A_B": {
+      "partnerA_sf": [
+        "2.10.220.10",
+        "3.80.20.20"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0229"
+    },
+    "4KRP_A_B": {
+      "partnerA_sf": [
+        "2.10.220.10",
+        "3.80.20.20"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0230"
+    },
+    "4MYW_A_B": {
+      "partnerA_sf": [
+        "2.70.230.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0234"
+    },
+    "4NZW_A_B": {
+      "partnerA_sf": [
+        "1.25.10.10"
+      ],
+      "partnerB_sf": [
+        "1.10.510.10",
+        "3.30.200.20"
+      ],
+      "family_id": "fam_0235"
+    },
+    "4O27_A_B": {
+      "partnerA_sf": [
+        "1.25.10.10"
+      ],
+      "partnerB_sf": [
+        "1.10.510.10",
+        "3.30.200.20"
+      ],
+      "family_id": "fam_0235"
+    },
+    "4OFY_A_B": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4Y61_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "3.80.10.10"
+      ],
+      "family_id": "fam_0243"
+    },
+    "4YFD_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0245"
+    },
+    "4YH7_A_B": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0246"
+    },
+    "5K39_A_B": {
+      "partnerA_sf": [
+        "2.60.40.680"
+      ],
+      "partnerB_sf": [
+        "1.10.1330.10",
+        "2.60.40.1120"
+      ],
+      "family_id": "fam_0253"
+    },
+    "5M2O_A_B": {
+      "partnerA_sf": [
+        "2.60.40.680"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0254"
+    },
+    "5TAR_A_B": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "2.70.50.40"
+      ],
+      "family_id": "fam_0255"
+    },
+    "1CSE_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1ACB_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0001"
+    },
+    "1SBN_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1SIB_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1TM1_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1Y1K_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1Y33_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1Y34_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1Y3B_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1Y3C_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1Y48_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1Y3D_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1TM4_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1TM5_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1TM3_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1TM7_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1TMG_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "1TO1_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "2SIC_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.350.10"
+      ],
+      "family_id": "fam_0134"
+    },
+    "1BRS_A_D": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.30.370.10"
+      ],
+      "family_id": "fam_0005"
+    },
+    "1B2U_A_D": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.30.370.10"
+      ],
+      "family_id": "fam_0005"
+    },
+    "1B2S_A_D": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.30.370.10"
+      ],
+      "family_id": "fam_0005"
+    },
+    "1B3S_A_D": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.30.370.10"
+      ],
+      "family_id": "fam_0005"
+    },
+    "1X1W_A_D": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.30.370.10"
+      ],
+      "family_id": "fam_0005"
+    },
+    "1X1X_A_D": {
+      "partnerA_sf": [
+        "3.10.450.30"
+      ],
+      "partnerB_sf": [
+        "3.30.370.10"
+      ],
+      "family_id": "fam_0005"
+    },
+    "1GCQ_AB_C": {
+      "partnerA_sf": [
+        "2.30.30.40"
+      ],
+      "partnerB_sf": [
+        "2.30.30.40"
+      ],
+      "family_id": "fam_0028"
+    },
+    "1AK4_A_D": {
+      "partnerA_sf": [
+        "2.40.100.10"
+      ],
+      "partnerB_sf": [
+        "1.10.375.10"
+      ],
+      "family_id": "fam_0003"
+    },
+    "1M9E_A_D": {
+      "partnerA_sf": [
+        "2.40.100.10"
+      ],
+      "partnerB_sf": [
+        "1.10.375.10"
+      ],
+      "family_id": "fam_0003"
+    },
+    "2I26_N_L": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "3BT1_A_U": {
+      "partnerA_sf": [
+        "2.10.25.10",
+        "2.40.20.10"
+      ],
+      "partnerB_sf": [
+        "2.10.60.10"
+      ],
+      "family_id": "fam_0147"
+    },
+    "1AHW_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1UUZ_A_D": {
+      "partnerA_sf": [
+        "3.40.1420.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0075"
+    },
+    "1DVF_AB_CD": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1VFB_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "3D5S_A_C": {
+      "partnerA_sf": [
+        "1.50.10.20"
+      ],
+      "partnerB_sf": [
+        "1.10.10.1270"
+      ],
+      "family_id": "fam_0162"
+    },
+    "3D5R_A_C": {
+      "partnerA_sf": [
+        "1.50.10.20"
+      ],
+      "partnerB_sf": [
+        "1.10.10.1270"
+      ],
+      "family_id": "fam_0162"
+    },
+    "3BP8_A_C": {
+      "partnerA_sf": [
+        "1.10.10.10",
+        "3.30.420.40"
+      ],
+      "partnerB_sf": [
+        "3.30.1360.60"
+      ],
+      "family_id": "fam_0145"
+    },
+    "2VIS_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.10.77.10",
+        "3.90.209.20"
+      ],
+      "family_id": "fam_0135"
+    },
+    "2VIR_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.10.77.10",
+        "3.90.209.20"
+      ],
+      "family_id": "fam_0135"
+    },
+    "1KIQ_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "1KIP_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "1KIR_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "2JEL_LH_P": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "3.30.1340.10"
+      ],
+      "family_id": "fam_0117"
+    },
+    "2J0T_A_D": {
+      "partnerA_sf": [
+        "3.40.390.10"
+      ],
+      "partnerB_sf": [
+        "2.40.50.120"
+      ],
+      "family_id": "fam_0115"
+    },
+    "2BTF_A_P": {
+      "partnerA_sf": [
+        "3.30.420.40",
+        "3.90.640.10"
+      ],
+      "partnerB_sf": [
+        "3.30.450.30"
+      ],
+      "family_id": "fam_0104"
+    },
+    "2AJF_A_E": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "3.30.70.1840"
+      ],
+      "family_id": "fam_0097"
+    },
+    "4CPA_A_I": {
+      "partnerA_sf": [
+        "3.40.630.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0210"
+    },
+    "1NCA_N_LH": {
+      "partnerA_sf": [
+        "2.120.10.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0044"
+    },
+    "1N8O_ABC_E": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.550"
+      ],
+      "family_id": "fam_0042"
+    },
+    "1MAH_A_F": {
+      "partnerA_sf": [
+        "3.40.50.1820"
+      ],
+      "partnerB_sf": [
+        "2.10.60.10"
+      ],
+      "family_id": "fam_0006"
+    },
+    "1REW_AB_C": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "2.10.60.10"
+      ],
+      "family_id": "fam_0130"
+    },
+    "3BK3_A_C": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "6.20.200.20"
+      ],
+      "family_id": "fam_0143"
+    },
+    "1S0W_A_C": {
+      "partnerA_sf": [
+        "3.40.710.10"
+      ],
+      "partnerB_sf": [
+        "3.30.1450.10"
+      ],
+      "family_id": "fam_0053"
+    },
+    "1GL1_A_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0032"
+    },
+    "1GL0_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0030"
+    },
+    "1FC2_C_D": {
+      "partnerA_sf": [
+        "1.20.5.420"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0023"
+    },
+    "3BN9_B_CD": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0017"
+    },
+    "3NPS_A_BC": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0181"
+    },
+    "1DQJ_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "2FTL_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "1CBW_FGH_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "1Z7X_W_X": {
+      "partnerA_sf": [
+        "3.80.10.10"
+      ],
+      "partnerB_sf": [
+        "3.10.130.10"
+      ],
+      "family_id": "fam_0093"
+    },
+    "1FCC_A_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "3.10.20.10"
+      ],
+      "family_id": "fam_0024"
+    },
+    "1GC1_G_C": {
+      "partnerA_sf": [
+        "2.170.40.20"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0125"
+    },
+    "1JRH_LH_I": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1DAN_HL_UT": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0017"
+    },
+    "1NMB_N_LH": {
+      "partnerA_sf": [
+        "2.120.10.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0045"
+    },
+    "3HFM_HL_Y": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "1CHO_EFG_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1PPF_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1R0R_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0051"
+    },
+    "3SGB_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1SMF_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0065"
+    },
+    "1FY8_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "3TGK_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "1F5R_A_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "3BTD_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "3BTE_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "3BTF_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "3BTG_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "3BTH_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "3BTM_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "3BTQ_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "3BTW_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "3BTT_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "4.10.410.10"
+      ],
+      "family_id": "fam_0156"
+    },
+    "2SGP_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1CSO_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1CT0_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1CT2_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1CT4_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "2SGQ_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1SGD_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1SGE_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1SGN_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1SGP_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1SGQ_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "1SGY_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "2NU0_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "2NU1_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "2NU2_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "2NU4_E_I": {
+      "partnerA_sf": [
+        "2.40.10.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30"
+      ],
+      "family_id": "fam_0121"
+    },
+    "2J1K_C_T": {
+      "partnerA_sf": [
+        "2.60.90.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0116"
+    },
+    "3SF4_A_D": {
+      "partnerA_sf": [
+        "1.25.40.10"
+      ],
+      "partnerB_sf": [
+        "6.20.200.10"
+      ],
+      "family_id": "fam_0197"
+    },
+    "2VLR_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1OGA_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "2P5E_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "3QDG_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "3QDJ_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4L3E_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0232"
+    },
+    "1BD2_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1AO7_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4FTV_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0214"
+    },
+    "3D3V_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "5E9D_AB_CDE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "3QFJ_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0188"
+    },
+    "4JFF_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4JFD_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4JFE_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "3PWP_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "3H9S_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0169"
+    },
+    "2OI9_AQ_BC": {
+      "partnerA_sf": [
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "2E7L_EQ_AD": {
+      "partnerA_sf": [
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1LP9_ABC_EF": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "2UWE_ABC_EF": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "2JCC_ABC_EF": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "2J8U_ABC_EF": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1QSE_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0048"
+    },
+    "1QRN_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1QSF_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1MI5_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "2AK4_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "2BNR_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "2BNQ_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "3HG1_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4MNQ_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1YY9_CD_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.10.220.10",
+        "3.80.20.20"
+      ],
+      "family_id": "fam_0091"
+    },
+    "3BX1_A_C": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "2.80.10.50"
+      ],
+      "family_id": "fam_0159"
+    },
+    "3SZK_AB_C": {
+      "partnerA_sf": [
+        "1.10.490.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.1850"
+      ],
+      "family_id": "fam_0199"
+    },
+    "4GXU_ABCDEF_MN": {
+      "partnerA_sf": [
+        "2.10.77.10",
+        "3.90.20.10",
+        "3.90.209.20"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0217"
+    },
+    "3LZF_AB_HL": {
+      "partnerA_sf": [
+        "2.10.77.10",
+        "3.90.20.10",
+        "3.90.209.20"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0176"
+    },
+    "4HRN_A_D": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.10.220.10"
+      ],
+      "family_id": "fam_0220"
+    },
+    "1N8Z_AB_C": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.10.220.10",
+        "3.80.20.20"
+      ],
+      "family_id": "fam_0043"
+    },
+    "3R9A_AC_B": {
+      "partnerA_sf": [
+        "3.40.640.10",
+        "3.90.1150.10"
+      ],
+      "partnerB_sf": [
+        "1.25.40.10"
+      ],
+      "family_id": "fam_0190"
+    },
+    "3G6D_LH_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "1.20.1250.10"
+      ],
+      "family_id": "fam_0168"
+    },
+    "3Q8D_A_E": {
+      "partnerA_sf": [
+        "1.20.1440.120",
+        "2.40.50.140"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0187"
+    },
+    "1XGU_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "1XGP_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "1XGQ_AB_C": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "1XGR_AB_C": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0079"
+    },
+    "1XGT_AB_C": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0080"
+    },
+    "3RF3_A_C": {
+      "partnerA_sf": [
+        "1.20.120.230"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0192"
+    },
+    "3AAA_AB_C": {
+      "partnerA_sf": [
+        "1.20.58.570",
+        "3.30.1140.60",
+        "3.90.1150.210"
+      ],
+      "partnerB_sf": [
+        "1.25.40.20"
+      ],
+      "family_id": "fam_0137"
+    },
+    "3LB6_A_C": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "4K71_A_BC": {
+      "partnerA_sf": [
+        "1.10.246.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "family_id": "fam_0227"
+    },
+    "3UIG_A_P": {
+      "partnerA_sf": [
+        "1.10.1170.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0201"
+    },
+    "3UII_A_P": {
+      "partnerA_sf": [
+        "1.10.1170.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0204"
+    },
+    "3N85_A_LH": {
+      "partnerA_sf": [
+        "2.10.220.10",
+        "3.80.20.20"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0179"
+    },
+    "4N8V_G_ABC": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4CVW_A_C": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "2.60.40.1130",
+        "2.60.40.1180",
+        "3.20.20.80"
+      ],
+      "partnerB_sf": [
+        "1.10.110.10"
+      ],
+      "family_id": "fam_0211"
+    },
+    "4B0M_A_BM": {
+      "partnerA_sf": [
+        "3.10.20.410"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10",
+        "2.60.40.1090"
+      ],
+      "family_id": "fam_0208"
+    },
+    "3SEK_B_C": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30",
+        "3.90.290.10"
+      ],
+      "family_id": "fam_0138"
+    },
+    "3HH2_AB_C": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30",
+        "3.90.290.10"
+      ],
+      "family_id": "fam_0138"
+    },
+    "3B4V_AB_C": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30",
+        "3.90.290.10"
+      ],
+      "family_id": "fam_0138"
+    },
+    "2B0U_AB_C": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "3.30.60.30",
+        "3.90.290.10"
+      ],
+      "family_id": "fam_0138"
+    },
+    "4HFK_A_BD": {
+      "partnerA_sf": [
+        "3.90.1720.70"
+      ],
+      "partnerB_sf": [
+        "1.20.120.1620"
+      ],
+      "family_id": "fam_0218"
+    },
+    "3KBH_A_E": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.60.40.3130"
+      ],
+      "family_id": "fam_0172"
+    },
+    "4I77_HL_Z": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "1.20.1250.10"
+      ],
+      "family_id": "fam_0222"
+    },
+    "3L5X_A_HL": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0173"
+    },
+    "4JPK_HL_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0226"
+    },
+    "1BJ1_HL_VW": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.10.90.10"
+      ],
+      "family_id": "fam_0007"
+    },
+    "1CZ8_HL_VW": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.10.90.10"
+      ],
+      "family_id": "fam_0016"
+    },
+    "1MHP_HL_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "3.40.50.410"
+      ],
+      "family_id": "fam_0041"
+    },
+    "2B2X_HL_A": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "3.40.50.410"
+      ],
+      "family_id": "fam_0100"
+    },
+    "1MLC_AB_E": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0037"
+    },
+    "2NYY_DC_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "1.20.1120.10",
+        "2.60.120.200",
+        "2.80.10.50",
+        "3.90.1240.10"
+      ],
+      "family_id": "fam_0126"
+    },
+    "2NZ9_DC_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "1.20.1120.10",
+        "2.60.120.200",
+        "2.80.10.50",
+        "3.90.1240.10"
+      ],
+      "family_id": "fam_0127"
+    },
+    "3NGB_HL_G": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.170.40.20"
+      ],
+      "family_id": "fam_0180"
+    },
+    "3SE4_B_C": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "3SE3_B_A": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "3SE4_B_A": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "1C4Z_ABC_D": {
+      "partnerA_sf": [
+        "3.30.2160.10",
+        "3.30.2410.10",
+        "3.90.1750.10"
+      ],
+      "partnerB_sf": [
+        "3.10.110.10"
+      ],
+      "family_id": "fam_0010"
+    },
+    "3VR6_ABCDEF_GH": {
+      "partnerA_sf": [
+        "1.10.1140.10",
+        "2.40.30.20",
+        "2.40.50.100",
+        "3.40.50.12240",
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [
+        "3.40.50.10580"
+      ],
+      "family_id": "fam_0205"
+    },
+    "2BDN_HL_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.40.50.40"
+      ],
+      "family_id": "fam_0102"
+    },
+    "1KNE_A_P": {
+      "partnerA_sf": [
+        "2.40.50.40"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0039"
+    },
+    "4E6K_AB_G": {
+      "partnerA_sf": [
+        "1.20.1260.10"
+      ],
+      "partnerB_sf": [
+        "1.10.10.1100"
+      ],
+      "family_id": "fam_0212"
+    },
+    "2DSQ_I_G": {
+      "partnerA_sf": [
+        "1.10.100.10"
+      ],
+      "partnerB_sf": [
+        "4.10.800.10"
+      ],
+      "family_id": "fam_0108"
+    },
+    "1WQJ_I_B": {
+      "partnerA_sf": [
+        "1.10.100.10"
+      ],
+      "partnerB_sf": [
+        "4.10.40.20"
+      ],
+      "family_id": "fam_0077"
+    },
+    "3W2D_A_HL": {
+      "partnerA_sf": [
+        "2.40.50.110",
+        "3.10.20.120"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0206"
+    },
+    "4HSA_AB_C": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.2150",
+        "2.60.40.2160"
+      ],
+      "family_id": "fam_0221"
+    },
+    "4J2L_A_CD": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0223"
+    },
+    "4JGH_ABC_D": {
+      "partnerA_sf": [
+        "1.10.750.20",
+        "3.10.20.90",
+        "3.30.505.10",
+        "3.30.710.10"
+      ],
+      "partnerB_sf": [
+        "1.20.1310.10"
+      ],
+      "family_id": "fam_0225"
+    },
+    "4LRX_AB_CD": {
+      "partnerA_sf": [
+        "3.30.1180.20",
+        "3.40.50.10440"
+      ],
+      "partnerB_sf": [
+        "3.30.450.20",
+        "3.30.450.40"
+      ],
+      "family_id": "fam_0233"
+    },
+    "4NM8_ABCDEF_HL": {
+      "partnerA_sf": [
+        "3.90.20.10",
+        "3.90.209.20"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0135"
+    },
+    "4OFY_A_D": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4OZG_ABJ_GH": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.10.320.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4P5T_CD_AB": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.10.320.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0237"
+    },
+    "4P23_CD_AB": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.10.320.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0236"
+    },
+    "3C60_CD_AB": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.10.320.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0160"
+    },
+    "4PWX_AB_CD": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0238"
+    },
+    "2C5D_A_C": {
+      "partnerA_sf": [
+        "2.60.120.200"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0106"
+    },
+    "4RA0_A_C": {
+      "partnerA_sf": [
+        "2.60.120.200"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0106"
+    },
+    "4U6H_AB_E": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0241"
+    },
+    "4X4M_AB_E": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "4ZS6_HL_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.20.210.30",
+        "3.30.70.1840"
+      ],
+      "family_id": "fam_0247"
+    },
+    "5C6T_HL_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.30.29.100"
+      ],
+      "family_id": "fam_0248"
+    },
+    "5DWU_HL_AB": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0250"
+    },
+    "4NKQ_C_AB": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "1U7F_B_AC": {
+      "partnerA_sf": [
+        "2.60.200.10"
+      ],
+      "partnerB_sf": [
+        "2.60.200.10"
+      ],
+      "family_id": "fam_0073"
+    },
+    "3NVQ_B_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.130.10.10",
+        "2.60.40.10",
+        "3.30.1680.10"
+      ],
+      "family_id": "fam_0185"
+    },
+    "3NVN_B_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.130.10.10"
+      ],
+      "family_id": "fam_0183"
+    },
+    "3EQY_A_C": {
+      "partnerA_sf": [
+        "1.10.245.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0166"
+    },
+    "3SE8_HL_G": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.170.40.20"
+      ],
+      "family_id": "fam_0193"
+    },
+    "3SE9_HL_G": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.170.40.20"
+      ],
+      "family_id": "fam_0194"
+    },
+    "5UFQ_A_C": {
+      "partnerA_sf": [
+        "3.40.50.300"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0258"
+    },
+    "1YQV_HL_Y": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "1.10.530.10"
+      ],
+      "family_id": "fam_0090"
+    },
+    "3QIB_ABP_CD": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.10.320.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1Y4A_E_I": {
+      "partnerA_sf": [
+        "3.40.50.200"
+      ],
+      "partnerB_sf": [
+        "3.30.10.10"
+      ],
+      "family_id": "fam_0082"
+    },
+    "2NOJ_A_B": {
+      "partnerA_sf": [
+        "1.50.10.20"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0119"
+    },
+    "2ABZ_B_E": {
+      "partnerA_sf": [
+        "3.40.630.10"
+      ],
+      "partnerB_sf": [
+        "3.30.1040.10"
+      ],
+      "family_id": "fam_0095"
+    },
+    "1MQ8_A_B": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "3.40.50.410"
+      ],
+      "family_id": "fam_0100"
+    },
+    "2QJ9_AB_C": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "2.10.60.10"
+      ],
+      "family_id": "fam_0130"
+    },
+    "2QJA_AB_C": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "2.10.60.10"
+      ],
+      "family_id": "fam_0130"
+    },
+    "2QJB_AB_C": {
+      "partnerA_sf": [
+        "2.10.90.10"
+      ],
+      "partnerB_sf": [
+        "2.10.60.10"
+      ],
+      "family_id": "fam_0130"
+    },
+    "1XXM_A_C": {
+      "partnerA_sf": [
+        "3.40.710.10"
+      ],
+      "partnerB_sf": [
+        "3.30.1450.10"
+      ],
+      "family_id": "fam_0053"
+    },
+    "2PYE_ABC_DE": {
+      "partnerA_sf": [
+        "2.60.40.10",
+        "3.30.500.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0049"
+    },
+    "1QAB_ABCD_E": {
+      "partnerA_sf": [
+        "2.60.40.180"
+      ],
+      "partnerB_sf": [
+        "2.40.128.20"
+      ],
+      "family_id": "fam_0047"
+    },
+    "3BIW_A_E": {
+      "partnerA_sf": [
+        "3.40.50.1820"
+      ],
+      "partnerB_sf": [
+        "2.60.120.200"
+      ],
+      "family_id": "fam_0141"
+    },
+    "3UIH_A_P": {
+      "partnerA_sf": [
+        "1.10.1170.10"
+      ],
+      "partnerB_sf": [],
+      "family_id": "fam_0202"
+    },
+    "4UYP_A_D": {
+      "partnerA_sf": [
+        "2.60.40.680"
+      ],
+      "partnerB_sf": [
+        "1.10.1330.10"
+      ],
+      "family_id": "fam_0253"
+    },
+    "4UYQ_A_B": {
+      "partnerA_sf": [
+        "2.60.40.680"
+      ],
+      "partnerB_sf": [
+        "1.10.1330.10"
+      ],
+      "family_id": "fam_0253"
+    },
+    "2VN5_A_B": {
+      "partnerA_sf": [
+        "2.60.40.680"
+      ],
+      "partnerB_sf": [
+        "1.10.1330.10"
+      ],
+      "family_id": "fam_0253"
+    },
+    "3BDY_HL_V": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.10.90.10"
+      ],
+      "family_id": "fam_0139"
+    },
+    "3BE1_HL_A": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.10.220.10",
+        "3.80.20.20"
+      ],
+      "family_id": "fam_0140"
+    },
+    "2NY7_HL_G": {
+      "partnerA_sf": [
+        "2.60.40.10"
+      ],
+      "partnerB_sf": [
+        "2.170.40.20"
+      ],
+      "family_id": "fam_0125"
+    },
+    "3IDX_HL_G": {
+      "partnerA_sf": [],
+      "partnerB_sf": [
+        "2.170.40.20"
+      ],
+      "family_id": "fam_0170"
+    },
+    "3SE3_B_C": {
+      "partnerA_sf": [
+        "1.20.1250.10"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0008"
+    },
+    "4GU0_A_E": {
+      "partnerA_sf": [],
+      "partnerB_sf": [],
+      "family_id": "fam_0216"
+    },
+    "2C5D_AB_CD": {
+      "partnerA_sf": [
+        "2.60.120.200"
+      ],
+      "partnerB_sf": [
+        "2.60.40.10"
+      ],
+      "family_id": "fam_0106"
+    },
+    "1OHZ_A_B": {
+      "partnerA_sf": [
+        "2.60.40.680"
+      ],
+      "partnerB_sf": [
+        "1.10.1330.10"
+      ],
+      "family_id": "fam_0253"
+    },
+    "2CCL_A_B": {
+      "partnerA_sf": [
+        "2.60.40.680"
+      ],
+      "partnerB_sf": [
+        "1.10.1330.10"
+      ],
+      "family_id": "fam_0253"
+    }
+  },
+  "per_dataset": {
+    "S1102": {
+      "n_mut": 1102,
+      "n_cplx": 111,
+      "cath_family_exposure_pct": 22.2,
+      "chain_coverage_pct": 52.3,
+      "n_exposed_complexes": 32,
+      "n_unmapped_complexes": 55,
+      "antibody_family_exposed_mut": 76,
+      "antibody_exposed_pct": 6.9,
+      "n_antibody_dominated_families": 3
+    },
+    "S1131": {
+      "n_mut": 1127,
+      "n_cplx": 110,
+      "cath_family_exposure_pct": 25.8,
+      "chain_coverage_pct": 51.8,
+      "n_exposed_complexes": 32,
+      "n_unmapped_complexes": 55,
+      "antibody_family_exposed_mut": 96,
+      "antibody_exposed_pct": 8.5,
+      "n_antibody_dominated_families": 3
+    },
+    "S2003": {
+      "n_mut": 1124,
+      "n_cplx": 174,
+      "cath_family_exposure_pct": 22.9,
+      "chain_coverage_pct": 62.1,
+      "n_exposed_complexes": 61,
+      "n_unmapped_complexes": 74,
+      "antibody_family_exposed_mut": 75,
+      "antibody_exposed_pct": 6.7,
+      "n_antibody_dominated_families": 3
+    },
+    "S4169": {
+      "n_mut": 2497,
+      "n_cplx": 211,
+      "cath_family_exposure_pct": 38.6,
+      "chain_coverage_pct": 65.2,
+      "n_exposed_complexes": 79,
+      "n_unmapped_complexes": 86,
+      "antibody_family_exposed_mut": 410,
+      "antibody_exposed_pct": 16.4,
+      "n_antibody_dominated_families": 4
+    },
+    "SKEMPI-single": {
+      "n_mut": 5112,
+      "n_cplx": 324,
+      "cath_family_exposure_pct": 64.5,
+      "chain_coverage_pct": 78.6,
+      "n_exposed_complexes": 190,
+      "n_unmapped_complexes": 73,
+      "antibody_family_exposed_mut": 1642,
+      "antibody_exposed_pct": 32.1,
+      "n_antibody_dominated_families": 8
+    },
+    "SKEMPI-multi": {
+      "n_mut": 1973,
+      "n_cplx": 155,
+      "cath_family_exposure_pct": 69.2,
+      "chain_coverage_pct": 76.5,
+      "n_exposed_complexes": 77,
+      "n_unmapped_complexes": 43,
+      "antibody_family_exposed_mut": 657,
+      "antibody_exposed_pct": 33.3,
+      "n_antibody_dominated_families": 7
+    }
+  }
+}

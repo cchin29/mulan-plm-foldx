@@ -1,0 +1,315 @@
+NOTICE
+======
+
+This repository is a research **fork** of MuLAN (MUtational effects with Light Attention
+Networks) by Gianluca Lombardi and Alessandra Carbone.
+
+Upstream origins
+----------------
+
+  * Canonical:  https://gitlab.lcqb.upmc.fr/lombardi/mulan
+  * Mirror:     https://github.com/GianLMB/mulan
+  * Paper:      Lombardi, G. & Carbone, A. "MuLAN: Mutation-driven Light Attention Networks
+                for investigating protein-protein interactions from sequences."
+                bioRxiv 2024.08.24.609515.  doi:10.1101/2024.08.24.609515
+
+Copyright (c) 2024 Gianluca Lombardi and Alessandra Carbone, for the original work.
+Copyright (c) 2026 Connor Chin, for the modifications and additions described below.
+
+
+Statement of modifications
+--------------------------
+
+As required by the Attribution term of CC BY-NC-SA 4.0, this is an explicit record that the
+work has been modified, and how.
+
+Upstream's licence was verified rather than assumed (2026-08-06): the LICENSE at
+https://github.com/GianLMB/mulan is the full Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International legal code, "Copyright (c) 2024: Gianluca
+Lombardi and Alessandra Carbone", including its ShareAlike section 3.b. This fork's CC BY-NC-SA
+4.0 therefore follows from upstream's terms rather than being a choice made on their behalf.
+
+One distinction is worth stating because the two sources differ. `images/visual_abstract.png` is
+redistributed from the upstream **repository**, and is byte-identical to it (git blob
+1e828657e7096dd05d56e1d20fec3a7d8d5dc48b, 4,079,061 bytes) -- so it arrives under CC BY-NC-SA
+4.0 with the rest of the repository. The same figure also appears in the authors' bioRxiv
+preprint (doi:10.1101/2024.08.24.609515), which bioRxiv records as **CC BY-NC** -- a different
+licence, with no ShareAlike term. Nothing here is redistributed under that grant, and describing
+the image as coming from the preprint would name a source whose terms this repository does not
+rely on and could not restate.
+
+Files redistributed **verbatim** from upstream MuLAN:
+
+    examples/S1102.tsv                            examples/example.fasta
+    examples/sample_mut.txt                       scripts/uniprot_visualize.py
+    models/config/lightatt_default_config.json    models/config/lightatt_scores_config.json
+    images/visual_abstract.png                    (the paper's visual abstract, shown in README)
+
+Upstream files **modified** here:
+
+    mulan/{__init__,config,constants,data,modules,train_utils,utils}.py
+    scripts/{compute_landscape,extract_attentions,generate_embeddings,predict,train}.py
+
+Everything else under `mulan/` and `scripts/` is **original to this fork** and was never part of
+upstream MuLAN -- roughly 2,900 lines, chiefly `mulan/foldx/`, `mulan/plm/`, `mulan/metrics/`,
+`mulan/splits/`, `mulan/interface_xattn.py` and `scripts/audit_local_results.py`. Crediting those
+to the upstream authors would misattribute work they have not seen.
+
+`LICENSE` reproduces upstream's copyright line with one correction: upstream spells the first
+author "Ginluca"; this repository spells it "Gianluca".
+
+The substantive additions in this fork are:
+
+  1. **Multiple PLM embedding backends.** Upstream already ships a seven-entry HuggingFace
+     registry (`PLM_ENCODERS`: ESM-2 3B/650M/35M, Ankh large/base, ProtBERT, ProtT5-XL-half)
+     with `get_available_plms()` and family-branching load logic. This fork consolidates those
+     surfaces behind one registry and extends it to SDK-only and offline-embedding sources
+     (ProstT5, SaProt, ESM-C, ESM3, AIDO, MINT), adding per-model tokenization prefixes, strip
+     rules, dtype and device policy.
+
+  2. **A FoldX augmentation channel.** An encoder-independent zero-shot score channel
+     carrying FoldX binding ΔΔG, in two arms: a single Interaction-Energy scalar and a
+     12-term decomposed vector consumed by a small MLP. What this repository contains is
+     the *consuming* half — the mergers that join scores onto evaluation splits
+     (`mulan/foldx/merge.py`) and a vendored snapshot of the computed results
+     (`data/foldx/`). The *producing* half — the compute pipeline
+     (RepairPDB → BuildModel → AnalyseComplex), the result store and its reader API —
+     was extracted to skempi-foldx and is a dependency of this package, not part of it.
+
+  3. **Leakage-controlled evaluation.** The upstream random 10-fold cross-validation was
+     supplemented with by-complex, sequence-clustered (mmseqs ≤60%) and CATH-superfamily
+     hold-out protocols, evaluated with per-structure Spearman correlation and AUROC so the
+     results are directly comparable with the published ΔΔG frontier.
+
+  4. **Additional model heads**, including interface cross-attention, a pooled wild-type
+     structural-context branch, and a structure gate over 3Di embeddings.
+
+  5. **Apple Silicon / MPS support**, cross-platform device selection, and an in-memory
+     embedding cache.
+
+Neither Gianluca Lombardi nor Alessandra Carbone has reviewed or endorsed this fork, and
+they are not responsible for it. Any errors introduced here are the fork author's.
+
+
+Third-party data and assets
+---------------------------
+
+Neither upstream MuLAN nor this fork produced the underlying measurements. Everything below is
+someone else's work that this repository depends on, redistributes, or derives from.
+
+  * **SKEMPI 2.0** — the source of every ΔΔG label used here, and of the chain groupings and
+    cleaned mutation strings the FoldX pipeline runs on. **Any table in this repository carrying
+    SKEMPI ΔΔG values or SKEMPI-derived mutation strings is an adaptation of it** -- not only the
+    evaluation splits under `data/splits/`, but the row sets and fold files under
+    `experiments/`, `experiments/embedding_sweep/data/wt_sequences.fasta` (sequences extracted
+    from SKEMPI's cleaned PDBs), and `examples/S1102.tsv`. The SKEMPI database itself is not
+    redistributed.
+
+    SKEMPI 2.0 is released under **CC BY 4.0**
+    (https://creativecommons.org/licenses/by/4.0/), which permits these adaptations and requires
+    that the licence be identified and the modifications indicated -- which this paragraph does.
+    `examples/S1102.tsv` is a further adaptation: it is Lombardi & Carbone's curation of SKEMPI
+    rows, redistributed here verbatim from upstream MuLAN.
+
+        Jankauskaite, J., Jimenez-Garcia, B., Dapkunas, J., Fernandez-Recio, J. & Moal, I. H.
+        "SKEMPI 2.0: an updated benchmark of changes in protein-protein binding energy,
+        kinetics and thermodynamics upon mutation."
+        Bioinformatics 35(3):462-469, 2019.  doi:10.1093/bioinformatics/bty635
+
+        https://life.bsc.es/pid/skempi2
+
+  * **The S4169 benchmark selection** determines which mutations 2,494 of the 4,238 shipped
+    single-point FoldX records cover. The ddG values and the `cleaned` mutation strings are
+    SKEMPI's, but the per-complex *lists* passed to BuildModel for those records came from S4169.
+    Each record names this in its `_source` field, and `data/foldx/CONSOLIDATION_REPORT.txt`
+    reports the split by source.
+
+    This is load-bearing rather than bibliographic: as `OPEN_QUESTIONS.md` establishes, a
+    mutation's FoldX ddG depends on every entry before it in the list it was computed with, so
+    the row selection materially set those values. It is therefore worth being exact about whose
+    selection it is.
+
+    **S4169 is mCSM-PPI2's, not GeoPPI's**, though it was obtained here from GeoPPI's copy.
+    GeoPPI's own paper attributes it: "Rodrigues et al. filtered single-point mutations and
+    selected 4,169 variants from 319 different complexes, called the S4169 dataset." The two
+    files agree row for row -- 4,169 of 4,169 PDB identifiers and 4,169 of 4,169 ddG values,
+    row-aligned -- so GeoPPI's contribution to the artifact is a residue renumbering and a
+    column rename, which is what this repository consumed and what its `_source` labels record.
+    S1131 likewise predates GeoPPI: it is Xiong et al.'s non-redundant interface set, used the
+    same way for the benchmark tables.
+
+    mCSM-PPI2's article is CC BY 4.0 and its dataset page is marked Open Knowledge; GeoPPI is
+    MIT (https://github.com/Liuxg16/GeoPPI, LICENSE at root). Attribution for the selection runs
+    to mCSM-PPI2, and for the values to SKEMPI 2.0.
+
+        Rodrigues, C. H. M., Myung, Y., Pires, D. E. V. & Ascher, D. B. "mCSM-PPI2: predicting
+        the effects of mutations on protein-protein interactions."
+        Nucleic Acids Research 47(W1):W338-W344, 2019.  doi:10.1093/nar/gkz383
+
+        Xiong, P., Zhang, C., Zheng, W. & Zhang, Y. "BindProfX: Assessing Mutation-Induced
+        Binding Affinity Change by Protein Interface Profiles with Pseudo-Counts."
+        Journal of Molecular Biology 429(3):426-434, 2017.  doi:10.1016/j.jmb.2016.11.022
+
+        Liu, X., Luo, Y., Li, P., Song, S. & Peng, J. "Deep geometric representations for
+        modeling effects of mutations on protein-protein binding affinity."
+        PLOS Computational Biology 17(8):e1009284, 2021.  doi:10.1371/journal.pcbi.1009284
+        (the copy these lists were taken from)
+
+  * **The CATH-superfamily partition is not ours, and is NOT redistributed here.** It is a join
+    of our rows onto the static `cath_fold` column that USP-ddG ships in its own
+    `data/SKEMPI2/skempi_v2.csv` (https://github.com/ak422/USP-ddG), following the
+    CATH-superfamily hold-out protocol introduced by CATH-ddG. We reuse it deliberately, so that
+    a number produced here is placeable directly in their tables. Credit for the partition
+    belongs to those authors.
+
+    USP-ddG's repository shows an MIT badge in its README but ships no LICENSE file; its terms are
+    stated here as found rather than asserted. Which of the two papers first constructed the
+    partition cannot be established from either repository -- USP-ddG's code regenerates labels
+    from inputs it does not ship -- so both are cited and neither is claimed as sole originator.
+
+    Because those terms cannot be established, `data/splits/splits_skempi_full_cath_kfold/`
+    carries only a build recipe and a checksum manifest. Obtain the split by cloning USP-ddG and
+    running `experiments/full_skempi_seqonly/build_split_cath.py --usp <their csv>`; the output is
+    byte-reproducible and `MANIFEST.sha256` confirms it is the split our numbers were computed on.
+    For the same reason the CATH tier's predictions under `results/` ship unkeyed -- keyed rows
+    would disclose the partition, since our test rows are the complement of train and val within
+    the rows this tier keeps.
+    That directory's README documents both. Everything else there -- the row curation, the ddG
+    values from SKEMPI 2.0, the seeded val carve, the model outputs -- is ours or SKEMPI's and is
+    published in full.
+
+        Yu, G., Bi, X., Ma, T., Li, Y. & Wang, J. "CATH-ddG: towards robust mutation effect
+        prediction on protein-protein interactions out of CATH homologous superfamily."
+        Bioinformatics 41(Supplement 1):i362-i372, 2025.  doi:10.1093/bioinformatics/btaf228
+
+        Yu, G., Bi, X., Zhao, Q. & Wang, J. "USP-ddG: a unified structural paradigm with data
+        efficacy and mixture-of-experts for predicting mutational effects on protein-protein
+        interactions."  Bioinformatics 42(Supplement 1):btag249, 2026.
+        doi:10.1093/bioinformatics/btag249  (preprinted as doi:10.1101/2025.11.09.687124)
+
+    The underlying CATH superfamily classification is maintained by the CATH/Gene3D group
+    (https://www.cathdb.info/) and is distributed under CC BY 4.0, which carries a citation
+    requirement:
+
+        Sillitoe, I., Bordin, N., Dawson, N. et al. "CATH: increased structural coverage of
+        functional space."  Nucleic Acids Research 49(D1):D266-D273, 2021.
+        doi:10.1093/nar/gkaa1079
+
+  * **SIFTS** (EMBL-EBI) supplies the PDB-chain to CATH-superfamily mapping that
+    `experiments/cath_leakage/cath_families.json` is derived from, via
+    `pdb_chain_cath_uniprot.csv`. That file records its own source in its `meta.sifts_source`
+    field. SIFTS is distributed by EMBL-EBI under CC BY 4.0.
+
+        Dana, J. M. et al. "SIFTS: updated Structure Integration with Function, Taxonomy and
+        Sequences resource allows 40-fold increase in coverage of structure-based annotations
+        for proteins."  Nucleic Acids Research 47(D1):D482-D489, 2019.
+        doi:10.1093/nar/gky1114
+
+        https://www.ebi.ac.uk/pdbe/docs/sifts/
+
+  * **Protein Data Bank structures.** The FoldX channel is computed on SKEMPI's cleaned PDB
+    files. Structures are not redistributed here; the computed FoldX *outputs* are.
+
+  * **AlphaFold Protein Structure Database** (EMBL-EBI / Google DeepMind) supplies the predicted
+    structures the per-residue structural context is computed from. `scripts/uniprot_visualize.py`
+    fetches models from it at run time, and the 3Di tokens described in
+    `mulan/EMBEDDING_PREPROCESSING.md` are computed from the AlphaFold backbone. Structures are
+    not redistributed here, but values *derived* from them are: the RSA and contact fields in
+    `experiments/structctx_sweep/results/*.json`, computed under the pLDDT mask each file names.
+    AFDB is distributed under CC BY 4.0, which carries a citation requirement, and asks that the
+    method paper and the database paper be cited separately:
+
+        Jumper, J., Evans, R., Pritzel, A. et al. "Highly accurate protein structure prediction
+        with AlphaFold."  Nature 596:583-589, 2021.  doi:10.1038/s41586-021-03819-2
+
+        Bertoni, D., Tsenkov, M., Magana, P. et al. "AlphaFold Protein Structure Database 2025:
+        a redesigned interface and updated structural coverage."  Nucleic Acids Research
+        54(D1):D358-D362, 2025.  doi:10.1093/nar/gkaf1226
+        (supersedes the 2024 database paper, doi:10.1093/nar/gkad1011)
+
+    The RSA and secondary-structure values in those files are produced by DSSP, cited under
+    `references` in CITATION.cff. First three authors plus the senior author in both entries
+    above; see each paper for the full list.
+
+  * **MMseqs2** (Steinegger & Söding, Nature Biotechnology 35:1026-1028, 2017) was used to build
+    the <=60% sequence-identity clustered splits.
+
+  * **"MuLAN attention scores for PDB chains"** (Lombardi, G., Zenodo record 18175031,
+    2025-12-18, CC BY 4.0, https://doi.org/10.5281/zenodo.18175031) -- upstream's released
+    Ankh-large attention and the interface labels it is scored against -- is the input to
+    `experiments/attention_interface/score_interactome.py` and to every measured number in
+    `experiments/attention_interface/RESULTS_interactome.md` (its `paper` column is transcribed
+    from the upstream publication). The record itself is not
+    redistributed; the scores derived from it are.
+
+  * **reveal.js**, vendored under `scripts_plots/artifacts/*/deck*/vendor/` for the
+    self-contained result decks. MIT licensed, Copyright (c) 2011-2023 Hakim El Hattab
+    (https://revealjs.com). The vendored files are not all one release -- `reveal.js` is 4.6.0
+    and `reveal.css` is 4.5.0 -- and the MIT header is retained in `reveal.js` and `reveal.css`
+    but not in the vendored theme `white.css`, which carries only its author line. The MIT
+    license is compatible with, and independent of, this repository's CC BY-NC-SA 4.0 terms:
+    reveal.js remains MIT for anyone who extracts it.
+
+Comparator numbers quoted in `docs/` and `experiments/BENCHMARK_MATRIX.md` are the respective
+authors' published results, cited there and reproduced only for comparison. The set the figures
+draw from is `data/benchmarks/frontier.tsv`, one row per (method, metric, protocol) with the
+source paper and table named per row; it holds transcribed third-party results only, and never
+any number measured in this repository.
+
+
+Related projects
+----------------
+
+Two modules developed inside this codebase were extracted into standalone projects and are
+maintained separately. Both are dependencies of this package rather than parts of it, and each
+carries its own terms — which are not the same as each other's. Consult the licence in the
+project itself; the summaries below are orientation, not a grant.
+
+    skempi-foldx — https://github.com/cchin29/skempi-foldx
+        The FoldX compute pipeline, per-complex result store and reader API. MIT for the
+        code, CC BY 4.0 for the SKEMPI-derived energies. A required dependency, pinned to
+        v0.1.0 in pyproject.toml. Neither term is this repository's, so code obtained from
+        skempi-foldx is not encumbered by the non-commercial condition below.
+
+    foldenv — https://github.com/cchin29/foldenv
+        Per-residue structural context (RSA, secondary structure, contacts). Reached here
+        through the optional `struct` extra. CC BY-NC-SA 4.0 — the same terms as this
+        repository, because foldenv adapts portions of MuLAN itself. The non-commercial
+        and share-alike conditions travel with it.
+
+
+License
+-------
+
+This fork is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International (CC BY-NC-SA 4.0), the same license as upstream MuLAN, as required by its
+ShareAlike term. See LICENSE for the full text.
+
+This means, in brief: free for attributed, non-commercial use; derivative works must be
+released under the same license. It is **not** an OSI-approved open-source license and it
+cannot be relicensed under permissive terms.
+
+The pretrained MuLAN checkpoints are upstream artifacts and are **not** redistributed here;
+see README for where to obtain them.
+
+FoldX is licensed software from the CRG -- free to academic and non-profit research
+institutions, paid for commercial use -- and is **not** included in this repository. Running the FoldX
+pipeline requires your own license and binary from https://foldxsuite.crg.eu/. No part of the
+FoldX distribution -- binary, rotabase, parameter files, or documentation -- is reproduced here,
+in whole or in part, and nothing in this repository lets a reader run FoldX without obtaining it
+from CRG under their own agreement.
+
+What *is* distributed here is `data/foldx/`: numeric results we computed under our own academic
+license -- per-complex energies in JSON, keyed by SKEMPI mutation. These are measurements taken
+with a tool, not a redistribution of the tool, and they are not sufficient to reconstruct it.
+They are the same class of artifact as any published table of FoldX energies. Note also that the
+labels these energies are computed against come from SKEMPI 2.0 (CC BY 4.0, attributed above),
+which is a separate obligation that travels with them either way.
+
+We have not sought written confirmation from CRG that their academic license permits publishing
+computed outputs, and we do not represent this as their position. Our reading is that a license
+governing the software does not reach numbers produced by running it, and the field's practice --
+FoldX energies appear in the supplementary data of many published papers -- is consistent with
+that. **If you hold a FoldX license, your own agreement governs what you may do; read it rather
+than relying on this paragraph.** If CRG take a different view, contact the maintainer and
+`data/foldx/` will be withdrawn.
