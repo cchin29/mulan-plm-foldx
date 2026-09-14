@@ -18,7 +18,7 @@ o = []
 o.append(text(56, 40, "APPENDIX  ·  FIGURE A1", 11, MUTED, anchor="start", weight=700))
 o.append(text(56, 66, "The FoldX channel — definitions and provenance", 24, INK, anchor="start", weight=650))
 o.append(text(56, 92,
-              "Everything behind panel 1d: how the number is computed, what the twelve terms are, and the exact two configurations. "
+              "Everything behind the score channel (route 1d of Figure 1): how the number is computed, what the twelve terms are, and the exact two configurations. "
               "Encoder-independent — the channel is physics, reused unchanged across every backbone and every split.",
               12.5, INK_SOFT, anchor="start"))
 
@@ -129,7 +129,7 @@ o.append(text(gx, SY + 146, "add_scores — one number,", 10.5, PHYS_D, anchor="
 o.append(text(gx, SY + 161, "appended to the pooled vector", 10.5, INK_SOFT, anchor="start"))
 o.append(text(gx, SY + 184, "→  Linear (H + 1 → 1)", 10.5, INK_SOFT, anchor="start"))
 o.append(text(gx, SY + 199, "→  ΔΔG, kcal/mol", 10.5, INK_SOFT, anchor="start"))
-o.append(text(gx, SY + 236, "See Figure 1d for the arms", 10.5, MUTED, anchor="start", style="font-style:italic"))
+o.append(text(gx, SY + 236, "See Figure 1, route 1d, for where the arms attach", 10.5, MUTED, anchor="start", style="font-style:italic"))
 o.append(text(gx, SY + 251, "in context.", 10.5, MUTED, anchor="start", style="font-style:italic"))
 
 write(str(_OUT / "figA1_foldx_channel.svg"), W, H, "".join(o))

@@ -96,7 +96,11 @@ FRONTIER = {
         floor=("PPIformer", _CMP_CATH["PPIformer"]),
     ),
 }
-PS_YMAX = 0.56   # headroom for BA-DDG 0.513 (byCplx) + CATH-ddG 0.494 labels
+PS_YMAX = 0.64   # headroom for BA-DDG 0.513 (byCplx) + CATH-ddG 0.494 labels, and for a second
+                 # row of model labels: where two stacks a fraction of a decade apart top out at
+                 # nearly the same height, one label is lifted a row above the other (panels 2
+                 # and 4a). At 0.56 the lifted ESM-C 6B label on panel 2 ran into the panel title.
+                 # Shared by panels 2, 3a and 4a.
 PS_YMIN = -0.055  # floor headroom: ProstT5 sits at 0.054 on the clustered panel and hangs its
                   # label BELOW the marker, which the old ymin=0 clipped in half.
 
@@ -535,7 +539,10 @@ def draw_ps_panel(ax, D, split, title, show_ylabel, label_override=None):
 
     base_mean = np.nanmean([D.get((split, m, "base"), np.nan) for m in models])
     ax.axhline(base_mean, ls=":", lw=1.0, color="#888", zorder=1)
-    ax.annotate(f"mean base {base_mean:.3f}", (XLIM[1], base_mean), ha="right", va="bottom",
+    # Hangs BELOW its line (va="top"). Above it, AIDO-16B's base marker at the right edge sat on
+    # the text on all three of these panels, since that model's base lands a little above the
+    # mean on each; below the line the right edge is clear on all three.
+    ax.annotate(f"mean base {base_mean:.3f}", (XLIM[1], base_mean), ha="right", va="top",
                 fontsize=8.5, color="#888")
     ax.set_ylim(PS_YMIN, PS_YMAX)
     if show_ylabel:
@@ -661,21 +668,28 @@ def main():
     draw_ps_panel(ax2, D, "fullSK bycomplex-ALL", "2 · by-complex, single+multi (RDE-Network)", True,
                   # ProstT5's label ran straight through Ankh3-large's base marker (0.158) — drop it
                   # a further text row so it clears.
-                  # ESM-C 6B tops out just above Ankh3-xl a third of a decade away, so their two
-                  # centred labels touch — lift ESM-C 6B by a text row.
-                  label_override={**LABEL, "ProstT5": ("top", -32), "ESM-C 6B": ("bottom", 30)})
+                  # ESM-C 6B (top 0.479) sits a third of a decade from Ankh3-xl (0.458), so their
+                  # centred labels touch: lift ESM-C 6B a text row, into the headroom PS_YMAX leaves.
+                  # Ankh-large (top 0.458) and Ankh3-large (0.442) are closer still, 1.02e9 against
+                  # 1.35e9 as plotted, so their labels overprinted outright: lift Ankh-large a row
+                  # above Ankh3-large's. Both checked against the rendered text extents.
+                  label_override={**LABEL, "ProstT5": ("top", -32), "ESM-C 6B": ("bottom", 34),
+                                  "Ankh-large": ("bottom", 34)})
     # Combined single+multi, like panels 2 and 4a. This rung has no per-structure comparator at all
     # (see the in-panel note), so nothing had to be re-matched to move it — but leaving it on the
     # single-point rung made it the one step of the ladder measured on a different mutation set,
     # which is not a difference a reader should have to discover from a comment.
     draw_ps_panel(ax3, D, "fullSK clustered-ALL", "3a · CD-HIT ≤60%, single+multi (ProtBFF)", False)
-    # CATH is the one panel where Ankh-large (hi 0.387) and Ankh3-large (hi 0.393) top out level, so
-    # two centred labels at the same x overprint. Pull Ankh-large due west of its base instead.
-    # Ankh3-large's label also has to clear ProstT5's FoldX-scalar diamond (0.436), which sits 5% away
-    # in x and ABOVE Ankh3-large's own stack top (0.393) — hence the extra-tall offset.
+    # Ankh-large's label used to be pulled due west of its base, from a lineage in which it and
+    # Ankh3-large topped out level. On the current numbers that put it on ESM-C 600M's FoldX-scalar
+    # diamond (0.351), so it sits above its own stack again (top 0.421) and Ankh3-large's label
+    # (stack top 0.392) rises a further row to clear it — which also clears ProstT5's FoldX-scalar
+    # diamond (0.415), 5% away in x and above Ankh3-large's own stack. ESM-C 6B (top 0.438) and
+    # Ankh3-xl (0.414) collide as on panel 2, so ESM-C 6B takes the same one-row lift. All three
+    # checked against the rendered text extents.
     draw_ps_panel(ax4, D, "fullSK CATH-all", "4a · CATH-superfamily (CATH-ddG)", False,
-                  label_override={**LABEL, "Ankh-large": ("west", -12),
-                                  "Ankh3-large": ("bottom", 44)})
+                  label_override={**LABEL, "Ankh3-large": ("bottom", 54),
+                                  "ESM-C 6B": ("bottom", 30)})
     # Show y tick values on all three Spearman panels (shared scale, but labels repeated).
     for ax in (ax3, ax4):
         ax.tick_params(labelleft=True)
@@ -706,9 +720,12 @@ def main():
     # Panel 2's floor is the one region on this row that no marker enters — its lowest base sits at
     # 0.19. Lower-RIGHT, not left: ProstT5's label hangs below its marker into the left corner, and
     # the two smallest PLMs sit there too, while nothing on the right half is drawn under 0.25.
-    ax2.legend(handles=handles, loc="lower right", fontsize=7.8, framealpha=0.95,
-               title="MuLAN arms (panels 2–4)", title_fontsize=7.8, borderpad=0.35,
-               labelspacing=0.32, handletextpad=0.5)
+    # 7.4pt with tighter spacing since 2026-09-12: the taller per-structure axis (PS_YMAX 0.64)
+    # moved ESM2-3B's label, which hangs below its base marker, down onto the top edge of the
+    # 7.8pt box. The smaller box clears it, checked against the rendered extents.
+    ax2.legend(handles=handles, loc="lower right", fontsize=7.4, framealpha=0.95,
+               title="MuLAN arms (panels 2–4)", title_fontsize=7.4, borderpad=0.35,
+               labelspacing=0.25, handletextpad=0.5, handlelength=1.6, borderaxespad=0.25)
 
     fig.suptitle("MuLAN across PLM scale — ΔΔG performance (1) and per-structure Spearman on the "
                  "leakage-controlled full-SKEMPI ladder: by-complex single+multi (2), clustered (3a), CATH (4a)\n"

@@ -10,6 +10,22 @@ transfer learning from protein language models into a light-attention head.
 repository under its CC BY-NC-SA 4.0 licence — see [NOTICE](NOTICE). The same figure appears in
 their bioRxiv preprint, which carries CC BY-NC; the grant relied on here is the repository's.</sub>
 
+## Slides
+
+A 25-slide deck, dated 2026-09-13, written for a first-time reader of this repository. It covers the
+three questions below and what came of them: the leakage ladder and how each rung is defined, the
+CATH-superfamily leaderboard against the published frontier, the four routes tried for getting
+structure into a sequence-only model, the attention-based interface results, and the limitations.
+
+**Where:** [`scripts_plots/artifacts/2026-09-13/deck_2026-09-13/`](scripts_plots/artifacts/2026-09-13/deck_2026-09-13/)
+
+This is a reveal.js deck, so GitHub shows the source of `index.html` rather than rendering it. Clone
+or download the folder and open `index.html` in a browser — the slides read their figures and five
+interactive widgets from `assets/` beside it, so the folder has to stay intact.
+[`scripts_plots/DECK_HOWTO.md`](scripts_plots/DECK_HOWTO.md) covers bundling it into one shareable
+file, and [`scripts_plots/DECK_AND_FIGURE_PROVENANCE.md`](scripts_plots/DECK_AND_FIGURE_PROVENANCE.md)
+ties each figure to the data behind it, including which assets carry numbers that no script checks.
+
 ## What this fork asks
 
 Sequence-only ΔΔG predictors look strong under the evaluation protocol they are usually reported

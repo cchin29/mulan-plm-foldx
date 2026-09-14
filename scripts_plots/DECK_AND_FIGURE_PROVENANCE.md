@@ -206,8 +206,8 @@ breaks when they go stale. Listed worst-first.
 
 | Asset | Typed data-bearing numbers | Note |
 |---|---|---|
-| `leakage_explainer.html` | ~21 | No producer, no checker |
-| `metric_rationale.html` | ~14 | No checker. One value (`0.881`) could not be traced to any declared source at all |
+| `leakage_explainer.html` | ~21 | No producer, no checker. Audited by hand on 2026-09-14, which found three defects in the 2026-09-13 deck's copy: the retracted CATH per-structure ρ of 0.411, and two complex counts (314, 144) that its own embedded `META` array contradicted. All three corrected. Its 24 residual-leakage matrix cells remain the only numbers in the deck with no derivation anywhere in the tree |
+| `metric_rationale.html` | ~14 | No checker. The untraceable `0.881` was traced on 2026-09-14: it is the **mean per-fold PCC** from `scripts_plots/results_matrix.csv`, which is what `experiments/METRIC_RATIONALE.md:13` says it is. The value stands — it is the headline this fork inherited, and the document's argument (0.881 against 0.489) is about that number. What is wrong is the label "pooled Pearson" on all six of the page's faces; the same column is headed "pooled PCC" in the document itself, so the imprecision is shared rather than introduced here. The true pooled Pearson for that run is 0.886 (`experiments/rescore_perstructure/results.csv`), which is a different quantity and not a substitute |
 | `split_ladder.html` / `.png` | — | No producing script exists in the repo. The `.png` in the 2026-07-26 deck came from the hollowed ladder script and is stale |
 | `coverage_treemap.html` / `.png` | — | No producing script in the repo |
 | `point3_scatter.png`, `fig1_2x2.png` | — | No producing script in the repo |
@@ -249,6 +249,27 @@ figure set has one visual identity.
 ---
 
 ## 7. Changelog
+
+- **2026-09-14** — The 2026-09-13 deck added to the tree, and the two assets in §5 that carry typed
+  numbers with no checker were audited by hand for the first time. That audit is the argument of §2 in
+  miniature: `leakage_explainer.html` was still asserting the CATH per-structure ρ of **0.411**, retracted
+  on 2026-08-05 and superseded by 0.438, in a sentence that contradicted the corrected value elsewhere in
+  the same file — and it published two complex counts, 314 and 144, that the file's own embedded `META`
+  array already gave as 315 and 146. `leakage_explainer.html` was corrected outright.
+  `metric_rationale.html` was not, and the reason is worth recording: it labels **0.881** "pooled Pearson"
+  on all six of its faces, including two written by its own JavaScript over a value it had just computed —
+  but 0.881 is the mean per-fold PCC (`METRIC_RATIONALE.md:13`), the headline this fork inherited and the
+  subject of that document's whole argument. Substituting the true pooled Pearson, 0.886, was tried and
+  reverted: it changed what the page is about and desynchronised it from the document it cites. The label
+  is the defect, and a label is a wording decision, so it is queued rather than applied. Nothing broke
+  while any of this was wrong, because nothing was looking.
+
+  Also corrected: two citations that resolved to unrelated papers — RDE-Network as `arXiv:2210.06525` (a
+  subword-segmental language-model paper) and DiffAffinity as `arXiv:2310.03962` (a Clifford-algebra
+  paper) — in `experiments/BENCHMARK_MATRIX.md`, `experiments/benchmark_matrix.html` and
+  `experiments/METRIC_RATIONALE.md`. The transcribed *values* came from the papers' tables and were
+  unaffected; only the pointers were wrong. `gen_benchmark_matrix_data.py --verify` checks those values and
+  cannot see a citation, which is why the error survived every clean run.
 
 - **2026-08-06** — This doc created. `mdtable.py` extracted; `comparators.py` rewired onto it;
   `gen_benchmark_matrix_data.py` rewritten to `--write`/`--verify` instead of printing arrays

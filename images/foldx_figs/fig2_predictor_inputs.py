@@ -11,7 +11,7 @@ o = []
 
 o.append(text(56, 50, "Figure 2  ·  Predictor inputs at test time — FoldX alone, MuLAN base, MuLAN + channel", 25, INK, anchor="start", weight=650))
 o.append(text(56, 80,
-              "One held-out complex, three ways to rank its mutations. FoldX alone is unsupervised and free; it is the comparator the SKEMPI frontier reports against.",
+              "One held-out complex, three ways to rank its mutations. FoldX alone is unsupervised and requires no training; it is the comparator the SKEMPI frontier reports against.",
               13.5, INK_SOFT, anchor="start"))
 
 LANE_X, LANE_W = 56, 1032
@@ -59,7 +59,7 @@ def pipe1(y):
     b.append(ranked(OUT_X, y + 100, PHYS_S))
     return "".join(b)
 o.append(lane(Y1, LH, "PREDICTOR 1", PHYS_S, "FoldX alone", given1, pipe1,
-              "unsupervised physics, computed from the held-out structure itself — so homology control cannot hurt it",
+              "unsupervised physics, computed from the held-out structure itself — so homology control cannot lower its score",
               "#fffdf7", PHYS_S))
 
 # ------------------------------------------------------------------ lane 2
@@ -79,8 +79,8 @@ def pipe2(y):
     b.append(arrow(PIPE_X + 122, y + 120, PIPE_X + 142, y + 120, INK, 1.5))
     b.append(box(PIPE_X + 146, y + 100, 116, 40, "MuLAN head", ATT_F, ATT_S, 12, 8))
     b.append(badge(PIPE_X + 74, y + 34, "trained on SKEMPI", "good", 132))
-    b.append(arrow(PIPE_X + 268, y + 120, OUT_X - 12, y + 128, INK, 1.6))
-    b.append(ranked(OUT_X, y + 100, "#8ea9c9"))
+    b.append(arrow(PIPE_X + 268, y + 120, OUT_X - 12, y + 120, INK, 1.6))
+    b.append(ranked(OUT_X, y + 92, "#8ea9c9"))
     return "".join(b)
 o.append(lane(Y2, LH, "PREDICTOR 2", "#8ea9c9", "MuLAN base", given2, pipe2,
               "sequence only — nothing in the input tells it where the interface is, or what the physics says"))
@@ -101,9 +101,11 @@ def pipe3(y):
     b.append(box(PIPE_X + 146, y + 100, 116, 40, "MuLAN head", ATT_F, ATT_S, 12, 8))
     b.append(f'<rect x="{PIPE_X+192}" y="{y+143}" width="24" height="15" fill="{SLOT_F}" stroke="{PHYS_S}" stroke-width="2"/>')
     b.append(text(PIPE_X + 224, y + 151, "add_scores slot", 9.5, PHYS_D, anchor="start", weight=600))
+    # the FoldX number from lane 1 enters the head here
+    b.append(arrow(GIVEN_X + 146, y + 151, PIPE_X + 188, y + 151, PHYS_S, 1.6))
     b.append(badge(PIPE_X + 60, y + 34, "trained  +  reads FoldX", "good", 160))
-    b.append(arrow(PIPE_X + 268, y + 120, OUT_X - 12, y + 128, INK, 1.6))
-    b.append(ranked(OUT_X, y + 100, ATT_S))
+    b.append(arrow(PIPE_X + 268, y + 120, OUT_X - 12, y + 120, INK, 1.6))
+    b.append(ranked(OUT_X, y + 92, ATT_S))
     return "".join(b)
 o.append(lane(Y3, LH, "PREDICTOR 3", ATT_S, "MuLAN + FoldX channel", given3, pipe3,
               "the only arm with access to both — so the question is what it adds beyond lane 1"))
@@ -159,8 +161,8 @@ o.append(result_block(Y2 + 138,
 
 o.append(f'<line x1="{PX+24}" y1="{Y3+104}" x2="{PX+PW-24}" y2="{Y3+104}" stroke="{HAIRLINE}" stroke-width="1"/>')
 o.append(text(PX + 24, Y3 + 130, "The dashed line", 12.5, PHYS_D, anchor="start", weight=700))
-o.append(text(PX + 24, Y3 + 154, "It marks lane 1. A learned model earns its keep", 11, INK_SOFT, anchor="start"))
-o.append(text(PX + 24, Y3 + 171, "only by sitting clearly to the right of it —", 11, INK_SOFT, anchor="start"))
+o.append(text(PX + 24, Y3 + 154, "It marks lane 1. A learned model is worth adding", 11, INK_SOFT, anchor="start"))
+o.append(text(PX + 24, Y3 + 171, "only if it sits clearly to the right of it —", 11, INK_SOFT, anchor="start"))
 o.append(text(PX + 24, Y3 + 188, "which happens on 19 of 232 contrasts.", 11, INK_SOFT, anchor="start"))
 
 # ================================================================ conclusion band
@@ -168,7 +170,7 @@ CY = Y3 + LH + 24
 o.append(rrect(56, CY, 1588, 96, 12, "#fffaf0", PHYS_S, 1.8))
 o.append(text(80, CY + 28, "The missing comparator", 14.5, PHYS_D, anchor="start", weight=700))
 o.append(text(80, CY + 52,
-              "Every earlier result compared lane 3 against lane 2. Against lane 1 — the free alternative — across 10 backbones and 9 split tiers:",
+              "Every earlier result compared lane 3 against lane 2. Against lane 1 — the alternative that requires no training — across 10 backbones and 9 split tiers:",
               12, INK_SOFT, anchor="start"))
 stats = [("0 of 78", "base arms that beat FoldX alone", BAD),
          ("19 of 232", "contrasts that significantly beat it — all carry the channel", GOOD),
