@@ -53,10 +53,10 @@ CD-HIT ≤60% frontier column is reported in, and the only one comparable to it.
 interchangeable and neither is the pooled correlation. Blank means the rung predates the column,
 which is "not scored", never zero.
 
-`scripts_plots/artifacts/` holds generated HTML/explainer output for the dated decks. It **is
-tracked**, and the figures inside it are snapshots of the state on their own date rather than
-live output — regenerating a script here does not update them. Both shipped decks predate the
-2026-07-30 coverage fix and carry a superseded banner saying so.
+`scripts_plots/artifacts/` is where dated decks are built, and it is **not tracked**. The published
+slides are one self-contained file, `docs/slides/mulan-plm-foldx-slides.html`, and the figures
+inside it are snapshots of the state on its build date rather than live output — regenerating a
+script here does not update them. Rebuild the deck and re-bundle it (`DECK_HOWTO.md`).
 
 ---
 

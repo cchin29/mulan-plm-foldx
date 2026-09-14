@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Bundle a multi-file reveal.js deck into ONE self-contained .html for sharing.
 
-The decks under scripts_plots/artifacts/<date>/deck/ are a folder tree:
+A deck is built locally as a folder tree, under scripts_plots/artifacts/<date>/deck/ (not tracked):
     index.html  +  vendor/{reveal.css,white.css,reveal.js}  +  assets/{*.png,*.html}
 `index.html` alone is useless (relative refs), so this inlines everything into a
 single file you can email / double-click / drop anywhere, offline:
@@ -18,8 +18,8 @@ break reveal.js layout -- see `audit_viewport_units` and DECK_HOWTO.md.
 
 Pure stdlib, no deps. Re-run it on each new deck version:
 
-    python3 scripts_plots/bundle_deck.py scripts_plots/artifacts/2026-07-23/deck/index.html
-    # -> scripts_plots/artifacts/2026-07-23/deck_selfcontained.html
+    python3 scripts_plots/bundle_deck.py <deck>/index.html -o docs/slides/mulan-plm-foldx-slides.html
+    # <deck> is the local source tree, e.g. scripts_plots/artifacts/<date>/deck
 
 Options:
     -o OUT               output path (default: <deckdir>/../<deckdir_name>_selfcontained.html)

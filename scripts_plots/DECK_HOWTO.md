@@ -1,16 +1,17 @@
 # DECK_HOWTO — building, checking and sharing the reveal.js decks
 
-Scope: `scripts_plots/artifacts/<date>/deck/` (source tree) and the
-`deck_selfcontained.html` bundles produced from it by `bundle_deck.py`.
+Scope: a deck's source tree, built locally under `scripts_plots/artifacts/<date>/deck/` and not
+tracked, and the single self-contained file `bundle_deck.py` produces from it. The published copy of
+the current deck is `docs/slides/mulan-plm-foldx-slides.html`.
 
 ---
 
 ## 1. Build
 
 ```bash
-# from the repo root
-python3 scripts_plots/bundle_deck.py scripts_plots/artifacts/<date>/deck/index.html
-# -> scripts_plots/artifacts/<date>/deck_selfcontained.html
+# from the repo root; the deck source tree is built locally and is not tracked
+python3 scripts_plots/bundle_deck.py scripts_plots/artifacts/<date>/deck/index.html \
+    --strict -o docs/slides/mulan-plm-foldx-slides.html
 ```
 
 `index.html` alone is useless outside its folder (relative refs to `vendor/`

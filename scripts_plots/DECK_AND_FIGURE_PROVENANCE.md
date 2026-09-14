@@ -48,8 +48,10 @@ cd "<repo>/mulan"
 ./.venv/bin/python scripts_plots/check_fig1_numbers.py
 ./.venv/bin/python scripts_plots/comparators.py
 
-# 5. Copy the refreshed assets into the deck folder, then bundle (see DECK_HOWTO.md).
-python3 scripts_plots/bundle_deck.py scripts_plots/artifacts/<date>/deck/index.html --strict
+# 5. Copy the refreshed assets into the local deck folder (not tracked), then bundle it into the
+#    published file (see DECK_HOWTO.md).
+python3 scripts_plots/bundle_deck.py scripts_plots/artifacts/<date>/deck/index.html --strict \
+    -o docs/slides/mulan-plm-foldx-slides.html
 ```
 
 **Step 2 before step 3, always.** The `plot_ppS_*` pair reads its comparator and AUROC values
@@ -250,7 +252,8 @@ figure set has one visual identity.
 
 ## 7. Changelog
 
-- **2026-09-14** — The 2026-09-13 deck added to the tree, and the two assets in §5 that carry typed
+- **2026-09-14** — The 2026-09-13 deck published as one self-contained file,
+  `docs/slides/mulan-plm-foldx-slides.html`, and the two assets in §5 that carry typed
   numbers with no checker were audited by hand for the first time. That audit is the argument of §2 in
   miniature: `leakage_explainer.html` was still asserting the CATH per-structure ρ of **0.411**, retracted
   on 2026-08-05 and superseded by 0.438, in a sentence that contradicted the corrected value elsewhere in

@@ -242,13 +242,13 @@ someone else's work that this repository depends on, redistributes, or derives f
     from the upstream publication). The record itself is not
     redistributed; the scores derived from it are.
 
-  * **reveal.js**, vendored under `scripts_plots/artifacts/*/deck*/vendor/` for the
-    self-contained result decks. MIT licensed, Copyright (c) 2011-2023 Hakim El Hattab
-    (https://revealjs.com). The vendored files are not all one release -- `reveal.js` is 4.6.0
-    and `reveal.css` is 4.5.0 -- and the MIT header is retained in `reveal.js` and `reveal.css`
-    but not in the vendored theme `white.css`, which carries only its author line. The MIT
-    license is compatible with, and independent of, this repository's CC BY-NC-SA 4.0 terms:
-    reveal.js remains MIT for anyone who extracts it.
+  * **reveal.js**, inlined into the self-contained slide deck
+    `docs/slides/mulan-plm-foldx-slides.html`. MIT licensed, Copyright (c) 2011-2023 Hakim El
+    Hattab (https://revealjs.com). The inlined files are not all one release -- `reveal.js` is
+    4.6.0 and `reveal.css` is 4.5.0 -- and the MIT header is retained with `reveal.js` and
+    `reveal.css` inside the bundle, but not with the theme `white.css`, which carries only its
+    author line. The MIT license is compatible with, and independent of, this repository's
+    CC BY-NC-SA 4.0 terms: reveal.js remains MIT for anyone who extracts it.
 
 Comparator numbers quoted in `docs/` and `experiments/BENCHMARK_MATRIX.md` are the respective
 authors' published results, cited there and reproduced only for comparison. The set the figures

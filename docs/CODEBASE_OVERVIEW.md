@@ -294,7 +294,8 @@ context vector (`struct_context` in `MulanConfig`), not the code that computes o
   nothing there; the shipped copies are under `results/`.
 - Others: `plot_ddg_scaling.py`, `plot_variability.py` (fed by `aggregate_folds.py`), the
   `plot_augmentation.py` / `plot_structure_fusion.py` / `plot_model_timeline.py` schematics, and
-  `bundle_deck.py` for the self-contained result decks under `artifacts/`.
+  `bundle_deck.py`, which bundles a slide deck built locally under `artifacts/` (not tracked) into
+  the single self-contained file published as `docs/slides/mulan-plm-foldx-slides.html`.
 - [`PLOT_REGEN_HOWTO.md`](../scripts_plots/PLOT_REGEN_HOWTO.md) is the authoritative per-script
   inventory and regeneration procedure.
 

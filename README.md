@@ -17,14 +17,13 @@ three questions below and what came of them: the leakage ladder and how each run
 CATH-superfamily leaderboard against the published frontier, the four routes tried for getting
 structure into a sequence-only model, the attention-based interface results, and the limitations.
 
-**Where:** [`scripts_plots/artifacts/2026-09-13/deck_2026-09-13/`](scripts_plots/artifacts/2026-09-13/deck_2026-09-13/)
+**Where:** [`docs/slides/mulan-plm-foldx-slides.html`](docs/slides/mulan-plm-foldx-slides.html)
 
-This is a reveal.js deck, so GitHub shows the source of `index.html` rather than rendering it. Clone
-or download the folder and open `index.html` in a browser — the slides read their figures and five
-interactive widgets from `assets/` beside it, so the folder has to stay intact.
-[`scripts_plots/DECK_HOWTO.md`](scripts_plots/DECK_HOWTO.md) covers bundling it into one shareable
-file, and [`scripts_plots/DECK_AND_FIGURE_PROVENANCE.md`](scripts_plots/DECK_AND_FIGURE_PROVENANCE.md)
-ties each figure to the data behind it, including which assets carry numbers that no script checks.
+It is one self-contained file — the figures, the five interactive widgets and the reveal.js runtime
+are all inlined — so it opens offline in any browser, with nothing else to download. GitHub shows
+the file's source rather than rendering it: download the raw file from that page and open it.
+[`scripts_plots/DECK_AND_FIGURE_PROVENANCE.md`](scripts_plots/DECK_AND_FIGURE_PROVENANCE.md) ties
+each figure to the data behind it, including which ones carry numbers that no script checks.
 
 ## What this fork asks
 

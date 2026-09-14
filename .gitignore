@@ -77,9 +77,9 @@ experiments/cath_leakage/pdb_chain_cath_uniprot.csv.gz
 snapshot*.md
 export*.md
 
-# Deck bundles and staging dirs (regenerable from the deck sources).
-scripts_plots/artifacts/**/*_selfcontained.html
-scripts_plots/artifacts/**/_to_delete/
+# Dated deck sources, their bundles and staging dirs are built locally and never tracked. The
+# published slides are the single bundled file under docs/slides/.
+scripts_plots/artifacts/
 
 # Per-box generated aggregates (each machine regenerates from its own runs).
 scripts_plots/benchmarks_folds.csv
