@@ -56,10 +56,10 @@ MuLAN *comparable*, not a number no one else uses.
 
 They compound; separating them is clarifying. ESM-C 6B base:
 
-| | pooled PCC | pooled Spearman | per-structure Spearman |
+| | Pearson | pooled Spearman | per-structure Spearman |
 |---|---|---|---|
-| **leaky** (per-mut 10-fold) | **0.881** | — | 0.489 |
-| **clustered** (≤60%) | 0.642 | 0.448 | 0.370 |
+| **leaky** (per-mut 10-fold) | **0.881** (mean per-fold) | — | 0.489 |
+| **clustered** (≤60%) | 0.642 (pooled) | 0.448 | 0.370 |
 
 - **Metric cut** (top row, left→right): pooled PCC → per-structure Spearman drops **0.88 → 0.49** at a
   fixed split.
@@ -124,10 +124,10 @@ spread; per-structure Spearman measures the design question (rank mutations *wit
 
 **Center visual — the 2×3 decomposition table** (ESM-C 6B base):
 
-| | pooled PCC | pooled Spearman | per-structure Spearman |
+| | Pearson | pooled Spearman | per-structure Spearman |
 |---|---|---|---|
-| leaky | 0.881 | — | 0.489 |
-| clustered | 0.642 | 0.448 | 0.370 |
+| leaky | 0.881 (mean per-fold) | — | 0.489 |
+| clustered | 0.642 (pooled) | 0.448 | 0.370 |
 
 with two arrows annotated: horizontal "metric candor: 0.88→0.49" and vertical "split candor:
 0.49→0.37".

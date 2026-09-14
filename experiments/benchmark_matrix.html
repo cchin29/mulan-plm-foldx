@@ -45,7 +45,7 @@
 
 <div class="legend">
   <b>Splits (introduced by):</b> CV10 leaky per-mutation 10-fold (classical / MuLAN lineage) · byCplx whole-PDB-out 3-fold (<b>RDE-Network</b>, 2023) · CATH superfamily hold-out TM&lt;0.6 (<b>CATH-ddG</b>, 2025). <b>Clustered tier</b>, two criteria: <b>iDist≤0.03</b> = interface deduplication (<b>PPIRef/PPIformer</b>, 2024; per-protein Spearman) vs <b>CD-HIT≤60%</b> = sequence-identity clustering (<b>ProtBFF</b>, 2025; MuLAN uses this), shown as <b>pooled</b> Spearman &amp; Pearson — the only clustered metric ProtBFF reports. <b>MuLAN clusters by sequence identity, not iDist interface dedup.</b> &nbsp;
-  <b>Tags:</b> <span class="tag">ᵖᶜ</span>pooled Pearson · <span class="tag">ᵖ</span>pooled Spearman · <span class="tag">ᴿ</span>CATH re-eval (USP/CATH-ddG) · <span class="tag">ˢ</span>Prompt-DDG Tab.1 · <span class="tag">ᴮ</span>BA-DDG Tab.1 · <span class="tag">ᶜ</span>CATH-ddG Suppl.S2 · <span class="tag">✦</span>pending · ● uses split · — n/a. Green cells shaded by ρ. MuLAN full-SKEMPI byCplx = single-point 96 complexes; CATH = 13; CD-HIT pooled over 4,165 single-point muts.
+  <b>Tags:</b> <span class="tag">ᵖᶜ</span>pooled Pearson · <span class="tag">ᵖ</span>pooled Spearman · <span class="tag">ᴿ</span>CATH re-eval (USP/CATH-ddG) · <span class="tag">ˢ</span>Prompt-DDG Tab.1 · <span class="tag">ᴮ</span>BA-DDG Tab.1 · <span class="tag">ᶜ</span>CATH-ddG Suppl.S2 · ● uses split · — n/a. Green cells shaded by ρ. MuLAN full-SKEMPI byCplx = single-point 96 complexes; CATH = 13; CD-HIT pooled over 4,165 single-point muts.
 </div>
 
 <table id="t">
@@ -72,8 +72,8 @@
 
 <div class="callout">
   <b>Dataset-matched clustered comparison (full SKEMPI, CD-HIT ≤60% sequence identity, pooled — the only apples-to-apples with ProtBFF):</b>
-  <div class="rank"><b>MuLAN+FoldX 0.561</b> P &gt; ProtBFF <b>0.514</b> P &gt; ProMIM 0.486 &gt; ProSST-base 0.428 &gt; ESM2-base 0.194 &nbsp;(pooled Pearson, single+multi rung). MuLAN sits <b>above ProtBFF</b> on both readings of the metric. This line read "MuLAN below" off 0.407 P until 2026-08-05, from the 28%-FoldX-coverage lineage on the single-point rung.</div>
-  ProSST/ProMIM/ESM2 numbers are from <b>ProtBFF Table 2</b> (same CD-HIT 60% split; dataset = SKEMPI2 minus the 10 largest complexes ≈ 6,631 muts vs MuLAN's 4,165 single-point — close, not identical). The S1102 clustered numbers (~0.65 P) are higher only because S1102 is a curated easy subset. No frontier paper reports <i>per-structure</i> Spearman on a sequence-clustered split.
+  <div class="rank"><b>MuLAN+FoldX 0.561</b> P &gt; ProtBFF <b>0.514</b> P &gt; ProMIM 0.486 &gt; ProSST-base 0.428 &gt; ESM2-base 0.194 &nbsp;(pooled Pearson, single+multi rung). MuLAN sits <b>above ProtBFF</b> on both readings of the metric.</div>
+  ProSST/ProMIM/ESM2 numbers are from <b>ProtBFF Table 2</b> (same CD-HIT 60% split; dataset = SKEMPI2 minus the 10 largest complexes ≈ 6,631 muts vs MuLAN's 4,165 single-point — close, not identical). The S1102 clustered numbers (~0.65 P) are higher only because S1102 is a curated subset from the original MuLAN project, and an easier benchmark than full SKEMPI. No frontier paper reports <i>per-structure</i> Spearman on a sequence-clustered split.
 </div>
 
 <div style="margin:16px 0 6px;font-size:12.5px">

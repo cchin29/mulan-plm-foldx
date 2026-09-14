@@ -20,7 +20,7 @@ _MuLAN clusters by **sequence identity**, not by **iDist ≤0.03 interface dedup
 a different criterion (see ††)._ **Value tags:** bare = per-structure/per-PPI Spearman ·
 `ᵖ` pooled Spearman · `ᵖᶜ` pooled Pearson · `ᴿ` re-evaluated on CATH by
 USP-ddG / CATH-ddG (not the method's own paper) · `ˢ` secondary source (Prompt-DDG Table 1, arXiv
-2405.10348) · `ᴮ` BA-DDG Table 1 (arXiv 2410.09543) · `ᶜ` CATH-ddG Suppl. Table S2 · `✦` pending ·
+2405.10348) · `ᴮ` BA-DDG Table 1 (arXiv 2410.09543) · `ᶜ` CATH-ddG Suppl. Table S2 ·
 `●` uses split, value not in hand · `—` not used. OOD columns = sets shared by ≥2 papers; one-offs in **Other**.
 
 ## Papers (frontier + original MuLAN)
@@ -129,7 +129,7 @@ and `score_sp_all.py clustered` (fold-avg, via `results_matrix_ps.csv`)._
 ## MuLAN — S1102 ladder (this work, 2026-07)
 
 _`CV10`/`byCplx` = **per-structure Spearman** (leaky → by-complex); `CD-HIT Sp/Ps` = **pooled** Spearman &
-Pearson on the S1102 CD-HIT ≤60% split. **NB: S1102 is a curated easy subset — these CD-HIT pooled
+Pearson on the S1102 CD-HIT ≤60% split. **NB: S1102 is a curated subset from the original MuLAN project and an easier benchmark — these CD-HIT pooled
 numbers (~0.5–0.65) are NOT dataset-matched to ProtBFF; the full-SKEMPI table above (0.509/0.548) is.**
 `CV10 (P)` = leaky pooled Pearson. Best per column **bold**._
 

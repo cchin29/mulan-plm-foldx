@@ -80,7 +80,7 @@
   <div class="lead">The MuLAN ΔΔG headline metric changed from <b>10-fold-CV pooled Pearson</b> to <b>per-structure Spearman (T≥10)</b>. Same runs — a stricter, decision-relevant metric. (Numbers: ESM-C 6B base on S1102.)</div>
 
   <div class="hero">
-    <div class="big"><span class="num a"><span class="v">0.881</span><span class="ml">pooled Pearson</span></span><span class="arw">→</span><span class="num b"><span class="v">0.489</span><span class="ml">per-structure Spearman</span></span></div>
+    <div class="big"><span class="num a"><span class="v">0.881</span><span class="ml">CV10 PCC · mean per-fold</span></span><span class="arw">→</span><span class="num b"><span class="v">0.489</span><span class="ml">per-structure Spearman</span></span></div>
     <div class="cap"><b>Same model, same predictions, same leaky split.</b> Only the metric changed: pooled Pearson (<span class="pooltag">purple</span>) rewards the easy spread between complexes; per-structure Spearman (<span class="pstag">green</span>) measures the design question — rank the mutations <i>within</i> one complex.</div>
   </div>
 
@@ -88,7 +88,7 @@
   <div class="scatterbox">
     <svg id="sc" width="440" height="330" viewBox="0 0 440 330" role="img" aria-label="scatter"></svg>
     <div class="cap">
-      Each color is one complex. They sit at different ΔΔG levels, so <b>pooled</b> across all of them the cloud hugs the diagonal → <b class="pooltag" id="pr">pooled Pearson ≈ 0.881</b>. But <b>within</b> any single color the trend is flat → <b class="pstag" id="mr">per-structure Spearman ≈ 0.489</b>. The metric change is just <i>which line you read</i>.
+      Each color is one complex. They sit at different ΔΔG levels, so <b>pooled</b> across all of them the cloud hugs the diagonal → <b class="pooltag" id="pr">CV10 PCC (mean per-fold) ≈ 0.881</b>. But <b>within</b> any single color the trend is flat → <b class="pstag" id="mr">per-structure Spearman ≈ 0.489</b>. The metric change is just <i>which line you read</i>.
       <div class="linelegend">
         <span><svg width="38" height="10"><line x1="1" y1="5" x2="37" y2="5" stroke="#111" stroke-width="1.6" stroke-dasharray="5 3" opacity=".65"/></svg> dotted = pooled Pearson (across all complexes)</span>
         <span><svg width="38" height="10"><line x1="1" y1="5" x2="12" y2="5" stroke="#2563eb" stroke-width="2.6" stroke-linecap="round"/><line x1="14" y1="5" x2="25" y2="5" stroke="#dc2626" stroke-width="2.6" stroke-linecap="round"/><line x1="27" y1="5" x2="37" y2="5" stroke="#059669" stroke-width="2.6" stroke-linecap="round"/></svg> solid (multicolor) = per-structure Spearman (within each complex)</span>
@@ -104,19 +104,19 @@
     <div class="decright">
       <div class="metricarrow"><span class="lab">stricter metric ▶</span><span class="bar"></span></div>
       <table class="dec">
-        <thead><tr><th class="rl"></th><th class="pooltag">Pooled Pearson</th><th class="pooltag">Pooled Spearman</th><th class="pstag">Per-structure Spearman</th></tr></thead>
+        <thead><tr><th class="rl"></th><th class="pooltag">Pearson</th><th class="pooltag">Pooled Spearman</th><th class="pstag">Per-structure Spearman</th></tr></thead>
         <tbody>
           <tr><td class="rl">leaky<br><span style="font-weight:400;color:#9ca3af;font-size:11px">per-mut 10-fold</span></td>
-              <td><div class="cell pool">0.881</div></td><td><div class="cell na">—</div></td><td><div class="cell ps" id="c_lk_ps">0.489</div></td></tr>
+              <td><div class="cell pool">0.881<span style="display:block;font-weight:400;color:#9ca3af;font-size:10px">mean per-fold</span></div></td><td><div class="cell na">—</div></td><td><div class="cell ps" id="c_lk_ps">0.489</div></td></tr>
           <tr><td class="rl">clustered<br><span style="font-weight:400;color:#9ca3af;font-size:11px">CD-HIT ≤60%</span></td>
-              <td><div class="cell pool">0.642</div></td><td><div class="cell pool">0.448</div></td><td><div class="cell ps" id="c_cl_ps">0.370</div></td></tr>
+              <td><div class="cell pool">0.642<span style="display:block;font-weight:400;color:#9ca3af;font-size:10px">pooled</span></div></td><td><div class="cell pool">0.448</div></td><td><div class="cell ps" id="c_cl_ps">0.370</div></td></tr>
         </tbody>
       </table>
     </div>
   </div>
   <div class="cuts">
     <div class="cut"><div class="t">① Metric cut <span class="badge cut">−0.392 · the bigger one</span></div>
-      <div>pooled Pearson <span class="n">0.881</span> → per-structure Spearman <span class="n">0.489</span> <i>(fixed split)</i></div>
+      <div>CV10 PCC (mean per-fold) <span class="n">0.881</span> → per-structure Spearman <span class="n">0.489</span> <i>(fixed split)</i></div>
       <div class="d">bulk + between-complex inflation stripped out</div></div>
     <div class="cut"><div class="t">② Split cut <span class="badge cut">−0.119</span></div>
       <div>leaky <span class="n">0.489</span> → clustered <span class="n">0.370</span> <i>(fixed metric)</i></div>
@@ -153,7 +153,7 @@
     <div class="k"><b>Pooled Pearson/Spearman</b> — reported only to compare with methods that quote pooled correlations (e.g. ProtBFF); never the headline.</div>
   </div>
 
-  <div class="foot">Source: <code>experiments/METRIC_RATIONALE.md</code>; data from <code>rescore_perstructure/results.csv</code> (leaky) + <code>retrain_split/results_clustered.csv</code>. Metric = RDE <code>per_complex_corr</code>, validated &lt;1e-9. Lead with per-structure Spearman; cite pooled only against pooled.</div>
+  <div class="foot">Source: <code>experiments/METRIC_RATIONALE.md</code>; data from <code>rescore_perstructure/results.csv</code> (leaky) + <code>retrain_split/results_clustered.csv</code>. Metric = RDE <code>per_complex_corr</code>, validated &lt;1e-9.</div>
 </div>
 
 <script>
@@ -183,7 +183,7 @@ function spearman(a){const n=a.length;const rk=arr=>{const idx=arr.map((v,i)=>[v
   const rx=rk(a.map(p=>p[0])),ry=rk(a.map(p=>p[1]));let d=0;for(let i=0;i<n;i++)d+=(rx[i]-ry[i])**2;return 1-6*d/(n*(n*n-1));}
 const pr=pearson(all);
 const mr=complexes.reduce((s,cx)=>s+spearman(cx.pts),0)/complexes.length;
-document.getElementById("pr").textContent=`pooled Pearson ≈ 0.881`;
+document.getElementById("pr").textContent=`CV10 PCC (mean per-fold) ≈ 0.881`;
 document.getElementById("mr").textContent=`per-structure Spearman ≈ 0.489`;
 // scales (auto-fit to data)
 const xs=all.map(p=>p[0]), ys=all.map(p=>p[1]);
@@ -201,7 +201,7 @@ svg+=`<text x="14" y="${(H-pad)/2}" text-anchor="middle" font-size="11" fill="#6
 (()=>{const n=all.length;let mx=0,my=0;all.forEach(p=>{mx+=p[0];my+=p[1]});mx/=n;my/=n;
   let sxy=0,sxx=0;all.forEach(p=>{sxy+=(p[0]-mx)*(p[1]-my);sxx+=(p[0]-mx)**2});const b=sxy/sxx,a=my-b*mx;
   const x1=xlo+0.03,x2=xhi-0.03;svg+=`<line x1="${sx(x1)}" y1="${sy(a+b*x1)}" x2="${sx(x2)}" y2="${sy(a+b*x2)}" stroke="#111" stroke-width="1.5" stroke-dasharray="5 3" opacity=".55"/>`;
-  svg+=`<text x="${sx(x2)-4}" y="${sy(a+b*x2)-6}" text-anchor="end" font-size="10" fill="#111" opacity=".7" font-weight="700">pooled Pearson fit = 0.881</text>`;})();
+  svg+=`<text x="${sx(x2)-4}" y="${sy(a+b*x2)-6}" text-anchor="end" font-size="10" fill="#111" opacity=".7" font-weight="700">pooled fit — all complexes</text>`;})();
 // per-complex (within) regression lines — weak/flat, drawn under the points
 complexes.forEach(cx=>{
   const p=cx.pts,n=p.length;let mx=0,my=0;p.forEach(q=>{mx+=q[0];my+=q[1]});mx/=n;my/=n;
