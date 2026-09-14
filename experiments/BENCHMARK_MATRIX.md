@@ -338,8 +338,8 @@ Paper cells verified from the primary tables: BA-DDG Table 1 (byCplx), USP-ddG T
 
 - **SKEMPI v2** — Jankauskaitė et al., *Bioinformatics* 2019 · doi:10.1093/bioinformatics/bty635
 - **MuLAN** — bioRxiv 2024 · doi:10.1101/2024.08.24.609515
-- **RDE-Network** — Luo et al., ICLR 2023 · arXiv:2210.06525 · bioRxiv doi:10.1101/2023.02.28.530137
-- **DiffAffinity** — Liu et al., NeurIPS 2023 · arXiv:2310.03962
+- **RDE-Network** — Luo et al., ICLR 2023 · bioRxiv doi:10.1101/2023.02.28.530137 · OpenReview _X9Yl1K2mD
+- **DiffAffinity** — Liu et al., NeurIPS 2023 · arXiv:2310.19849
 - **PPIformer** — Bushuiev et al., ICLR 2024 · arXiv:2310.18515
 - **Prompt-DDG** — Wu et al., ICML 2024 · arXiv:2405.10348
 - **GearBind** — Cai et al., *Nat. Commun.* 2024 · doi:10.1038/s41467-024-51563-8 · arXiv:2304.08818 (note: 10.1038/s41467-024-49798-6 is a *different* paper, FSFP)
@@ -350,7 +350,7 @@ Paper cells verified from the primary tables: BA-DDG Table 1 (byCplx), USP-ddG T
 - **ProSST** — Li et al., NeurIPS 2024 · bioRxiv doi:10.1101/2024.04.15.589672
 - **ProMIM** — Mo et al., 2024 · arXiv:2405.17802
 
-**Split provenance:** by-complex 3-fold — RDE-Network (arXiv:2210.06525); iDist ≤0.03 interface dedup —
+**Split provenance:** by-complex 3-fold — RDE-Network (doi:10.1101/2023.02.28.530137); iDist ≤0.03 interface dedup —
 PPIRef/PPIformer (arXiv:2310.18515, Zenodo 10.5281/zenodo.12789167); CD-HIT ≤60% sequence identity —
 ProtBFF (doi:10.64898/2025.12.23.696257), clustering tool CD-HIT (Fu et al. 2012, doi:10.1093/bioinformatics/bts565);
 CATH-superfamily hold-out — CATH-ddG (doi:10.1093/bioinformatics/btaf228, reused by USP-ddG).

@@ -144,5 +144,5 @@ AUROC + precision@k for triage, and pooled only to line up against ProtBFF."
 
 _Sources: `scripts_plots/results_matrix.csv` (leaky cv10 PCC), `experiments/retrain_split/results_clustered.csv`
 (pooled + per-structure, clustered), `scripts_plots/results_matrix_ps.csv` (per-structure ladder). RDE
-`per_complex_corr` — arXiv:2210.06525. Metric-inflation critique in
+`per_complex_corr` — doi:10.1101/2023.02.28.530137. Metric-inflation critique in
 `REVIEW_gaps_and_landscape.md` §2.2._
